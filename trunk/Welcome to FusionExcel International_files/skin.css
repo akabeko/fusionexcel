@@ -1,0 +1,527 @@
+.MainMenu_MenuContainer
+{
+    BORDER-BOTTOM: 0px solid;
+    BORDER-LEFT: 0px solid;
+    BACKGROUND-COLOR: transparent;
+    BORDER-TOP: 0px solid;
+    BORDER-RIGHT: 0px solid
+}
+.MainMenu_MenuBar
+{
+    HEIGHT: 16px;
+    CURSOR: hand
+}
+.MainMenu_MenuItem
+{
+    BORDER-BOTTOM: #eef0fc 1px solid;
+    BORDER-LEFT: #eef0fc 0px solid;
+    BACKGROUND-COLOR: blue;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Tahoma, Arial, Helvetica;
+    COLOR: white;
+    FONT-SIZE: 10pt;
+    BORDER-TOP: #eef0fc 1px solid;
+    CURSOR: hand;
+    FONT-WEIGHT: bold;
+    BORDER-RIGHT: #eef0fc 0px solid
+}
+.MainMenu_MenuIcon
+{
+    BORDER-BOTTOM: #5a71ab 1px solid;
+    TEXT-ALIGN: center;
+    BORDER-LEFT: #5a71ab 1px solid;
+    BACKGROUND-COLOR: #5a71ab;
+    WIDTH: 15px;
+    HEIGHT: 21px;
+    BORDER-TOP: #5a71ab 1px solid;
+    CURSOR: hand
+}
+.MainMenu_SubMenu
+{
+    Z-INDEX: 1000;
+    BORDER-BOTTOM: #eef0fc 0px solid;
+    FILTER: progid:DXImageTransform.Microsoft.Shadow(color='DimGray', Direction=135, Strength=3);
+    BORDER-LEFT: #eef0fc 0px solid;
+    BACKGROUND-COLOR: #eef0fc;
+    MARGIN-TOP: 8px;
+    BORDER-TOP: #eef0fc 0px solid;
+    CURSOR: hand;
+    BORDER-RIGHT: #eef0fc 0px solid
+}
+.MainMenu_MenuBreak
+{
+    BORDER-BOTTOM: #eef0fc 1px solid;
+    BORDER-LEFT: #eef0fc 0px solid;
+    BACKGROUND-COLOR: white;
+    HEIGHT: 1px;
+    BORDER-TOP: #eef0fc 1px solid;
+    BORDER-RIGHT: #eef0fc 0px solid
+}
+.MainMenu_MenuItemSel
+{
+    BACKGROUND-COLOR: #fff;
+    FONT-STYLE: normal;
+    FONT-FAMILY: Tahoma, Arial, Helvetica;
+    COLOR: #b00;
+    FONT-SIZE: 8pt;
+    CURSOR: hand;
+    FONT-WEIGHT: bold
+}
+.MainMenu_MenuArrow
+{
+    BORDER-BOTTOM: #eef0fc 1px solid;
+    FONT-FAMILY: webdings;
+    FONT-SIZE: 10pt;
+    BORDER-TOP: #eef0fc 0px solid;
+    CURSOR: hand;
+    BORDER-RIGHT: #eef0fc 1px solid
+}
+.MainMenu_RootMenuArrow
+{
+    FONT-FAMILY: webdings;
+    FONT-SIZE: 10pt;
+    CURSOR: hand
+}
+SPAN.menuimg
+{
+    BACKGROUND: url(/Portals/0/Skins/Fusion/pwmenu.gif) no-repeat center center
+}
+BODY
+{
+    BACKGROUND-IMAGE: url(pwbg.gif);
+    MARGIN: 0px
+}
+#gnpage
+{
+    BORDER-BOTTOM: #fff 3px solid;
+    POSITION: absolute;
+    TEXT-ALIGN: center;
+    BORDER-LEFT: #fff 3px solid;
+    MARGIN-TOP: -270px;
+    WIDTH: 700px;
+    BACKGROUND: url(/Portals/0/Skins/Fusion/pwpe.gif) #fef9f1 no-repeat right bottom;
+    HEIGHT: 530px;
+    MARGIN-LEFT: -350px;
+    BORDER-TOP: #fff 3px solid;
+    TOP: 50%;
+    BORDER-RIGHT: #fff 3px solid;
+    LEFT: 50%
+}
+DIV.gnlogo
+{
+    POSITION: absolute;
+    TEXT-ALIGN: left;
+    WIDTH: 75px;
+    BACKGROUND: url(/Portals/0/Skins/Fusion/pwlogo.gif) no-repeat left top;
+    HEIGHT: 40px;
+    TOP: 3px;
+    LEFT: 15px
+}
+DIV.gnmenu
+{
+    BORDER-BOTTOM: #b00 2px solid;
+    POSITION: absolute;
+    TEXT-ALIGN: left;
+    WIDTH: 430px;
+    HEIGHT: 36px;
+    TOP: 0px;
+    PADDING-TOP: 8px;
+    LEFT: 95px
+}
+DIV.gnuser
+{
+    BORDER-BOTTOM: #b00 2px solid;
+    POSITION: absolute;
+    TEXT-ALIGN: right;
+    WIDTH: 170px;
+    PADDING-RIGHT: 5px;
+    HEIGHT: 36px;
+    TOP: 0px;
+    RIGHT: 0px;
+    PADDING-TOP: 8px
+}
+DIV.gnuser A.OtherTabs
+{
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    COLOR: #666;
+    FONT-SIZE: 9px
+}
+DIV.gnuser A.OtherTabs:visited
+{
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    COLOR: #666;
+    FONT-SIZE: 9px
+}
+DIV.gnuser A.OtherTabs:hover
+{
+    COLOR: #b00
+}
+DIV.gninfo
+{
+    BORDER-BOTTOM: #fff 1px solid;
+    POSITION: absolute;
+    TEXT-ALIGN: left;
+    BORDER-LEFT: #fff 1px solid;
+    PADDING-BOTTOM: 5px;
+    BACKGROUND-COLOR: #fdf0dc;
+    PADDING-LEFT: 5px;
+    WIDTH: 200px;
+    PADDING-RIGHT: 5px;
+    HEIGHT: 430px;
+    OVERFLOW: auto;
+    BORDER-TOP: #fff 1px solid;
+    TOP: 50px;
+    BORDER-RIGHT: #fff 1px solid;
+    PADDING-TOP: 5px;
+    LEFT: 15px
+}
+DIV.gncontent
+{
+    BORDER-BOTTOM: #fff 1px solid;
+    POSITION: absolute;
+    TEXT-ALIGN: left;
+    BORDER-LEFT: #fff 1px solid;
+    PADDING-BOTTOM: 5px;
+    BACKGROUND-COLOR: #fdf0dc;
+    PADDING-LEFT: 5px;
+    WIDTH: 450px;
+    PADDING-RIGHT: 5px;
+    HEIGHT: 430px;
+    OVERFLOW: auto;
+    BORDER-TOP: #fff 1px solid;
+    TOP: 50px;
+    BORDER-RIGHT: #fff 1px solid;
+    PADDING-TOP: 5px;
+    LEFT: 230px
+}
+DIV.gnlink
+{
+    POSITION: absolute;
+    TEXT-ALIGN: right;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 5px;
+    WIDTH: 600px;
+    BOTTOM: 0px;
+    PADDING-RIGHT: 5px;
+    HEIGHT: 10px;
+    BORDER-TOP: #fff 2px solid;
+    PADDING-TOP: 5px;
+    LEFT: 0px
+}
+DIV.gnlink SPAN.OtherTabs
+{
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    COLOR: #666;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold
+}
+DIV.gnlink A.OtherTabs
+{
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    COLOR: #666;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold
+}
+DIV.gnlink A.OtherTabs:visited
+{
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    COLOR: #666;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold
+}
+DIV.gnlink A.OtherTabs:hover
+{
+    COLOR: #b00
+}
+#footer
+{
+    POSITION: absolute;
+    TEXT-ALIGN: center;
+    BACKGROUND-COLOR: #fef9f1;
+    WIDTH: 100%;
+    BOTTOM: 0px;
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    HEIGHT: 40px;
+    COLOR: #999;
+    FONT-SIZE: 9px;
+    PADDING-TOP: 8px;
+    LEFT: 0px
+}
+#footer A.Normal
+{
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    COLOR: #999;
+    FONT-SIZE: 9px
+}
+#footer A.OtherTabs
+{
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    COLOR: #999;
+    FONT-SIZE: 9px
+}
+#footer SPAN.SelectedTab
+{
+    FONT-FAMILY: Verdana, Geneva, Arial, sans-serif;
+    COLOR: #999;
+    FONT-SIZE: 9px
+}
+.Normal
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #666666;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.Normal:link
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #666666;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.Normal:visited
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #666666;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.Normal:active
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #666666;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.Normal:hover
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #666666;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.BlueFont
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.BlueFont:link
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.BlueFont:visited
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.BlueFont:active
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.BlueFont:hover
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.BlueFontHeader
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.BlueFontHeader:link
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.BlueFontHeader:visited
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.BlueFontHeader:active
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.BlueFontHeader:hover
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #22428b;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.RedFontBig
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 15px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.RedFontBig:link
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.RedFontBig:visited
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.RedFontBig:active
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.RedFontBig:hover
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 11px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.RedFont
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.RedFont:link
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.RedFont:visited
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.RedFont:active
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.RedFont:hover
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ff0000;
+    FONT-SIZE: 10px;
+    TEXT-DECORATION: none
+}
+.WhiteFontBig
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: 9px;
+    TEXT-DECORATION: none
+}
+.WhiteFontBig:link
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: 9px;
+    TEXT-DECORATION: none
+}
+.WhiteFontBig:visited
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: 9px;
+    TEXT-DECORATION: none
+}
+.WhiteFontBig:active
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: 9px;
+    TEXT-DECORATION: none
+}
+.WhiteFontBig:hover
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: 9px;
+    TEXT-DECORATION: none
+}
+.WhiteFont
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.WhiteFont:link
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.WhiteFont:visited
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.WhiteFont:active
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.WhiteFont:hover
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+    COLOR: #ffffff;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none
+}
+.fe3
+{
+    FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10px
+}

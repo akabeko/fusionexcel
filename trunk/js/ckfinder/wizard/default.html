@@ -1,0 +1,794 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ * CKFinder
+ * ========
+ * http://www.ckfinder.com
+ * Copyright (C) 2007-2008 Frederico Caldeira Knabben (FredCK.com)
+ *
+ * The software, this file and its contents are subject to the CKFinder
+ * License. Please read the license.txt file before using, installing, copying,
+ * modifying or distribute this file or part of its contents. The contents of
+ * this file is part of the Source Code of CKFinder.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CKFinder - Asp setup Wizard</title>
+	<style type="text/css">
+		body {
+			font-family: Arial, Sans-Serif;
+			font-size: 80%;
+		}
+		p {
+			margin-top:0;
+		}
+		.error {
+			color: #FF0000 ;
+		}
+
+		.ok {
+			color: #00AA00 ;
+		}
+		#output {
+			padding: 1em 0;
+		}
+		#loggerOutput {
+		}
+		#loggerOutput div {
+			margin: 0.4em 0;
+			color:#000;
+			background-color: #e5e5e5;
+			border: 1px solid #AAA;
+			padding: 0.2em;
+			width:100%;
+			overflow:auto;
+		}
+		pre
+		{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+
+			background-color: #FFF;
+			color:#000;
+			font-size:120%;
+
+			white-space: pre; /* CSS2 */
+			white-space: -moz-pre-wrap; /* Mozilla*/
+			white-space: -o-pre-wrap; /* Opera 7 */
+			white-space: pre-wrap; /* CSS 2.1 */
+			white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+			word-wrap: break-word; /* IE */
+		}
+		b.pre { white-space:pre;}
+
+		td, th {vertical-align:top; padding:3px; text-align:left;}
+		table {border-collapse:collapse;}
+		table, td, th {border:1px solid #333;}
+		thead th {text-align:center}
+
+      .progressBar {
+         margin-top:0.2em;
+         height: 0.8em;
+         background: blue;
+         -moz-border-radius: 5px;
+         -webkit-border-radius: 5px;
+         border-radius: 5px;
+       }
+
+       .speed {
+         width: 5em;
+         text-align: right;
+				 padding-right:0.4em;
+				 display:inline-block;
+       }
+       .uploadinfo {
+         width: 8em;
+         text-align: right;
+				 padding-right:0.4em;
+				 display:inline-block;
+       }
+       .progressBarContainer {
+         width: 200px;
+				 display:inline-block;
+       }
+
+	</style>
+	<script type="text/javascript">
+// <![CDATA[
+
+var Result = function()
+{
+	this.ok = true ;
+	this.message = '' ;
+	this.url = null ;
+}
+
+Result.prototype.SetError = function(message, url)
+{
+//	var c= arguments.caller;
+//	var e= arguments.callee;
+
+	this.ok = false ;
+	this.message = message ;
+	this.url = url ;
+}
+
+Result.prototype.SetWarning = function(message, url)
+{
+	this.message = message ;
+	this.url = url ;
+}
+
+Result.prototype.GetMessage = function()
+{
+	if ( this.message === '' )
+		return '' ;
+
+	if (!this.ok)
+	{
+		return '<p class="error">' + this.message + '<\/p>' +
+			(this.url ? '<p>You can get more info in <a href="' + this.url + '">this page<\/a><\/p>' : '') +
+			'<p>You can <a href="#" onclick="TestRunner.Skip(); return false;">resume the tests clicking here<\/a> (remember that further tests might depend on the success of the previous ones)<\/p>';
+	}
+
+	// Not an error (this.ok == true), but something that should be noted
+	return '<p class="info">' + this.message + '<\/p>' +
+		(this.url ? '<p>You can get more info in <a href="' + this.url + '">this page<\/a><\/p>' : '') ;
+
+}
+
+var Logger = {
+	output: null,
+	Add : function( resource )
+	{
+		if (!this.output)
+			this.output = document.getElementById("loggerOutput");
+
+		var div = document.createElement( 'DIV' );
+		var text = resource.text ;
+		if (typeof(resource.headers) == "string")
+		{
+			if (resource.headers.indexOf("Content-Type: image")>0)
+				text = text.substr(0, 200) + "\r\n...Image data...";
+		}
+
+		div.innerHTML = '<p>Requested  URL: <a href="' + resource.url + '">' + resource.url + '<\/a><br>' +
+			'Returned status: ' + resource.status + '<br>' +
+			'Elapsed ms: ' + resource.elapsedTime + '<br>' +
+			'Returned text: ' + '<\/p>' +
+			'<pre>' + HTMLEncode(text) + '<\/pre>' ;
+		this.output.appendChild( div ) ;
+
+	}
+}
+
+function Toggle(id)
+{
+	var o = document.getElementById(id);
+	if (o.style.display == '')
+		o.style.display = 'none' ;
+	else
+		o.style.display = '' ;
+}
+/*
+	Get URL, use the FCKXml object form the FCKeditor file browser as a basis
+	It's modified so that any error is returned in the Resource object
+	*/
+
+var Resource = function()
+{
+	this.url = '' ;
+	this.status = 0 ;
+	this.text = '' ;
+	this.DOMDocument = null ;
+}
+
+Resource.prototype.GetError = function()
+{
+	var message = [] ;
+	message.push( '&nbsp; Requested URL: <a href="' + this.url + '">' + this.url + '<\/a>' ) ;
+	message.push( '&nbsp; Returned status: ' + this.status ) ;
+	message.push( '&nbsp; Returned text: ' + HTMLEncode(this.text) ) ;
+	message.push( '&nbsp; Returned xml: ' + HTMLEncode(this.DOMDocument) ) ;
+	message.push( '&nbsp; Returned headers: <br><pre>' + HTMLEncode(this.headers) + '<\/pre>' ) ;
+
+	return message.join( '<br>' ) ;
+}
+
+
+Resource.prototype.SelectNodes = function( xpath )
+{
+	if ( navigator.userAgent.indexOf('MSIE') >= 0 )		// IE
+		return this.DOMDocument.selectNodes( xpath ) ;
+	else					// Gecko
+	{
+		var aNodeArray = new Array();
+
+		var xPathResult = this.DOMDocument.evaluate( xpath, this.DOMDocument,
+				this.DOMDocument.createNSResolver(this.DOMDocument.documentElement), XPathResult.ORDERED_NODE_ITERATOR_TYPE, null) ;
+		if ( xPathResult )
+		{
+			var oNode = xPathResult.iterateNext() ;
+ 			while( oNode )
+ 			{
+ 				aNodeArray[aNodeArray.length] = oNode ;
+ 				oNode = xPathResult.iterateNext();
+ 			}
+		}
+		return aNodeArray ;
+	}
+}
+
+Resource.prototype.SelectSingleNode = function( xpath )
+{
+	if ( !this.DOMDocument )
+		return null;
+
+	if ( navigator.userAgent.indexOf('MSIE') >= 0 )		// IE
+		return this.DOMDocument.selectSingleNode( xpath ) ;
+	else					// Gecko
+	{
+		var xPathResult = this.DOMDocument.evaluate( xpath, this.DOMDocument,
+				this.DOMDocument.createNSResolver(this.DOMDocument.documentElement), 9, null);
+
+		if ( xPathResult && xPathResult.singleNodeValue )
+			return xPathResult.singleNodeValue ;
+		else
+			return null ;
+	}
+}
+
+Resource.prototype.GetSingleNodeValue = function( xpath )
+{
+	var oNode = this.SelectSingleNode( xpath ) ;
+
+	if (!oNode || !oNode.firstChild )
+		return null ;
+
+	return oNode.firstChild.nodeValue.replace(/\n/g, '<br>') ;
+}
+
+// returns an array of objects representing the xml subtree
+Resource.prototype.GetObject = function( xpath )
+{
+	var oNode = this.SelectSingleNode( xpath ) ;
+
+	if (!oNode || !oNode.firstChild )
+		return null ;
+
+	var childs = [] ;
+	var XMLchild = oNode.firstChild ;
+	while(XMLchild)
+	{
+		var child = {} ;
+		for(var i=0; i<XMLchild.attributes.length; i++)
+		{
+			child[ XMLchild.attributes[i].nodeName ] = XMLchild.attributes[i].nodeValue ;
+		}
+		childs.push(child);
+
+		XMLchild = XMLchild.nextSibling ;
+	}
+	return childs ;
+}
+
+
+function HTMLEncode( text )
+{
+	if ( text === null )
+		return "null" ;
+
+	if ( typeof(text) === 'undefined' )
+		return "undefined" ;
+
+	if ( typeof( text ) != "string" )
+		text = text.toString() ;
+
+	text = text.replace(
+		/&/g, "&amp;").replace(
+		/"/g, "&quot;").replace(
+		/</g, "&lt;").replace(
+		/>/g, "&gt;").replace(
+		/\n/g, "<br>");
+
+	return text ;
+}
+
+function ParsePermissions(resourcesInfo)
+{
+	var sData = [];
+	sData.push('<table>');
+	sData.push('<thead><tr><th rowspan="2">Resource<\/th><th colspan="4">Folders<\/th><th colspan="4">Files<\/th><\/tr>');
+	sData.push('<tr><th>View<\/th><th>Create<\/th><th>Rename<\/th><th>Delete<\/th><th>View<\/th><th>Create<\/th><th>Rename<\/th><th>Delete<\/th><\/tr><\/thead>');
+
+	for(var i=0; i<resourcesInfo.length; i++)
+	{
+		var resource = resourcesInfo[i];
+		var acl = resource.acl;
+		var line = '<tr><th>' + resource.name + '<\/th>';
+		for(var j=0; j<8; j++)
+		{
+			line += '<td>' + ((acl & Math.pow(2, j)) ? 'Yes' : 'No') + '<\/td>';
+		}
+		line +='<\/tr>';
+		sData.push(line)
+	}
+	sData.push('<\/table>');
+
+	return sData.join('');
+}
+
+
+var FCKXml = function()
+{}
+
+FCKXml.prototype.GetHttpRequest = function()
+{
+	// Gecko / IE7
+	try { return new XMLHttpRequest(); }
+	catch(e) {}
+
+	// IE6
+	try { return new ActiveXObject( 'Msxml2.XMLHTTP' ) ; }
+	catch(e) {}
+
+	// IE5
+	try { return new ActiveXObject( 'Microsoft.XMLHTTP' ) ; }
+	catch(e) {}
+
+	return null ;
+}
+
+FCKXml.prototype.PostedData = function(oXmlHttp, asyncFunctionPointer, urlToCall, startTime)
+{
+				var oXml ;
+				try
+				{
+					// this is the same test for an FF2 bug as in fckxml_gecko.js
+					// but we've moved the responseXML assignment into the try{}
+					// so we don't even have to check the return status codes.
+					var test = oXmlHttp.responseXML.firstChild ;
+					oXml = oXmlHttp.responseXML ;
+				}
+				catch ( e )
+				{
+					try
+					{
+						oXml = (new DOMParser()).parseFromString( oXmlHttp.responseText, 'text/xml' ) ;
+					}
+					catch ( e ) {}
+				}
+
+				var resource = new Resource() ;
+				resource.url = urlToCall ;
+				resource.status = oXmlHttp.status ;
+				resource.text = oXmlHttp.responseText ;
+				resource.elapsedTime = (new Date()).getTime() - startTime ; // ms
+				try {
+					if (oXmlHttp.getAllResponseHeaders)
+						resource.headers = oXmlHttp.getAllResponseHeaders();
+				}
+				catch (e ) {}
+
+//				alert(oXmlHttp.getResponseHeader('Server'))
+				resource.DOMDocument = oXml ;
+				if ( !oXml || !oXml.firstChild || oXml.firstChild.nodeName == 'parsererror' )
+				{
+					resource.DOMDocument = null ;
+				}
+
+				Logger.Add( resource );
+				// workaround for http://code.google.com/p/fbug/issues/detail?id=1970
+				window.setTimeout(function() {asyncFunctionPointer( resource )}, 0);
+}
+
+FCKXml.prototype.PostData = function( urlToCall, body, asyncFunctionPointer, container )
+{
+	var oXmlHttp = this.GetHttpRequest() ;
+
+	// Avoid cache:
+	// Besides other problems, IE doesn't return the normal headers if it uses the cache
+	urlToCall += (urlToCall.indexOf('?')==-1 ? '?' : '&') ;
+	urlToCall += 'nocache=' + (new Date()).toString() ;
+
+	var startTime = (new Date()).getTime() ;
+	var self = this;
+
+	if (oXmlHttp.upload)
+	{
+		if (container)
+			initXHREventTarget(oXmlHttp.upload, container);
+
+		oXmlHttp.onload = function(evt)
+		{
+			self.PostedData(oXmlHttp, asyncFunctionPointer, urlToCall, startTime);
+		}
+	}
+	else
+	{
+		oXmlHttp.onreadystatechange = function(e)
+		{
+			if ( oXmlHttp.readyState == 4 )
+			{
+				self.PostedData(oXmlHttp, asyncFunctionPointer, urlToCall, startTime);
+			}
+		}
+	}
+
+	oXmlHttp.open( "POST", urlToCall ) ;
+
+	if (this.boundary)
+		oXmlHttp.setRequestHeader("Content-Type", "multipart/form-data; boundary=" + this.boundary);
+	else
+		oXmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+
+	oXmlHttp.send( body ) ;
+	body = null;
+}
+
+	FCKXml.prototype.preparePostFile = function(fileName, data)
+	{
+		this.boundary =  "-----------------------------7d81a521f01c4";
+
+		var body = '';
+		body += this.boundary + '\r\n' ;
+		body += 'Content-Disposition: form-data; name="NewFile"; filename="' + fileName + '"\r\n' ;
+		body += 'Content-Type: text/plain\r\n' ;
+		body += '\r\n' ;
+		body += data  + '\r\n' ;
+		body += this.boundary  + '\r\n' ;
+
+		return body;
+	}
+
+	var k = 1024;
+	var m = k * k;
+	var width = 200;
+
+	function updateBytes(evt) {
+		evt.target.curLoad = evt.loaded;
+		evt.target.log.parentNode.previousSibling.textContent =
+			Number(evt.loaded/k).toFixed() + "/"+ Number(evt.total/k).toFixed() + "kB";
+	}
+
+	function updateSpeed(target) {
+		if (!target.curLoad) return;
+		var elapsedTime = ((new Date()).getTime() - target.startTime) / 1000 ;
+		target.log.parentNode.previousSibling.previousSibling.textContent =
+			Number((target.curLoad/elapsedTime)/k).toFixed() + "kB/s";
+	}
+
+	function updateProgress(evt) {
+		updateSpeed(evt.target);
+		if (evt.lengthComputable) {
+			updateBytes(evt);
+			var loaded = (evt.loaded / evt.total);
+			if (loaded < 1) {
+				var newW = loaded * width;
+				if (newW < 10) newW = 10;
+				evt.target.log.style.width = newW + "px";
+			}
+		}
+	}
+
+	function loadError(evt) {
+		evt.target.log.parentNode.previousSibling.previousSibling.textContent = "error";
+		clearTarget(evt.target);
+	}
+
+	function loaded(evt) {
+		updateBytes(evt);
+		evt.target.log.style.width = width + "px";
+		evt.target.log.parentNode.previousSibling.previousSibling.textContent = "";
+		clearTarget(evt.target);
+	}
+
+	function clearTarget(target) {
+		clearInterval(target.interval);
+		target.onprogress = null;
+		target.onload = null;
+		target.onerror = null;
+	}
+
+	function initXHREventTarget(target, container) {
+		var speed = document.createElement("span");
+		speed.className = "speed";
+		container.appendChild(speed);
+
+		var info = document.createElement("span");
+		info.className = "uploadinfo";
+		container.appendChild(info);
+
+		var progressContainer = document.createElement("div");
+		progressContainer.className = "progressBarContainer";
+		container.appendChild(progressContainer);
+
+		var progress = document.createElement("div");
+		progressContainer.appendChild(progress);
+		progress.className = "progressBar";
+
+		target.log = progress;
+		target.startTime= (new Date()).getTime() ;
+		target.interval = setInterval(updateSpeed, 1000, target);
+		target.curLoad = 0;
+		target.onprogress = updateProgress;
+		target.onload = loaded;
+		target.onerror = loadError;
+	}
+
+
+
+FCKXml.prototype.LoadUrl = function( urlToCall, asyncFunctionPointer )
+{
+	var bAsync = ( typeof(asyncFunctionPointer) == 'function' ) ;
+
+	var oXmlHttp = this.GetHttpRequest() ;
+
+	// Avoid cache:
+	// Besides other problems, IE doesn't return the normal headers if it uses the cache
+	urlToCall += (urlToCall.indexOf('?')==-1 ? '?' : '&') ;
+	urlToCall += 'nocache=' + (new Date()).toString() ;
+
+	var startTime = (new Date()).getTime() ;
+
+	oXmlHttp.open( "GET", urlToCall, bAsync ) ;
+
+// These are useless, we must use the previous trick to force IE to requesta always the data
+//	oXmlHttp.setRequestHeader("Cache-Control", "no-cache");
+//	oXmlHttp.setRequestHeader("Pragma", "no-cache");
+
+	if ( bAsync )
+	{
+		oXmlHttp.onreadystatechange = function()
+		{
+			if ( oXmlHttp.readyState == 4 )
+			{
+				var oXml ;
+				var text = "" ;
+				var aBody = null;
+
+				try
+				{
+					text = oXmlHttp.responseText;
+				}
+				catch ( e )
+				{
+					aBody = oXmlHttp.responseBody;
+				}
+				// IE doesn't return a valid responseText, and I can't manage to convert the responseBody to a string.
+				if (aBody !== null)
+				{
+//					var arr = (new VBArray(aBody)).toArray();
+					//CheckVBArray(oXmlHttp.responseBody)
+					text = "      JFIF   ";
+				}
+				// Opera doesn't return something valid for an image
+				if (window.opera && text== String.fromCharCode( 65533, 65533, 65533, 65533 ) )
+					text = "      JFIF   ";
+
+				try
+				{
+					// this is the same test for an FF2 bug as in fckxml_gecko.js
+					// but we've moved the responseXML assignment into the try{}
+					// so we don't even have to check the return status codes.
+					var test = oXmlHttp.responseXML.firstChild ;
+					oXml = oXmlHttp.responseXML ;
+				}
+				catch ( e )
+				{
+					try
+					{
+						oXml = (new DOMParser()).parseFromString( text, 'text/xml' ) ;
+					}
+					catch ( e ) {}
+				}
+
+				var resource = new Resource() ;
+				resource.url = urlToCall ;
+				resource.status = oXmlHttp.status ;
+				resource.text = text ;
+				resource.elapsedTime = (new Date()).getTime() - startTime ; // ms
+				try {
+					if (oXmlHttp.getAllResponseHeaders)
+						resource.headers = oXmlHttp.getAllResponseHeaders();
+				}
+				catch (e ) {}
+
+//				alert(oXmlHttp.getResponseHeader('Server'))
+				resource.DOMDocument = oXml ;
+				if ( !oXml || !oXml.firstChild || oXml.firstChild.nodeName == 'parsererror' )
+				{
+					resource.DOMDocument = null ;
+				}
+
+				Logger.Add( resource );
+				// workaround for http://code.google.com/p/fbug/issues/detail?id=1970
+				window.setTimeout(function() {asyncFunctionPointer( resource )}, 0);
+			}
+		}
+	}
+
+	oXmlHttp.send( null ) ;
+
+	if ( ! bAsync )
+	{
+		if ( oXmlHttp.status == 200 || oXmlHttp.status == 304 )
+			this.DOMDocument = oXmlHttp.responseXML ;
+		else
+		{
+			alert( 'XML request error: ' + oXmlHttp.statusText + ' (' + oXmlHttp.status + ')' ) ;
+		}
+	}
+}
+
+/*
+	Test Runner object
+	*/
+
+// Some of the tests will be asinchronous, so we must be able to wait for the test to finish
+var TestRunner = {
+	AllTests: [],
+
+	currentTest: 0,
+
+	Add: function(pointer)
+	{
+		this.AllTests.push(pointer);
+	},
+
+	Start: function()
+	{
+		if (this.AllTests.length==0)
+			this.OutputMessage( '<p class="error">ERROR, there are no tests to run!!!<\/p>' );
+		else
+			this.Run();
+	},
+	Run: function()
+	{
+		// Execute the next test, or finish
+		if (this.currentTest < this.AllTests.length)
+		{
+			this.UpdateProgress() ;
+			this.AllTests[ this.currentTest ]() ;
+		}
+		else
+		{
+			this.ClearProgress()
+			this.AppendToProgress( '<p class="ok">All the tests have been finished<\/p>' );
+		}
+	},
+	Skip: function()
+	{
+		this.currentTest++;
+		this.Run();
+	},
+
+	FinishedTest: function( result )
+	{
+
+		// Continue if the test was ok
+		if (result.ok)
+		{
+			this.OutputInfo( result.GetMessage()) ;
+			// Clear progress:
+			this.ClearProgress() ;
+			this.currentTest++ ;
+			this.Run() ;
+		}
+		else
+			this.OutputMessage( result.GetMessage()) ;
+
+	},
+
+	output: null,
+	OutputMessage: function( message )
+	{
+		if ( message === '' )
+			return ;
+
+		if ( !this.output )
+			this.output = document.getElementById( 'output' ) ;
+
+		var div = document.createElement( 'DIV' );
+		div.innerHTML = message ;
+		this.output.appendChild( div ) ;
+	},
+
+
+	infoBox: null,
+	OutputInfo: function( message )
+	{
+		if ( message === '' )
+			return ;
+
+		if ( !this.infoBox )
+			this.infoBox = document.getElementById( 'information' ) ;
+
+		var div = document.createElement( 'DIV' );
+		div.innerHTML = message ;
+		this.infoBox.appendChild( div ) ;
+	},
+
+	progress: null,
+	UpdateProgress: function()
+	{
+		if ( !this.progress )
+			this.progress = document.getElementById( 'progress' ) ;
+
+		var i = this.currentTest + 1 ;
+		var total = this.AllTests.length ;
+		this.progress.innerHTML = 'Running test ' + i + ' of ' + total + '.' ;
+	},
+
+	ClearProgress: function()
+	{
+		this.progress.innerHTML = '' ;
+	},
+
+	AppendToProgress: function( message )
+	{
+		if ( message === '' )
+			return ;
+
+		var div = document.createElement( 'DIV' );
+		div.innerHTML = message ;
+		this.progress.appendChild( div ) ;
+	}
+
+}
+
+// Size in Kb, returns a string of that size
+function createFile(size)
+{
+	var oneKb = '                ';
+	for(var i=4; i<10; i++)
+		oneKb +=oneKb;
+
+	var kb = size % 1024 ;
+	var mb = (size - kb)/ 1024 ;
+
+	if ( mb>0)
+	{
+		var oneMb = oneKb ;
+		for(var i=1; i<=10; i++)
+			oneMb +=oneMb;
+	}
+	var a = [];
+	for(var s=1; s<=kb; s++)
+		a.push(oneKb);
+
+	for(var s=1; s<=mb; s++)
+		a.push(oneMb);
+
+	var oneMb= null;
+	return a.join("");
+}
+
+// ]]>
+
+	</script>
+	<script type="text/javascript" src="assets/aspTests.js"></script>
+</head>
+<body>
+	<h1>CKFinder - Setup Wizard for ASP</h1>
+
+	<p>This page will try to find out any problem in order to properly run CKFinder for ASP.</p>
+
+<table>
+	<tr><th>Status</th><td id="progress"></td></tr>
+	<tr><th>Information</th><td id="information"></td></tr>
+	<tr><th>Errors</th><td id="output"></td></tr>
+</table>
+	<p><a href="#ViewOutput" id="ViewOutput" onclick="Toggle('loggerOutput');return false;">View detailed output</a></p>
+	<div id="loggerOutput" style="display:none"></div>
+
+	<script type="text/javascript">
+		TestRunner.Start() ;
+	</script>
+	<hr />
+	<h2>Notes:</h2>
+	<p>It's very important that you delete this 'wizard' folder from your server when you have finished installing correctly CKFinder.
+	The scripts that it contains aren't designed to be protected against an attacker, indeed, they might provide them some extra info that it isn't available in any other way</p>
+
+</body>
+</html>
