@@ -27,12 +27,27 @@ end if
 
 %>
 <!--#include file="header.asp" -->
-	<div>
-		<form method="post">
-			<p><label>Username: </label><input type="text" name="username" id="username" maxlength="20" /></p>
-			<p><label>Passsword: </label><input type="password" name="password" id="password" maxlength="20" /></p>
-			<p style="color: red;"><%= Request("msg") %></p>
-			<input type="submit" value="Login" name="submit" />
-		</form>
+	<div id="login_wrap">
+		<div id="login_box">
+			<form method="post">
+				<table width="100%" cellpadding="0" cellspacing"0" border="0">
+					<tr>
+						<td><label>Username: </label></td>
+						<td><input type="text" name="username" id="username" maxlength="20" /></td>
+					</tr>
+					<tr>
+						<td><label>Passsword: </label></td>
+						<td><input type="password" name="password" id="password" maxlength="20" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><p style="color: red;"><%= Request("msg") %></p></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><input type="submit" value="Login" name="submit" /></td>
+					</tr>
+				</table>
+			</form>
+		</div>
 	</div>
 <!--#include file="footer.asp" -->

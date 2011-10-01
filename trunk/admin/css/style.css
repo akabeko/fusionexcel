@@ -1,0 +1,27 @@
+body {
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size: 12px;
+	color: #333;
+	margin: 0;
+	padding: 0;
+	direction: ltr;
+	height: 100%;
+}
+
+body #wrap {
+	min-height: 100%;
+}
+
+#login_wrap {
+	min-height: 100%;
+}
+
+#login_box {
+	width: 240px;
+	height: 100px;
+	border: 1px solid #D8D8D8;
+	border-radius: 4px;
+	margin: auto;
+	margin-top: 200px;
+	padding: 8px 6px;
+}

@@ -3,6 +3,7 @@
 <head>
 	<title><%= title %></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	<script type="text/javascript">
 		google.load("jquery", "1");
@@ -11,15 +12,18 @@
 	<script type="text/javascript" src="../js/ckfinder/ckfinder.js"></script>
 </head>
 <body>
-	<div id="header">
-		<div id="navigation_menu">
-			<ul>
-				<li>
-					Article
-					<ul>
-						<li><a href="article.asp?article=news">News &amp; Events</a></li>
-					</ul>
-				</li>
-			</ul>
+	<div id="wrap">
+		<div id="header">
+			<% if not Session("login") = "" then %>
+			<div id="navigation_menu">
+				<ul>
+					<li>
+						Article
+						<ul>
+							<li><a href="article.asp?article=news">News &amp; Events</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<% end if %>
 		</div>
-	</div>
