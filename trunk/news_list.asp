@@ -12,7 +12,7 @@ call OpenDatabase()
 OFFSET = 50
 
 if Request("type") = "sidebar" then
-	sql = "SELECT TOP 20 id, title, content FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created"
+	sql = "SELECT TOP 20 id, title FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created"
 elseif Request("type") = "" then
 	page = 1
 	if not Request("page") = "" then
@@ -22,9 +22,12 @@ elseif Request("type") = "" then
 	end if
 	endPos = page * OFFSET
 	startPos = endPos - OFFSET
-	sql = "SELECT id, title, content FROM (SELECT TOP " & startPos & " sub.id FROM (SELECT TOP " & endPos & " tbl_article.id FROM tbl_article WHERE category = 'news' AND published = true ORDER BY tbl_article.created) sub WHERE category = 'news' AND published = true ORDER BY sub.created DESC) subOrdered WHERE category = 'news' AND published = true ORDER BY subOrdered.created";
+	if startPos <= 0 then
+		startPos = 1
+	end if
+	sql = "SELECT id, title FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created"
 else
-	sql = "SELECT id, title, content FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created"
+	sql = "SELECT id, title FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created"
 end if
 
 call CreateRecordSet(RecordSet, sql)
@@ -130,9 +133,12 @@ sql = "SELECT Count(tbl_article.id) AS total FROM tbl_article WHERE category='ne
 call CreateRecordSet(RecordSet_Count, sql)
 total_post = RecordSet_Count("total")
 page = Request("page")
-total_page = total_post / OFFSET
+total_page = Round(total_post / OFFSET, 0)
+if total_page = 0 AND total_post > 0 then
+	total_page = 1
+end if
 %>
-<table width="100%" border="0" cellspacing="1" cellpadding="10">
+<table width="100%" border="0" cellspacing="1" cellpadding="10" height="1512px">
 	<tbody>
 		<tr>
 			<td height="943px" valign="top" bgcolor="#EEF0FC">
@@ -144,6 +150,39 @@ total_page = total_post / OFFSET
 									<tbody>
 										<tr>
 											<td width="55%" align="right" class="smallcont">Page <%= page %> of <%= total_page %></td>
+											<td align="right" class="smallcont">
+												<a href="news.asp?page=1">Latest</a>&nbsp;|&nbsp;
+												<a href="news.asp?page=2">Next</a>&nbsp;|&nbsp;
+												<a href="news.asp?page=">Last</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td class="news-eve">
+								<ul>
+									<% Do While not RecordSet.EOF %>
+										<li><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= RecordSet("title") %>" target="_top"><%= RecordSet("title") %></a></li>
+									<%
+										RecordSet.MoveNext
+									Loop
+									%>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td height="30" align="right" valign="bottom">
+								<table width="100%" border="0" cellspacing="0" cellpadding="2">
+									<tbody>
+										<tr>
+											<td width="55%" align="right" class="smallcont">Page <%= page %> of <%= total_page %></td>
+											<td align="right" class="smallcont">
+												<a href="news.asp?page=1">Latest</a>&nbsp;|&nbsp;
+												<a href="news.asp?page=2">Next</a>&nbsp;|&nbsp;
+												<a href="news.asp?page=">Last</a>
+											</td>
 										</tr>
 									</tbody>
 								</table>

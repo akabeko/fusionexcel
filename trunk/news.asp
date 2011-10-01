@@ -63,7 +63,7 @@ body {
                 <td valign="top" bgcolor="#999999">
 					<script type="text/javascript">
 							var iframesrc="news_list.asp?<% if not Request("page") = "" then %>page=<%= Request("page") %><% end if %>"
-							document.write('<iframe id="datamain" name="myframe" src="'+iframesrc+'" ALLOWTRANSPARENCY="true" width="180px" height="1145px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>')
+							document.write('<iframe id="datamain" name="myframe" src="'+iframesrc+'" ALLOWTRANSPARENCY="true" width="740px" height="1512px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>')
 						</script>
 				</td>
               </tr>
