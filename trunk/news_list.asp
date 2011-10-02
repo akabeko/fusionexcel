@@ -132,11 +132,16 @@ else
 sql = "SELECT Count(tbl_article.id) AS total FROM tbl_article WHERE category='news' AND publish = true"
 call CreateRecordSet(RecordSet_Count, sql)
 total_post = RecordSet_Count("total")
-page = Request("page")
 total_page = Round(total_post / OFFSET, 0)
 if total_page = 0 AND total_post > 0 then
 	total_page = 1
 end if
+next_page = page + 1
+prev_page = page - 1
+if prev_page < 1 then
+	prev_page = 1
+end if
+
 %>
 <table width="100%" border="0" cellspacing="1" cellpadding="10" height="1512px">
 	<tbody>
@@ -152,8 +157,11 @@ end if
 											<td width="55%" align="right" class="smallcont">Page <%= page %> of <%= total_page %></td>
 											<td align="right" class="smallcont">
 												<a href="news.asp?page=1">Latest</a>&nbsp;|&nbsp;
-												<a href="news.asp?page=2">Next</a>&nbsp;|&nbsp;
-												<a href="news.asp?page=">Last</a>
+												<% if page > 1 and page < total_page then %>
+													<a href="news.asp?page=<%= prev_page %>">Back</a>&nbsp;|&nbsp;
+												<% end if %>
+												<a href="news.asp?page=<%= next_page %>">Next</a>&nbsp;|&nbsp;
+												<a href="news.asp?page=<%= total_page %>">Last</a>
 											</td>
 										</tr>
 									</tbody>
@@ -180,8 +188,11 @@ end if
 											<td width="55%" align="right" class="smallcont">Page <%= page %> of <%= total_page %></td>
 											<td align="right" class="smallcont">
 												<a href="news.asp?page=1">Latest</a>&nbsp;|&nbsp;
-												<a href="news.asp?page=2">Next</a>&nbsp;|&nbsp;
-												<a href="news.asp?page=">Last</a>
+												<% if page > 1 and page < total_page then %>
+													<a href="news.asp?page=<%= prev_page %>">Back</a>&nbsp;|&nbsp;
+												<% end if %>
+												<a href="news.asp?page=<%= next_page %>">Next</a>&nbsp;|&nbsp;
+												<a href="news.asp?page=<%= total_page %>">Last</a>
 											</td>
 										</tr>
 									</tbody>

@@ -31,8 +31,8 @@ body {
     <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tbody><tr valign="top">
           <td colspan="3" height="114px"><script type="text/javascript">
-				var iframesrc="topframe.asp"
-				document.write('<iframe id="datamain" name="myframe" src="'+iframesrc+'" ALLOWTRANSPARENCY="true" width="930px" height="114px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>')
+				//var iframesrc="topframe.asp"
+				//document.write('<iframe id="datamain" name="myframe" src="'+iframesrc+'" ALLOWTRANSPARENCY="true" width="930px" height="114px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>')
 	    </script><iframe id="datamain" name="myframe" src="./news_files/topframe.htm" allowtransparency="true" width="930px" height="114px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>
           </td>
         </tr>

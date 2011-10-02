@@ -1,6 +1,6 @@
 body {
 	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
-	font-size: 12px;
+	font-size: 11px;
 	color: #333;
 	margin: 0;
 	padding: 0;
@@ -10,6 +10,64 @@ body {
 
 body #wrap {
 	min-height: 100%;
+	width: 1000px;
+	margin: auto;
+}
+
+body #main {
+	margin: auto;
+}
+
+a {
+	color: #333;
+}
+
+.input_form {
+
+}
+
+.input_form label {
+	font-weight: bold;
+}
+
+.input_form input[type=text], .input_form select, .input_form textarea {
+	border: 1px solid #D8D8D8;
+	border-radius: 5px;
+	padding: 5px 3px;
+}
+
+
+.sidebar label {
+	font-weight: normal;
+}
+
+.sidebar table tr {
+	vertical-align: top;
+}
+
+.sidebar table tr td {
+	padding: 5px;
+}
+
+.error {
+	color: red;
+}
+
+.article_list {
+	border-collapse: collapse;
+}
+.article_list thead {
+	font-weight: bold;
+}
+
+.article_list tr td {
+	border: 1px solid #D8D8D8;
+	padding: 5px;
+}
+
+#main #button_navigator {
+	margin: 10px;
+	text-align: right;
 }
 
 #login_wrap {
@@ -17,11 +75,16 @@ body #wrap {
 }
 
 #login_box {
-	width: 240px;
-	height: 100px;
+	width: 280px;
+	height: 150px;
 	border: 1px solid #D8D8D8;
 	border-radius: 4px;
 	margin: auto;
 	margin-top: 200px;
 	padding: 8px 6px;
 }
+
+#login_box h1 {
+	font-size: 14px;
+}
+

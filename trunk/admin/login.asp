@@ -1,7 +1,7 @@
 <!--#include virtual="/data/dbCon.asp" -->
 <%
 if not Session("login") = "" then
-	Response.Redirect("index.asp")
+	Response.Redirect("Default.asp")
 end if
 
 if Request("submit") = "Login" then
@@ -15,7 +15,8 @@ if Request("submit") = "Login" then
 	
 	if not RecordSet.EOF then
 		Session("login") = username
-		Response.Redirect("index.asp")
+		Session.Timeout = 120
+		Response.Redirect("Default.asp")
 	else
 		Response.Redirect("login.asp?msg=") & Server.URLEncode("Invalid username or password")
 	end if
@@ -26,28 +27,42 @@ end if
 
 
 %>
-<!--#include file="header.asp" -->
-	<div id="login_wrap">
-		<div id="login_box">
-			<form method="post">
-				<table width="100%" cellpadding="0" cellspacing"0" border="0">
-					<tr>
-						<td><label>Username: </label></td>
-						<td><input type="text" name="username" id="username" maxlength="20" /></td>
-					</tr>
-					<tr>
-						<td><label>Passsword: </label></td>
-						<td><input type="password" name="password" id="password" maxlength="20" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><p style="color: red;"><%= Request("msg") %></p></td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-						<td><input type="submit" value="Login" name="submit" /></td>
-					</tr>
-				</table>
-			</form>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><%= title %></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="wrap">
+		<div id="main">
+			<div id="login_wrap">
+				<div id="login_box">
+					<form method="post">
+						<table width="100%" cellpadding="0" cellspacing"0" border="0">
+							<tr>
+								<td colspan="2"><h1>Fusion Excel Content Management</h1></td>
+							</tr>
+							<tr>
+								<td><label>Username: </label></td>
+								<td><input type="text" name="username" id="username" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td><label>Passsword: </label></td>
+								<td><input type="password" name="password" id="password" maxlength="20" /></td>
+							</tr>
+							<tr>
+								<td colspan="2" class="error"><%= Request("msg") %></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td><input type="submit" value="Login" name="submit" /></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
-<!--#include file="footer.asp" -->
+</body>
+</html>
