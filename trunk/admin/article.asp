@@ -112,7 +112,7 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 		$('#id_publish_start_date, #id_publish_end_date').datepicker();
 	});
 </script>
-<form method="post" class="input_form">
+<form enctype="multipart/form-data" method="post" class="input_form">
 	<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td><label>Published</label>:</td>
@@ -129,6 +129,10 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= RecordSet("publish_start_date") %>" /></td>
 			<td><label for="id_publish_end_date">End Publish Date</label>:</td>
 			<td><input type="text" id="id_publish_end_date" name="publish_end_date" class="date" value="<%= RecordSet("publish_end_date") %>" /></td>
+		</tr>
+		<tr>
+			<td><label for="id_preview_image_url">Image Preview</label>:</td>
+			<td colspan="3"><input type="file" name="preview_image_url" id="id_preview_image_url" />
 		</tr>
 	</table>
 	<br />
@@ -488,7 +492,7 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 		sql = sql & " WHERE category = '" & article & "'"
 	end if
 	
-	sql = sql & " ORDER BY created"
+	sql = sql & " ORDER BY created DESC"
 	
 	call CreateRecordSet(RecordSet, sql)
 	
@@ -497,7 +501,7 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 		<tr>
 			<td><%= RecordSet("id") %></td>
 			<td><a href='/admin/article.asp?action=edit&amp;id=<%= RecordSet("id") %><% if not article = "" then %>&amp;article=<%= article %><% end if %>'><%= RecordSet("title") %></a></td>
-			<td><%= RecordSet("publish") %></td>
+			<td><% if RecordSet("publish") then %>Yes<% else %>No<% end if %></td>
 			<td><%= RecordSet("modified") %></td>
 			<td><%= RecordSet("modified_by") %></td>
 			<td><%= RecordSet("category") %></td>

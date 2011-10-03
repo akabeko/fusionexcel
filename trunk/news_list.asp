@@ -12,7 +12,7 @@ call OpenDatabase()
 OFFSET = 50
 
 if Request("type") = "sidebar" then
-	sql = "SELECT TOP 20 id, title FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created"
+	sql = "SELECT TOP 20 id, title FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created DESC"
 elseif Request("type") = "" then
 	page = 1
 	if not Request("page") = "" then
@@ -25,9 +25,9 @@ elseif Request("type") = "" then
 	if startPos <= 0 then
 		startPos = 1
 	end if
-	sql = "SELECT id, title FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created"
+	sql = "SELECT id, title FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created DESC"
 else
-	sql = "SELECT id, title FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created"
+	sql = "SELECT id, title, preview_image_url FROM tbl_article WHERE category = 'news' AND publish = true ORDER BY created DESC"
 end if
 
 call CreateRecordSet(RecordSet, sql)
@@ -76,7 +76,7 @@ elseif Request("type") = "main" then
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 					<tbody>
 						<tr>
-							<td colspan="3" align="center" bgcolor="#e8edf0"><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= RecordSet("title") %>" target="_top"><img src="./Welcome to FusionExcel International_files/home_23092011.jpg" width="355" height="149" style="border:#999 solid 1px" title="<%= RecordSet("title") %>"></a></td>
+							<td colspan="3" align="center" bgcolor="#e8edf0"><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= RecordSet("title") %>" target="_top"><img src="<%= RecordSet("preview_image_url") %>" width="355" height="149" style="border:#999 solid 1px" title="<%= RecordSet("title") %>"></a></td>
 						</tr>
 						<tr>
 							<td width="48%" height="5" align="right" bgcolor="#e8edf0"></td>
