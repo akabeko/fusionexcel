@@ -11,7 +11,7 @@ if Request("article") = "news" then
 	article = "news"
 end if
 
-if Request("submit") = "Add" then
+if Request.Form("submit") = "Add" then
 	sql = "SELECT * FROM tbl_article"
 	call CreateRecordSet(RecordSet, sql)
 	RecordSet.AddNew
@@ -55,7 +55,7 @@ if Request("submit") = "Add" then
 	
 	Response.Redirect("article.asp?article=" & Request("article") & "&action=edit&id=" & article_id)
 	
-elseif Request("submit") = "Update" and CInt(Request("id")) > 0 then
+elseif Request.Form("submit") = "Update" and CInt(Request("id")) > 0 then
 	sql = "SELECT * FROM tbl_article WHERE id = " & Request("id")
 	call CreateRecordSet(RecordSet, sql)
 	RecordSet.Fields("title") = Request.Form("title")
@@ -112,7 +112,7 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 		$('#id_publish_start_date, #id_publish_end_date').datepicker();
 	});
 </script>
-<form enctype="multipart/form-data" method="post" class="input_form">
+<form method="post" class="input_form">
 	<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td><label>Published</label>:</td>

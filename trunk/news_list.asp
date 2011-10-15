@@ -44,7 +44,7 @@ if Request("type") = "sidebar" then
 			<td colspan="2" bgcolor="#5A71AB" class="left-news">
 				<ul>
 				<% Do While not RecordSet.EOF %>
-					<li><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= RecordSet("title") %>" target="_top"><%= RecordSet("title") %></a></li>
+					<li><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= Replace(RecordSet("title"), " ", "_") %>" target="_top"><%= RecordSet("title") %></a></li>
 				<%
 					RecordSet.MoveNext
 				Loop
@@ -76,7 +76,7 @@ elseif Request("type") = "main" then
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 					<tbody>
 						<tr>
-							<td colspan="3" align="center" bgcolor="#e8edf0"><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= RecordSet("title") %>" target="_top"><img src="<%= RecordSet("preview_image_url") %>" width="355" height="149" style="border:#999 solid 1px" title="<%= RecordSet("title") %>"></a></td>
+							<td colspan="3" align="center" bgcolor="#e8edf0"><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= Replace(RecordSet("title"), " ", "_") %>" target="_top"><img src="<%= RecordSet("preview_image_url") %>" width="355" height="149" style="border:#999 solid 1px" title="<%= RecordSet("title") %>"></a></td>
 						</tr>
 						<tr>
 							<td width="48%" height="5" align="right" bgcolor="#e8edf0"></td>
@@ -86,7 +86,7 @@ elseif Request("type") = "main" then
 						<tr class="fe3">
 							<td colspan="3" align="center" bgcolor="#e8edf0">
 								<img src="./Welcome to FusionExcel International_files/bar_arrow.gif" width="12" height="12">
-								<a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= RecordSet("title") %>" target="_top"><%= RecordSet("title") %></a>
+								<a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= Replace(RecordSet("title"), " ", "_") %>" target="_top"><%= RecordSet("title") %></a>
 							</td>
 						</tr>
 					</tbody>
@@ -109,7 +109,7 @@ elseif Request("type") = "main" then
 							<td valign="top" bgcolor="#e8edf0" class="left-news_myo">
 								<ul>
 								<% Do While not RecordSet.EOF %>
-									<li><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= RecordSet("title") %>" target="_top"><%= RecordSet("title") %></a></li>
+									<li><a href="article.asp?category=news&amp;article_id=<%= RecordSet("id") %>&amp;title=<%= Replace(RecordSet("title"), " ", "_") %>" target="_top"><%= RecordSet("title") %></a></li>
 								<%
 									RecordSet.MoveNext
 								Loop
