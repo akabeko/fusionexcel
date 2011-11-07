@@ -22,4 +22,8 @@ Function CloseRecordSet(rsName)
 	set rsName = Nothing
 End Function
 
+Function ExecuteQuery(sql)
+	Connection.Execute sql
+End Function
+
 %>

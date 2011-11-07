@@ -33,7 +33,7 @@ a {
 .input_form input[type=text], .input_form select, .input_form textarea {
 	border: 1px solid #D8D8D8;
 	border-radius: 5px;
-	padding: 5px 3px;
+	padding: 3px 3px;
 }
 
 

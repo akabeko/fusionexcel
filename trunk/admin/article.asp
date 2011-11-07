@@ -1,100 +1,108 @@
-<!--#include virtual="/data/dbCon.asp" -->
+<%@ Language=VBScript %>
 <%
-	title = "Fusion Excel Content Management System"
-	call OpenDatabase()
+option explicit
+Response.Expires = -1
+Server.ScriptTimeout = 600
+Session.CodePage = 65001
+Dim page_title, article, article_id, RecordSet, sql, uploadsDirVar
+Dim category_group, category_code
+
+category_group = 1
+category_code = 0
+page_title = "Fusion Excel Content Management System"
+uploadsDirVar = "C:\inetpub\scripts\fusionexcel\fusionexcel\trunk\images\" 
+
 %>
+<!--#include file="../data/dbCon.asp" -->
+<!--#include file="freeaspupload.asp" -->
 <!--#include file="header.asp" -->
-
 <%
-Dim article
-if Request("article") = "news" then
-	article = "news"
+call OpenDatabase()
+
+if Request("category_group") <> "" then
+	category_group = CInt(Request("category_group"))
 end if
 
-if Request.Form("submit") = "Add" then
-	sql = "SELECT * FROM tbl_article"
-	call CreateRecordSet(RecordSet, sql)
-	RecordSet.AddNew
-	RecordSet.Fields("title") = Request.Form("title")
-	RecordSet.Fields("publish") = Request.Form("publish")
-	RecordSet.Fields("category") = Request.Form("category")
-	if not publish_start_date = "" then
-		RecordSet.Fields("publish_start_date") = Request.Form("publish_start_date")
-	end if
-	if not publish_end_date = "" then
-		RecordSet.Fields("publish_end_date") = Request.Form("publish_end_date")
-	end if
-	RecordSet.Fields("meta_description") = Request.Form("meta_description")
-	RecordSet.Fields("meta_keywords") = Request.Form("meta_keywords")
-	RecordSet.Fields("meta_robots") = Request.Form("meta_robots")
-	RecordSet.Fields("meta_author") = Request.Form("meta_author")
-	RecordSet.Fields("content") = Request.Form("content")
-	
-	RecordSet.Fields("title_bm") = Request.Form("title_bm")
-	RecordSet.Fields("content_bm") = Request.Form("content_bm")
-	RecordSet.Fields("meta_description_bm") = Request.Form("meta_description_bm")
-	RecordSet.Fields("meta_keywords_bm") = Request.Form("meta_keywords_bm")
-	RecordSet.Fields("meta_robots_bm") = Request.Form("meta_robots_bm")
-	RecordSet.Fields("meta_author_bm") = Request.Form("meta_author_bm")
-	
-	RecordSet.Fields("title_chi") = Request.Form("title_chi")
-	RecordSet.Fields("content_chi") = Request.Form("content_chi")
-	RecordSet.Fields("meta_description_chi") = Request.Form("meta_description_chi")
-	RecordSet.Fields("meta_keywords_chi") = Request.Form("meta_keywords_chi")
-	RecordSet.Fields("meta_robots_chi") = Request.Form("meta_robots_chi")
-	RecordSet.Fields("meta_author_chi") = Request.Form("meta_author_chi")
-	
-	RecordSet.Fields("created_by") = Session("login")
-	RecordSet.Fields("modified_by") = Session("login")
-	
-	RecordSet.Update
-	article_id = RecordSet("id")
-	RecordSet.Close
-	
-	call CloseRecordSet(RecordSet)
-	
-	Response.Redirect("article.asp?article=" & Request("article") & "&action=edit&id=" & article_id)
-	
-elseif Request.Form("submit") = "Update" and CInt(Request("id")) > 0 then
-	sql = "SELECT * FROM tbl_article WHERE id = " & Request("id")
-	call CreateRecordSet(RecordSet, sql)
-	RecordSet.Fields("title") = Request.Form("title")
-	RecordSet.Fields("publish") = Request.Form("publish")
-	RecordSet.Fields("category") = Request.Form("category")
-	if not publish_start_date = "" then
-		RecordSet.Fields("publish_start_date") = Request.Form("publish_start_date")
-	end if
-	if not publish_end_date = "" then
-		RecordSet.Fields("publish_end_date") = Request.Form("publish_end_date")
-	end if
-	RecordSet.Fields("meta_description") = Request.Form("meta_description")
-	RecordSet.Fields("meta_keywords") = Request.Form("meta_keywords")
-	RecordSet.Fields("meta_robots") = Request.Form("meta_robots")
-	RecordSet.Fields("meta_author") = Request.Form("meta_author")
-	RecordSet.Fields("content") = Request.Form("content")
-	
-	RecordSet.Fields("title_bm") = Request.Form("title_bm")
-	RecordSet.Fields("content_bm") = Request.Form("content_bm")
-	RecordSet.Fields("meta_description_bm") = Request.Form("meta_description_bm")
-	RecordSet.Fields("meta_keywords_bm") = Request.Form("meta_keywords_bm")
-	RecordSet.Fields("meta_robots_bm") = Request.Form("meta_robots_bm")
-	RecordSet.Fields("meta_author_bm") = Request.Form("meta_author_bm")
-	
-	RecordSet.Fields("title_chi") = Request.Form("title_chi")
-	RecordSet.Fields("content_chi") = Request.Form("content_chi")
-	RecordSet.Fields("meta_description_chi") = Request.Form("meta_description_chi")
-	RecordSet.Fields("meta_keywords_chi") = Request.Form("meta_keywords_chi")
-	RecordSet.Fields("meta_robots_chi") = Request.Form("meta_robots_chi")
-	RecordSet.Fields("meta_author_chi") = Request.Form("meta_author_chi")
-	
-	RecordSet.Update
-	RecordSet.Close
-	call CloseRecordSet(RecordSet)
+if Request("id") <> "" then
+	article_id = Request("id")
 end if
-	
-if Request("action") = "edit" and CInt(Request("id")) > 0 then
-	sql = "SELECT * FROM tbl_article WHERE id = " & Request("id")
-	call CreateRecordSet(RecordSet, sql)
+
+if Request.ServerVariables("REQUEST_METHOD") = "POST" then
+	SaveFiles()
+	Response.Redirect("article.asp?article=" & article & "&action=edit&id=" & article_id & "&and=" & category_code )
+end if
+
+if Request("action") <> "" then
+	Dim publish, publish_start_date, publish_end_date, preview_image_url
+	Dim title, content, meta_description, meta_keywords, meta_robots, meta_author
+	Dim title_bm, content_bm, meta_description_bm, meta_keywords_bm, meta_robots_bm, meta_author_bm
+	Dim title_chi, content_chi, meta_description_chi, meta_keywords_chi, meta_robots_chi, meta_author_chi
+	Dim sequence, order_year
+	if Request("action") = "edit" and CInt(Request("id")) > 0 then
+		sql = "SELECT * FROM tbl_article WHERE id= " & Request("id")
+		call CreateRecordSet(RecordSet, sql)
+		publish = RecordSet("publish")
+		publish_start_date = RecordSet("publish_start_date")
+		publish_end_date = RecordSet("publish_end_date")
+		
+		title = RecordSet("title")
+		content = RecordSet("content")
+		meta_description = RecordSet("meta_description")
+		meta_keywords = RecordSet("meta_keywords")
+		meta_robots = RecordSet("meta_robots")
+		meta_author = RecordSet("meta_author")
+		
+		title_bm = RecordSet("title_bm")
+		content_bm = RecordSet("content_bm")
+		meta_description_bm = RecordSet("meta_description_bm")
+		meta_keywords_bm = RecordSet("meta_keywords_bm")
+		meta_robots_bm = RecordSet("meta_robots_bm")
+		meta_author_bm = RecordSet("meta_author_bm")
+		
+		title_chi = RecordSet("title_chi")
+		content_chi = RecordSet("content_chi")
+		meta_description_chi = RecordSet("meta_description_chi")
+		meta_keywords_chi = RecordSet("meta_keywords_chi")
+		meta_robots_chi = RecordSet("meta_robots_chi")
+		meta_author_chi = RecordSet("meta_author_chi")
+		
+		preview_image_url = RecordSet("preview_image_url")
+		
+		sequence = RecordSet("sequence")
+		order_year = RecordSet("order_year")
+		
+		category_code = RecordSet("category_code")
+	else
+		publish = Request("publish")
+		publish_start_date = Request("publish_start_date")
+		publish_end_date = Request("publish_end_date")
+		
+		title = Request("title")
+		content = Request("content")
+		meta_description = Request("meta_description")
+		meta_keywords = Request("meta_keywords")
+		meta_robots = Request("meta_robots")
+		meta_author = Request("meta_author")
+		
+		title_bm = Request("title_bm")
+		content_bm = Request("content_bm")
+		meta_description_bm = Request("meta_description_bm")
+		meta_keywords_bm = Request("meta_keywords_bm")
+		meta_robots_bm = Request("meta_robots_bm")
+		meta_author_bm = Request("meta_author_bm")
+		
+		title_chi = Request("title_chi")
+		content_chi = Request("content_chi")
+		meta_description_chi = Request("meta_description_chi")
+		meta_keywords_chi = Request("meta_keywords_chi")
+		meta_robots_chi = Request("meta_robots_chi")
+		meta_author_chi = Request("meta_author_chi")
+		
+		preview_image_url = ""
+		
+		sequence = Request("sequence")
+		order_year = Request("order_year")
+	end if
 %>
 <script type="text/javascript">
 	$(function() {
@@ -110,29 +118,64 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 			}
 		});
 		$('#id_publish_start_date, #id_publish_end_date').datepicker();
+		$('.input_form').submit(function() {
+			var year = $('#id_order_year').val();
+			var sequence = trimNumber($('#id_sequence').val());
+			if(!((parseFloat(sequence) == parseInt(sequence)) && !isNaN(sequence))) {
+				alert("Please enter integer value for Sequence Number");
+				return false;
+			}
+			else if(!((parseFloat(year) == parseInt(year)) && !isNaN(year))) {
+				alert("Please enter integer value for Sequence Year");
+				return false;
+			}
+			else if(year < 1950) {
+				alert("Sequence Year must more than 1950");
+				return false;
+			}
+		});
 	});
+	function trimNumber(s) {
+		while (s.substr(0,1) == '0' && s.length > 1) { s = s.substr(1, 9999); }
+		return s;
+	}
 </script>
-<form method="post" class="input_form">
+<form runat="server" method="POST" enctype="multipart/form-data" accept-charset="utf-8" class="input_form">
 	<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td><label>Published</label>:</td>
-			<td><input type="radio" name="publish" value="false" <% if RecordSet("publish") = false then %>checked="checked"<% end if %> /> No <input type="radio" name="publish" value="true" <% if RecordSet("publish") = true then %>checked="checked"<% end if %> /> Yes</td>
-			<td><label for="id_category">Category</label>:</td>
-			<td>
-				<select id="id_category" name="category">
-					<option value="news">News &amp; Events</option>
-				</select>
-			</td>
+			<td><input type="radio" name="publish" value="false" <% if publish = false then %>checked="checked"<% end if %> /> No <input type="radio" name="publish" value="true" <% if publish = true then %>checked="checked"<% end if %> /> Yes</td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td><label for="id_publish_start_date">Start Publish Date</label>:</td>
-			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= RecordSet("publish_start_date") %>" /></td>
+			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= publish_start_date %>" /></td>
 			<td><label for="id_publish_end_date">End Publish Date</label>:</td>
-			<td><input type="text" id="id_publish_end_date" name="publish_end_date" class="date" value="<%= RecordSet("publish_end_date") %>" /></td>
+			<td><input type="text" id="id_publish_end_date" name="publish_end_date" class="date" value="<%= publish_end_date %>" /></td>
 		</tr>
 		<tr>
-			<td><label for="id_preview_image_url">Image Preview</label>:</td>
-			<td colspan="3"><input type="file" name="preview_image_url" id="id_preview_image_url" />
+			<td><label for="id_order">Sequence Number</label>:</td>
+			<td><input type="text" id="id_sequence" name="sequence" value="<% if sequence = "" then %>0001<% else %><%= PadDigits(sequence, 4) %><% end if %>" maxlength="4" /></td>
+			<td><label for="id_order_year">Sequence Year</label>:</td>
+			<td><input type="text" id="id_order_year" name="order_year" class="date_year" value="<% if order_year = "" then %><%= Year(Now()) %><% else %><%= order_year %><% end if %>" maxlength="4" /></td>
+		</tr>
+		<tr>
+			<td><label for="id_category">Category</label>:</td>
+			<td colspan="3">
+				<%
+					Dim RefRecordSet
+					sql = "SELECT * FROM ref_category"
+					Call CreateRecordSet(RefRecordSet, sql)
+					Do While not RefRecordSet.EOF
+				%>
+					<input type="checkbox" name="category_code" id="id_<%= RefRecordSet("category_name") %>" value="<%= RefRecordSet("category_code") %>" <% if (((category_code \ RefRecordSet("category_code")) mod 2) = 1) then %> checked="checked"<% end if %> />
+					<label style="font-weight: normal" for="id_<%= RefRecordSet("category_name") %>"><%= RefRecordSet("category_name") %></label>
+				<%
+						RefRecordSet.MoveNext
+					Loop
+				%>
+			</td>
 		</tr>
 	</table>
 	<br />
@@ -147,11 +190,11 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
 					<tr>
 						<td><label for="id_title">Title</label>:</td>
-						<td colspan="3"><input type="text" id="id_title" name="title" value="<%= RecordSet("title") %>" maxlength="255" size="80" /></td>
+						<td colspan="3"><input type="text" id="id_title" name="title" value="<%= title %>" maxlength="255" size="80" /></td>
 					</tr>
 				</table>
 				<br />
-				<textarea id="editor1" name="content" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= RecordSet("content") %></textarea>
+				<textarea id="editor1" name="content" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content %></textarea>
 			</div>
 			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -160,19 +203,19 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 					</tr>
 					<tr>
 						<td><label for="id_meta_description">Description</label>:</td>
-						<td><textarea id="id_meta_description" name="meta_description" style="width: 150px; height: 80px;"><%= RecordSet("meta_description") %></textarea></td>
+						<td><textarea id="id_meta_description" name="meta_description" style="width: 150px; height: 80px;"><%= meta_description %></textarea></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_keywords">Keywords</label>:</td>
-						<td><textarea id="id_meta_keywords" name="meta_keywords" style="width: 150px; height: 80px;"><%= RecordSet("meta_keywords") %></textarea></td>
+						<td><textarea id="id_meta_keywords" name="meta_keywords" style="width: 150px; height: 80px;"><%= meta_keywords %></textarea></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_robots">Robots</label>:</td>
-						<td><input type="text" id="id_meta_robots" name="meta_robots" value="<%= RecordSet("meta_robots") %>" /></td>
+						<td><input type="text" id="id_meta_robots" name="meta_robots" value="<%= meta_robots %>" /></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_author">Author</label>:</td>
-						<td><input type="text" id="id_meta_author" name="meta_author" value="<%= RecordSet("meta_author") %>" /></td>
+						<td><input type="text" id="id_meta_author" name="meta_author" value="<%= meta_author %>" /></td>
 					</tr>
 				</table>
 			</div>
@@ -183,11 +226,11 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
 					<tr>
 						<td><label for="id_title">Title</label>:</td>
-						<td colspan="3"><input type="text" id="id_title_bm" name="title_bm" value="<%= RecordSet("title_bm") %>" maxlength="255" size="80" /></td>
+						<td colspan="3"><input type="text" id="id_title_bm" name="title_bm" value="<%= title_bm %>" maxlength="255" size="80" /></td>
 					</tr>
 				</table>
 				<br />
-				<textarea id="editor2" name="content_bm" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= RecordSet("content_bm") %></textarea>
+				<textarea id="editor2" name="content_bm" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content_bm %></textarea>
 			</div>
 			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -196,19 +239,19 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 					</tr>
 					<tr>
 						<td><label for="id_meta_description">Description</label>:</td>
-						<td><textarea id="id_meta_description_bm" name="meta_description_bm" style="width: 150px; height: 80px;"><%= RecordSet("meta_description_bm") %></textarea></td>
+						<td><textarea id="id_meta_description_bm" name="meta_description_bm" style="width: 150px; height: 80px;"><%= meta_description_bm %></textarea></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_keywords">Keywords</label>:</td>
-						<td><textarea id="id_meta_keywords_bm" name="meta_keywords_bm" style="width: 150px; height: 80px;"><%= RecordSet("meta_keywords_bm") %></textarea></td>
+						<td><textarea id="id_meta_keywords_bm" name="meta_keywords_bm" style="width: 150px; height: 80px;"><%= meta_keywords_bm %></textarea></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_robots">Robots</label>:</td>
-						<td><input type="text" id="id_meta_robots_bm" name="meta_robots_bm" value="<%= RecordSet("meta_robots_bm") %>" /></td>
+						<td><input type="text" id="id_meta_robots_bm" name="meta_robots_bm" value="<%= meta_robots_bm %>" /></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_author">Author</label>:</td>
-						<td><input type="text" id="id_meta_author_bm" name="meta_author_bm" value="<%= RecordSet("meta_author_bm") %>" /></td>
+						<td><input type="text" id="id_meta_author_bm" name="meta_author_bm" value="<%= meta_author_bm %>" /></td>
 					</tr>
 				</table>
 			</div>
@@ -219,11 +262,11 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
 					<tr>
 						<td><label for="id_title">Title</label>:</td>
-						<td colspan="3"><input type="text" id="id_title_chi" name="title_chi" value="<%= RecordSet("title_chi") %>" maxlength="255" size="80" /></td>
+						<td colspan="3"><input type="text" id="id_title_chi" name="title_chi" value="<%= title_chi %>" maxlength="255" size="80" /></td>
 					</tr>
 				</table>
 				<br />
-				<textarea id="editor3" name="content_chi" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= RecordSet("content_chi") %></textarea>
+				<textarea id="editor3" name="content_chi" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content_chi %></textarea>
 			</div>
 			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -232,214 +275,35 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 					</tr>
 					<tr>
 						<td><label for="id_meta_description">Description</label>:</td>
-						<td><textarea id="id_meta_description_chi" name="meta_description_chi" style="width: 150px; height: 80px;"><%= RecordSet("meta_description_chi") %></textarea></td>
+						<td><textarea id="id_meta_description_chi" name="meta_description_chi" style="width: 150px; height: 80px;"><%= meta_description_chi %></textarea></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_keywords">Keywords</label>:</td>
-						<td><textarea id="id_meta_keywords_chi" name="meta_keywords_chi" style="width: 150px; height: 80px;"><%= RecordSet("meta_keywords_chi") %></textarea></td>
+						<td><textarea id="id_meta_keywords_chi" name="meta_keywords_chi" style="width: 150px; height: 80px;"><%= meta_keywords_chi %></textarea></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_robots">Robots</label>:</td>
-						<td><input type="text" id="id_meta_robots_chi" name="meta_robots_chi" value="<%= RecordSet("meta_robots_chi") %>" /></td>
+						<td><input type="text" id="id_meta_robots_chi" name="meta_robots_chi" value="<%= meta_robots_chi %>" /></td>
 					</tr>
 					<tr>
 						<td><label for="id_meta_author">Author</label>:</td>
-						<td><input type="text" id="id_meta_author_chi" name="meta_author_chi" value="<%= RecordSet("meta_author_chi") %>" /></td>
+						<td><input type="text" id="id_meta_author_chi" name="meta_author_chi" value="<%= meta_author_chi %>" /></td>
 					</tr>
 				</table>
 			</div>
 			<br clear="both" />
 		</div>
 	</div>
-
-	<br clear="both" />
-	<div>
-		<input type="submit" name="submit" value="Update" />
-	</div>
-
-	<script type="text/javascript">
-		CKEDITOR.replace('editor1', {
-			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
-			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
-			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
-			filebrowserUploadUrl: '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-			filebrowserImageUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
-			filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
-		});
-		CKEDITOR.replace('editor2', {
-			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
-			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
-			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
-			filebrowserUploadUrl: '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-			filebrowserImageUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
-			filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
-		});
-		CKEDITOR.replace('editor3', {
-			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
-			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
-			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
-			filebrowserUploadUrl: '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-			filebrowserImageUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
-			filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
-		});
-	</script>
-</form>
-<% elseif (Request("action") = "edit" and Request("id") = "") or Request("action") = "add" then %>
-<script type="text/javascript">
-	$(function() {
-		$('#tabs').tabs();
-		$('#id_title, #id_content, #id_meta_description, #id_meta_keywords, #id_meta_robots, #id_meta_author').blur(function() {
-			var id_chi = "#" + $(this).attr('id') + "_chi";
-			var id_bm = "#" + $(this).attr('id') + "_bm";
-			if($(id_chi).val() == "") {
-				$(id_chi).val($(this).val());
-			}
-			if($(id_bm).val() == "") {
-				$(id_bm).val($(this).val());
-			}
-		});
-		$('#id_publish_start_date, #id_publish_end_date').datepicker();
-	});
-</script>
-<form method="post" class="input_form">
-	<table width="100%" cellpadding="0" cellspacing="0" border="0">
-		<tr>
-			<td><label>Published</label>:</td>
-			<td><input type="radio" name="publish" value="false" <% if Request("publish") = false then %>checked="checked"<% end if %> /> No <input type="radio" name="publish" value="true" <% if Request("publish") = true then %>checked="checked"<% end if %> /> Yes</td>
-			<td><label for="id_category">Category</label>:</td>
-			<td>
-				<select id="id_category" name="category">
-					<option value="news">News &amp; Events</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td><label for="id_publish_start_date">Start Publish Date</label>:</td>
-			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= Request("publish_start_date") %>" /></td>
-			<td><label for="id_publish_end_date">End Publish Date</label>:</td>
-			<td><input type="text" id="id_publish_end_date" name="publish_end_date" class="date" value="<%= Request("publish_end_date") %>" /></td>
-		</tr>
-	</table>
 	<br />
-	<div id="tabs">
-		<ul>
-			<li><a href="#tab-1">English</a></li>
-			<li><a href="#tab-2">BM</a></li>
-			<li><a href="#tab-3">Chinese</a></li>
-		</ul>
-		<div id="tab-1">
-			<div style="width: 73%; float: left;" class="form_main_container">
-				<table width="100%" cellpadding="0" cellspacing="0" border="0">
-					<tr>
-						<td><label for="id_title">Title</label>:</td>
-						<td colspan="3"><input type="text" id="id_title" name="title" value="<%= Request("title") %>" maxlength="255" size="80" /></td>
-					</tr>
-				</table>
-				<br />
-				<textarea id="editor1" name="content" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= Request("content") %></textarea>
-			</div>
-			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
-				<table width="100%" cellpadding="0" cellspacing="0" border="0">
-					<tr>
-						<td colspan="2"><b>Meta Information</b></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_description">Description</label>:</td>
-						<td><textarea id="id_meta_description" name="meta_description" style="width: 150px; height: 80px;"><%= Request("meta_description") %></textarea></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_keywords">Keywords</label>:</td>
-						<td><textarea id="id_meta_keywords" name="meta_keywords" style="width: 150px; height: 80px;"><%= Request("meta_keywords") %></textarea></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_robots">Robots</label>:</td>
-						<td><input type="text" id="id_meta_robots" name="meta_robots" value="<%= Request("meta_robots") %>" /></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_author">Author</label>:</td>
-						<td><input type="text" id="id_meta_author" name="meta_author" value="<%= Request("meta_author") %>" /></td>
-					</tr>
-				</table>
-			</div>
-			<br clear="both" />
-		</div>
-		<div id="tab-2">
-			<div style="width: 73%; float: left;" class="form_main_container">
-				<table width="100%" cellpadding="0" cellspacing="0" border="0">
-					<tr>
-						<td><label for="id_title">Title</label>:</td>
-						<td colspan="3"><input type="text" id="id_title_bm" name="title_bm" value="<%= Request("title_bm") %>" maxlength="255" size="80" /></td>
-					</tr>
-				</table>
-				<br />
-				<textarea id="editor2" name="content_bm" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= Request("content_bm") %></textarea>
-			</div>
-			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
-				<table width="100%" cellpadding="0" cellspacing="0" border="0">
-					<tr>
-						<td colspan="2"><b>Meta Information</b></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_description">Description</label>:</td>
-						<td><textarea id="id_meta_description_bm" name="meta_description_bm" style="width: 150px; height: 80px;"><%= Request("meta_description_bm") %></textarea></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_keywords">Keywords</label>:</td>
-						<td><textarea id="id_meta_keywords_bm" name="meta_keywords_bm" style="width: 150px; height: 80px;"><%= Request("meta_keywords_bm") %></textarea></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_robots">Robots</label>:</td>
-						<td><input type="text" id="id_meta_robots_bm" name="meta_robots_bm" value="<%= Request("meta_robots_bm") %>" /></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_author">Author</label>:</td>
-						<td><input type="text" id="id_meta_author_bm" name="meta_author_bm" value="<%= Request("meta_author_bm") %>" /></td>
-					</tr>
-				</table>
-			</div>
-			<br clear="both" />
-		</div>
-		<div id="tab-3">
-			<div style="width: 73%; float: left;" class="form_main_container">
-				<table width="100%" cellpadding="0" cellspacing="0" border="0">
-					<tr>
-						<td><label for="id_title">Title</label>:</td>
-						<td colspan="3"><input type="text" id="id_title_chi" name="title_chi" value="<%= Request("title_chi") %>" maxlength="255" size="80" /></td>
-					</tr>
-				</table>
-				<br />
-				<textarea id="editor3" name="content_chi" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= Request("content_chi") %></textarea>
-			</div>
-			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
-				<table width="100%" cellpadding="0" cellspacing="0" border="0">
-					<tr>
-						<td colspan="2"><b>Meta Information</b></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_description">Description</label>:</td>
-						<td><textarea id="id_meta_description_chi" name="meta_description_chi" style="width: 150px; height: 80px;"><%= Request("meta_description_chi") %></textarea></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_keywords">Keywords</label>:</td>
-						<td><textarea id="id_meta_keywords_chi" name="meta_keywords_chi" style="width: 150px; height: 80px;"><%= Request("meta_keywords_chi") %></textarea></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_robots">Robots</label>:</td>
-						<td><input type="text" id="id_meta_robots_chi" name="meta_robots_chi" value="<%= Request("meta_robots_chi") %>" /></td>
-					</tr>
-					<tr>
-						<td><label for="id_meta_author">Author</label>:</td>
-						<td><input type="text" id="id_meta_author_chi" name="meta_author_chi" value="<%= Request("meta_author_chi") %>" /></td>
-					</tr>
-				</table>
-			</div>
-			<br clear="both" />
-		</div>
+	<div id="image">
+		<label for="id_preview_image_url">Home Page Index Photo</label>:
+		<input type="file" name="preview_image_url" id="id_preview_image_url" /><br />
+		<% if preview_image_url <> "" then %><a href="<%= preview_image_url %>" target="_blank"><img src="<%= preview_image_url %>" /></a><% end if %>
 	</div>
 
 	<br clear="both" />
 	<div>
-		<input type="submit" name="submit" value="Add" />
+		<input type="submit" name="submit" value="<% if Request("action") = "edit" then %>Update<% else %>Add<% end if %>" />
 	</div>
 
 	<script type="text/javascript">
@@ -470,53 +334,179 @@ if Request("action") = "edit" and CInt(Request("id")) > 0 then
 	</script>
 </form>
 <% elseif Request("action") = "" then %>
-<div id="button_navigator">
-	<a href="/admin/article.asp?action=add<% if not article = "" then %>&amp;article=<%= article %><% end if %>">New Article</a>
-</div>
-<table width="100%" border="0" cellpadding="0" cellspacing="0" class="article_list">
-	<thead>
-		<tr>
-			<td>ID</td>
-			<td>Title</td>
-			<td>Published</td>
-			<td>Last Modified</td>
-			<td>Last Modified By</td>
-			<td>Category</td>
-		</tr>
-	</thead>
-	<tbody>
-<%
-	sql = "SELECT * FROM tbl_article"
-	
-	if not article = "" then
-		sql = sql & " WHERE category = '" & article & "'"
-	end if
-	
-	sql = sql & " ORDER BY created DESC"
-	
-	call CreateRecordSet(RecordSet, sql)
-	
-	Do While not RecordSet.EOF
-%>
-		<tr>
-			<td><%= RecordSet("id") %></td>
-			<td><a href='/admin/article.asp?action=edit&amp;id=<%= RecordSet("id") %><% if not article = "" then %>&amp;article=<%= article %><% end if %>'><%= RecordSet("title") %></a></td>
-			<td><% if RecordSet("publish") then %>Yes<% else %>No<% end if %></td>
-			<td><%= RecordSet("modified") %></td>
-			<td><%= RecordSet("modified_by") %></td>
-			<td><%= RecordSet("category") %></td>
-		</tr>
-<%
-		RecordSet.MoveNext
-	Loop
-%>
-	</tbody>
-</table>
-<%
-end if
+	<%
+		if Request("category_code") <> "" then
+			category_code = CInt(Request("category_code"))
+		end if
+	%>
+	<div id="button_navigator">
+		<a href="article.asp?action=add<% if not article = "" then %>&amp;article=<%= article %><% end if %>">New Article</a>
+	</div>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="article_list">
+		<thead>
+			<tr>
+				<td>ID</td>
+				<td>Title</td>
+				<td>Published</td>
+				<td>Last Modified</td>
+				<td>Last Modified By</td>
+				<td>Category</td>
+				<td>Sequence</td>
+			</tr>
+		</thead>
+		<tbody>
+	<%
+		sql = "SELECT id, title, publish, modified, modified_by, MIN(category_name) as category_name, order_year, sequence FROM tbl_article ar "
+		sql = sql & " INNER JOIN ref_category rc ON (((ar.category_code \ rc.category_code) mod 2) > 0)"
+		sql = sql & " WHERE rc.category_group_code =  " & category_group
+		if category_code <> "" and category_code > 0 then
+			sql = sql & " AND ar.category_code > 0"
+			sql = sql & " AND (((" & category_code & " \ ar.category_code) mod 2) = 1)"
+		end if
+		
+		sql = sql & " GROUP BY id, title, publish, modified, modified_by, order_year, sequence"
+		sql = sql & " ORDER BY order_year DESC, sequence ASC"
 
+		call CreateRecordSet(RecordSet, sql)
+		
+		
+		
+		Do While not RecordSet.EOF
+	%>
+			<tr>
+				<td><%= RecordSet("id") %></td>
+				<td><a href='article.asp?action=edit&amp;id=<%= RecordSet("id") %><% if not article = "" then %>&amp;article=<%= article %><% end if %>'><%= RecordSet("title") %></a></td>
+				<td><% if RecordSet("publish") then %>Yes<% else %>No<% end if %></td>
+				<td><%= RecordSet("modified") %></td>
+				<td><%= RecordSet("modified_by") %></td>
+				<td><%= RecordSet("category_name") %></td>
+				<td><%= RecordSet("order_year") %>-<%= PadDigits(RecordSet("sequence"), 4) %></td>
+			</tr>
+	<%
+			RecordSet.MoveNext
+		Loop
+	%>
+		</tbody>
+	</table>
+<%
+end if 
 call CloseRecordSet(RecordSet)
 call CloseDatabase()
 
+Function SaveFiles
+	Dim Upload, fileName, fileSize, ks, i, fileKey, sameSequence, sameOrderYear
+	Set Upload = New FreeASPUpload
+    Upload.Save(uploadsDirVar)
+	
+	SaveFiles = ""
+    ks = Upload.UploadedFiles.keys
+    if (UBound(ks) <> -1) then
+        for each fileKey in Upload.UploadedFiles.keys
+            SaveFiles = Upload.UploadedFiles(fileKey).FileName
+        next
+    else
+        SaveFiles = ""
+    end if
+	
+	if Upload.Form("submit") = "Add" then
+		sql = "SELECT * FROM tbl_article"
+		call CreateRecordSet(RecordSet, sql)
+		RecordSet.AddNew
+	else
+		sql = "SELECT * FROM tbl_article WHERE id = " & article_id
+		call CreateRecordSet(RecordSet, sql)
+	end if
+	
+	if SaveFiles <> "" then
+		RecordSet.Fields("preview_image_url") = "/images/" & SaveFiles
+	end if
+	
+	if RecordSet.Fields("sequence") = CInt(Upload.Form("sequence")) then
+		sameSequence = True
+	else
+		sameSequence = False
+	end if
+	
+	if RecordSet.Fields("order_year") = CInt(Upload.Form("order_year")) then
+		sameOrderYear = True
+	else
+		sameOrderYear = False
+	end if
+	
+	
+	RecordSet.Fields("title") = Upload.Form("title")
+	RecordSet.Fields("publish") = Upload.Form("publish")
+	if not Upload.Form("publish_start_date") = "" then
+		RecordSet.Fields("publish_start_date") = Upload.Form("publish_start_date")
+	end if
+	if not Upload.Form("publish_end_date") = "" then
+		RecordSet.Fields("publish_end_date") = Upload.Form("publish_end_date")
+	end if
+	RecordSet.Fields("meta_description") = Upload.Form("meta_description")
+	RecordSet.Fields("meta_keywords") = Upload.Form("meta_keywords")
+	RecordSet.Fields("meta_robots") = Upload.Form("meta_robots")
+	RecordSet.Fields("meta_author") = Upload.Form("meta_author")
+	RecordSet.Fields("content") = Upload.Form("content")
+	
+	RecordSet.Fields("title_bm") = Upload.Form("title_bm")
+	RecordSet.Fields("content_bm") = Upload.Form("content_bm")
+	RecordSet.Fields("meta_description_bm") = Upload.Form("meta_description_bm")
+	RecordSet.Fields("meta_keywords_bm") = Upload.Form("meta_keywords_bm")
+	RecordSet.Fields("meta_robots_bm") = Upload.Form("meta_robots_bm")
+	RecordSet.Fields("meta_author_bm") = Upload.Form("meta_author_bm")
+	
+	RecordSet.Fields("title_chi") = Upload.Form("title_chi")
+	RecordSet.Fields("content_chi") = Upload.Form("content_chi")
+	RecordSet.Fields("meta_description_chi") = Upload.Form("meta_description_chi")
+	RecordSet.Fields("meta_keywords_chi") = Upload.Form("meta_keywords_chi")
+	RecordSet.Fields("meta_robots_chi") = Upload.Form("meta_robots_chi")
+	RecordSet.Fields("meta_author_chi") = Upload.Form("meta_author_chi")
+	
+	RecordSet.Fields("created_by") = Session("login")
+	RecordSet.Fields("modified_by") = Session("login")
+	
+	
+	
+	Dim OrderRecordSet
+	sql = "SELECT COUNT(*) as 'counter' FROM tbl_article WHERE (category = 'news' OR category = 'charity' OR category = 'sponsorship') AND order_year = " & Upload.Form("order_year") & " AND sequence = " & Upload.Form("sequence")
+	call CreateRecordSet(OrderRecordSet, sql)
+	if OrderRecordSet.Fields("'counter'") > 0 then
+		if Upload.Form("submit") = "Add" then
+			sql = "UPDATE tbl_article SET sequence = sequence + 1 WHERE (category = 'news' OR category = 'charity' OR category = 'sponsorship') AND order_year = " & Upload.Form("order_year")
+			call ExecuteQuery(sql)
+		else
+			if not sameSequence or not sameOrderYear then
+				sql = "UPDATE tbl_article SET sequence = sequence + 1 WHERE (category = 'news' OR category = 'charity' OR category = 'sponsorship') AND order_year = " & Upload.Form("order_year") & " AND sequence >= " & Upload.Form("sequence")
+				Response.Write(sameSequence)
+				call ExecuteQuery(sql)
+			end if
+		end if
+	end if
+	
+	RecordSet.Fields("sequence") = Upload.Form("sequence")
+	RecordSet.Fields("order_year") = Upload.Form("order_year")
+	
+	Dim category_codes, code
+	category_codes = Split(Upload.Form("category_code"), ",")
+	
+	for each code in category_codes
+		category_code = category_code + CInt(code)
+	next
+	
+	RecordSet.Fields("category_code") = category_code
+	
+	RecordSet.Update
+	article_id = RecordSet("id")
+	RecordSet.Close
+	
+	
+	call CloseRecordSet(RecordSet)
+	
+	
+End Function
+
+Function PadDigits(n, totalDigits)
+	PadDigits = Right(String(totalDigits, "0") & n , totalDigits)
+End Function
 %>
 <!--#include file="footer.asp" -->

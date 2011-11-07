@@ -1,4 +1,4 @@
-<!--#include virtual="/data/dbCon.asp" -->
+<!--#include file="../data/dbCon.asp" -->
 <%
 if not Session("login") = "" then
 	Response.Redirect("Default.asp")
