@@ -27,13 +27,17 @@ if Request("id") <> "" then
 	article_id = Request("id")
 end if
 
-if Request.ServerVariables("REQUEST_METHOD") = "POST" then
+if Request.ServerVariables("REQUEST_METHOD") = "POST" and Request("action") <> "" then
 	SaveFiles()
 	Response.Redirect("article.asp?article=" & article & "&action=edit&id=" & article_id & "&and=" & category_code )
+elseif Request.ServerVariables("REQUEST_METHOD") = "POST" and Request("action") = "" and Request("search") = "" then
+	sql = "DELETE FROM tbl_article WHERE id IN (" & Request("action_article_id") & ")"
+	call ExecuteQuery(sql)
+	Response.Redirect("article.asp?article=" & article & "&and=" & category_code )
 end if
 
 if Request("action") <> "" then
-	Dim publish, publish_start_date, publish_end_date, preview_image_url
+	Dim publish, publish_start_date, preview_image_url
 	Dim title, content, meta_description, meta_keywords, meta_robots, meta_author
 	Dim title_bm, content_bm, meta_description_bm, meta_keywords_bm, meta_robots_bm, meta_author_bm
 	Dim title_chi, content_chi, meta_description_chi, meta_keywords_chi, meta_robots_chi, meta_author_chi
@@ -43,7 +47,6 @@ if Request("action") <> "" then
 		call CreateRecordSet(RecordSet, sql)
 		publish = RecordSet("publish")
 		publish_start_date = RecordSet("publish_start_date")
-		publish_end_date = RecordSet("publish_end_date")
 		
 		title = RecordSet("title")
 		content = RecordSet("content")
@@ -75,7 +78,6 @@ if Request("action") <> "" then
 	else
 		publish = Request("publish")
 		publish_start_date = Request("publish_start_date")
-		publish_end_date = Request("publish_end_date")
 		
 		title = Request("title")
 		content = Request("content")
@@ -100,8 +102,20 @@ if Request("action") <> "" then
 		
 		preview_image_url = ""
 		
-		sequence = Request("sequence")
-		order_year = Request("order_year")
+		if Request("order_year") <> "" then
+			order_year = Request("order_year")
+		else
+			order_year = Year(Now())
+		end if
+		
+		if Request("sequence") <> "" then
+			sequence = Request("sequence")
+		else
+			Dim sequenceRecordSet
+			sql = "SELECT MAX(sequence) + 1 as new_sequence FROM tbl_article WHERE order_year = " & order_year
+			Call CreateRecordSet(sequenceRecordSet, sql)
+			sequence = sequenceRecordSet("new_sequence")
+		end if
 	end if
 %>
 <script type="text/javascript">
@@ -117,10 +131,11 @@ if Request("action") <> "" then
 				$(id_bm).val($(this).val());
 			}
 		});
-		$('#id_publish_start_date, #id_publish_end_date').datepicker();
+		$('#id_publish_start_date').datepicker();
 		$('.input_form').submit(function() {
 			var year = $('#id_order_year').val();
 			var sequence = trimNumber($('#id_sequence').val());
+			var categoryCodeLength = $('input[name="category_code"]:checked').length;
 			if(!((parseFloat(sequence) == parseInt(sequence)) && !isNaN(sequence))) {
 				alert("Please enter integer value for Sequence Number");
 				return false;
@@ -131,6 +146,10 @@ if Request("action") <> "" then
 			}
 			else if(year < 1950) {
 				alert("Sequence Year must more than 1950");
+				return false;
+			}
+			else if(categoryCodeLength == 0) {
+				alert("Please select the Category");
 				return false;
 			}
 		});
@@ -151,8 +170,8 @@ if Request("action") <> "" then
 		<tr>
 			<td><label for="id_publish_start_date">Start Publish Date</label>:</td>
 			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= publish_start_date %>" /></td>
-			<td><label for="id_publish_end_date">End Publish Date</label>:</td>
-			<td><input type="text" id="id_publish_end_date" name="publish_end_date" class="date" value="<%= publish_end_date %>" /></td>
+			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td><label for="id_order">Sequence Number</label>:</td>
@@ -339,55 +358,86 @@ if Request("action") <> "" then
 			category_code = CInt(Request("category_code"))
 		end if
 	%>
+	<script type="text/javascript">
+		function deleteConfirm() {
+			var checkedVal = $("#id_article_list input:checked");
+			if(checkedVal.length > 0) {
+				if(confirm("Delete " + checkedVal.length + " record(s)?")) {
+					$("#id_article_list").submit();
+				}
+			}
+		}
+	</script>
+	<div style="float: left;">
+		<form method="post" action="article.asp?article=news&amp;category_group=<%= Request("category_group") %>&amp;search=title">
+			<label for="id_search_text">Search: </label><input type="text" name="search_query" id="id_search_text" value="" size="50" style="border-radius: 5px; border: 1px solid #CCC;" />
+		</form>
+	</div>
 	<div id="button_navigator">
+		<a href="javascript::void(0)" onclick="deleteConfirm()">Delete Selected</a>
 		<a href="article.asp?action=add<% if not article = "" then %>&amp;article=<%= article %><% end if %>">New Article</a>
 	</div>
-	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="article_list">
-		<thead>
-			<tr>
-				<td>ID</td>
-				<td>Title</td>
-				<td>Published</td>
-				<td>Last Modified</td>
-				<td>Last Modified By</td>
-				<td>Category</td>
-				<td>Sequence</td>
-			</tr>
-		</thead>
-		<tbody>
-	<%
-		sql = "SELECT id, title, publish, modified, modified_by, MIN(category_name) as category_name, order_year, sequence FROM tbl_article ar "
-		sql = sql & " INNER JOIN ref_category rc ON (((ar.category_code \ rc.category_code) mod 2) > 0)"
-		sql = sql & " WHERE rc.category_group_code =  " & category_group
-		if category_code <> "" and category_code > 0 then
-			sql = sql & " AND ar.category_code > 0"
-			sql = sql & " AND (((" & category_code & " \ ar.category_code) mod 2) = 1)"
-		end if
-		
-		sql = sql & " GROUP BY id, title, publish, modified, modified_by, order_year, sequence"
-		sql = sql & " ORDER BY order_year DESC, sequence ASC"
+	<br />
+	<form method="post" id="id_article_list">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="article_list">
+			<thead>
+				<tr>
+					<td>&nbsp;</td>
+					<td>ID</td>
+					<td>Title</td>
+					<td>Published</td>
+					<td width="130px">Last Modified</td>
+					<td>Last Modified By</td>
+					<td>Category</td>
+					<td>Sequence</td>
+				</tr>
+			</thead>
+			<tbody>
+		<%
+			sql = "SELECT id, title, publish, modified, modified_by, MIN(category_name) as category_name, order_year, sequence, sequence_indexed FROM tbl_article ar "
+			sql = sql & " INNER JOIN ref_category rc ON (((ar.category_code \ rc.category_code) mod 2) > 0)"
+			sql = sql & " WHERE rc.category_group_code =  " & category_group
+			if category_code <> "" and category_code > 0 then
+				sql = sql & " AND ar.category_code > 0"
+				sql = sql & " AND (((" & category_code & " \ ar.category_code) mod 2) = 1)"
+			end if
+			
+			if Request("search") = "title" then
+				if Request("search_query") <> "" then
+					sql = sql & " AND title LIKE '%" & Replace(Request("search_query"), " ", "%") & "%'"
+				end if
+			end if
+			
+			sql = sql & " GROUP BY id, title, publish, modified, modified_by, order_year, sequence, sequence_indexed"
+			sql = sql & " ORDER BY sequence_indexed DESC"
 
-		call CreateRecordSet(RecordSet, sql)
-		
-		
-		
-		Do While not RecordSet.EOF
-	%>
-			<tr>
-				<td><%= RecordSet("id") %></td>
-				<td><a href='article.asp?action=edit&amp;id=<%= RecordSet("id") %><% if not article = "" then %>&amp;article=<%= article %><% end if %>'><%= RecordSet("title") %></a></td>
-				<td><% if RecordSet("publish") then %>Yes<% else %>No<% end if %></td>
-				<td><%= RecordSet("modified") %></td>
-				<td><%= RecordSet("modified_by") %></td>
-				<td><%= RecordSet("category_name") %></td>
-				<td><%= RecordSet("order_year") %>-<%= PadDigits(RecordSet("sequence"), 4) %></td>
-			</tr>
-	<%
-			RecordSet.MoveNext
-		Loop
-	%>
-		</tbody>
-	</table>
+			call CreateRecordSet(RecordSet, sql)
+			
+			
+			
+			Do While not RecordSet.EOF
+		%>
+				<tr>
+					<td><input type="checkbox" name="action_article_id" value="<%= RecordSet("id") %>" /></td>
+					<td><%= RecordSet("id") %></td>
+					<td><a href='article.asp?action=edit&amp;id=<%= RecordSet("id") %><% if not article = "" then %>&amp;article=<%= article %><% end if %>'><%= RecordSet("title") %></a></td>
+					<% if RecordSet("publish") then %>
+						<td style="background: green; color: white;">Yes</td>
+					<% else %>
+						<td style="background: red; color: white;">No</td>
+					<% end if %>
+					<td><%= RecordSet("modified") %></td>
+					<td><%= RecordSet("modified_by") %></td>
+					<td><%= RecordSet("category_name") %></td>
+					<td><%= RecordSet("order_year") %>-<%= PadDigits(RecordSet("sequence"), 4) %></td>
+				</tr>
+		<%
+				RecordSet.MoveNext
+			Loop
+		%>
+			</tbody>
+		</table>
+	</form>
 <%
 end if 
 call CloseRecordSet(RecordSet)
@@ -439,9 +489,6 @@ Function SaveFiles
 	if not Upload.Form("publish_start_date") = "" then
 		RecordSet.Fields("publish_start_date") = Upload.Form("publish_start_date")
 	end if
-	if not Upload.Form("publish_end_date") = "" then
-		RecordSet.Fields("publish_end_date") = Upload.Form("publish_end_date")
-	end if
 	RecordSet.Fields("meta_description") = Upload.Form("meta_description")
 	RecordSet.Fields("meta_keywords") = Upload.Form("meta_keywords")
 	RecordSet.Fields("meta_robots") = Upload.Form("meta_robots")
@@ -477,10 +524,10 @@ Function SaveFiles
 		else
 			if not sameSequence or not sameOrderYear then
 				sql = "UPDATE tbl_article SET sequence = sequence + 1 WHERE (category = 'news' OR category = 'charity' OR category = 'sponsorship') AND order_year = " & Upload.Form("order_year") & " AND sequence >= " & Upload.Form("sequence")
-				Response.Write(sameSequence)
 				call ExecuteQuery(sql)
 			end if
 		end if
+		
 	end if
 	
 	RecordSet.Fields("sequence") = Upload.Form("sequence")
@@ -499,9 +546,9 @@ Function SaveFiles
 	article_id = RecordSet("id")
 	RecordSet.Close
 	
-	
 	call CloseRecordSet(RecordSet)
-	
+	sql = "UPDATE tbl_article SET sequence_indexed = Val(format(order_year) + '' + format(sequence, '0000'))"
+	Call ExecuteQuery(sql)
 	
 End Function
 

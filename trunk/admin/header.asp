@@ -31,7 +31,7 @@ end if
 					<li>
 						VIP QP Weares
 						<ul>
-							<li><a href="">VIP QP Wearers</a></li>
+							<li><a href="article_link.asp">VIP QP Wearers</a></li>
 						</ul>
 					</li>
 				</ul>
