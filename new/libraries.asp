@@ -22,4 +22,8 @@ Function GetUserDbPath()
 	GetUserDbPath = GetDataPath() & user_db
 End Function
 
+Function GetArticleDbPath()
+	GetArticleDbPath = GetDataPath() & article_db
+End Function
+
 %>

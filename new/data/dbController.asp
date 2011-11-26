@@ -36,14 +36,20 @@ Function ExecuteQuery(sql)
 	Connection.Execute sql
 End Function
 
-Dim XMLString
+Dim XMLString, XMLObj
 
 Function SetXMLPath(xmlPath)
-	
+	XMLString = xmlPath
 End Function
 
 Function OpenXML()
-
+	if XMLString = "" then
+		Response.Write "No XML string was provided"
+		Response.End
+	end if
+	set XMLObj = Server.CreateObject("Microsoft.XMLDOM")
+	XMLObj.async = false
+	XMLObj.load (Server.MapPath(XMLString))
 End Function
 
 %>
