@@ -9,28 +9,61 @@ end if
 	<title><%= page_title %></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="css/style.css?1" rel="stylesheet" type="text/css" />
-	<link href="../css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="../js/jquery-1.6.4.min.js"></script>
-	<script type="text/javascript" src="../js/jquery-ui-1.8.16.custom.min.js"></script>
-	<script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
-	<script type="text/javascript" src="../js/ckfinder/ckfinder.js"></script>
+	<link href="css/dropdownmenu/dropdownmenu.css" rel="stylesheet" type="text/css" />
+	<link href="css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="js/ckfinder/ckfinder.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("ul.subnav").parent().append("<span></span>"); //Only shows drop down trigger when js is enabled (Adds empty span tag after ul.subnav*)  
+			$("ul.topnav li span").click(function() { //When trigger is clicked...  
+				//Following events are applied to the subnav itself (moving subnav up and down)  
+				$(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click  
+				$(this).parent().hover(function() {  
+				}, function(){  
+					$(this).parent().find("ul.subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up  
+				});  
+				//Following events are applied to the trigger (Hover events for the trigger)  
+			}).hover(function() {  
+				$(this).addClass("subhover"); //On hover over, add class "subhover"  
+			}, function(){  //On Hover Out  
+				$(this).removeClass("subhover"); //On hover out, remove class "subhover"  
+			});
+			
+			$("ul.topnav li span").hover(function() { //When trigger is clicked...  
+				//Following events are applied to the subnav itself (moving subnav up and down)  
+				$(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click  
+				$(this).parent().hover(function() {  
+				}, function(){  
+					$(this).parent().find("ul.subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up  
+				});  
+				//Following events are applied to the trigger (Hover events for the trigger)  
+			}).hover(function() {  
+				$(this).addClass("subhover"); //On hover over, add class "subhover"  
+			}, function(){  //On Hover Out  
+				$(this).removeClass("subhover"); //On hover out, remove class "subhover"  
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="wrap">
 		<div id="header">
 			<div id="navigation_menu">
-				<ul>
+				<ul class="topnav">
 					<li>
-						Article
-						<ul>
+						<a href="#">Article</a>
+						<ul class="subnav">
 							<li><a href="article.asp?article=news&amp;category_group=1">News &amp; Events</a></li>
 							<li><a href="article.asp?article=news&amp;category_group=1&amp;category_code=2">Charities</a></li>
 							<li><a href="article.asp?article=news&amp;category_group=1&amp;category_code=4">Sponsorship</a></li>
 						</ul>
 					</li>
 					<li>
-						VIP QP Weares
-						<ul>
+						<a href="#">VIP QP Weares</a>
+						<ul class="subnav">
 							<li><a href="article_link.asp">VIP QP Wearers</a></li>
 						</ul>
 					</li>

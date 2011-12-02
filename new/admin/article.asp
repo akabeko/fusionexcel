@@ -1,9 +1,10 @@
-<!--#include file="../data/dbController.asp" -->
+<!--#include file="../libraries.asp" -->
 <%
 Dim page_title
 page_title = "Fusion Excel Content Management System"
 
 Dim category_code
+Dim RecordSet, sql, XMLObj
 
 category_code = 1
 %>
@@ -34,17 +35,18 @@ category_code = 1
 		category_code = CInt(Request("category_code"))
 	end if
 	
-	sql = "SELECT id, title, publish, modified, modified_by, order_year, sequence, sequence_indexed FROM article a "
-	sql = sql & "WHERE a.category_code > 0"
-	sql = sql & "AND (((" & category_code & " \ a.category_code) mod 2) = 1)"
+	sql = "SELECT article_id, title, publish, category_code, modified, modified_by, order_year, sequence, sequence_indexed FROM article a"
+	sql = sql & " WHERE a.category_code > 0"
+	sql = sql & " AND (((category_code \ " & category_code & ") mod 2) = 1)"
 	if Request("search") = "title" then
 		if Request("search_query") <> "" then
 			sql = sql & " AND title LIKE '%" & Replace(Request("search_query"), " ", "%") & "%'"
 		end if
 	end if
-	sql = sql & "ORDER BY sequence_indexed DESC"
-	
+	sql = sql & " ORDER BY sequence_indexed DESC"
+
 	Call SetConnection(GetArticleDbPath())
+	Call OpenDatabase()
 	Call CreateRecordSet(RecordSet, sql)
 %>
 <form method="post" id="id_article_list">
@@ -57,16 +59,16 @@ category_code = 1
 				<td>Published</td>
 				<td width="130px">Last Modified</td>
 				<td>Last Modified By</td>
-				<td>Category</td>
+				<td width="100px">Category</td>
 				<td>Sequence</td>
 			</tr>
 		</thead>
 		<tbody>
 		<% Do While not RecordSet.EOF %>
 			<tr>
-				<td><input type="checkbox" name="action_article_id" value="<%= RecordSet("id") %>" /></td>
-				<td><%= RecordSet("id") %></td>
-				<td><a href='article.asp?action=edit&amp;id=<%= RecordSet("id") %><% if not article = "" then %>&amp;article=<%= article %><% end if %>'><%= RecordSet("title") %></a></td>
+				<td><input type="checkbox" name="action_article_id" value="<%= RecordSet("article_id") %>" /></td>
+				<td><%= RecordSet("article_id") %></td>
+				<td><a href='article-edit.asp?id=<%= RecordSet("article_id") %>'><%= RecordSet("title") %></a></td>
 				<% if RecordSet("publish") then %>
 					<td style="background: green; color: white;">Yes</td>
 				<% else %>
@@ -74,7 +76,7 @@ category_code = 1
 				<% end if %>
 				<td><%= RecordSet("modified") %></td>
 				<td><%= RecordSet("modified_by") %></td>
-				<td><%= RecordSet("category_name") %></td>
+				<td><%= getCategoriesNameById(RecordSet("category_code")) %></td>
 				<td><%= RecordSet("order_year") %>-<%= PadDigits(RecordSet("sequence"), 4) %></td>
 			</tr>
 		<% RecordSet.MoveNext %>
@@ -82,4 +84,8 @@ category_code = 1
 		</tbody>
 	</table>
 </form>
+<%
+	call CloseRecordSet(RecordSet)
+end if
+%>
 <!--#include file="footer.asp" -->

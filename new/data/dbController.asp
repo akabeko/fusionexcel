@@ -12,7 +12,6 @@ Function OpenDatabase()
 		Response.Write "No connection string was provided"
 		Response.End
 	end if
-	Response.Write ConnectionString
 	set Connection = Server.CreateObject("ADODB.Connection")
 	Connection.open ConnectionString
 End Function
@@ -36,20 +35,29 @@ Function ExecuteQuery(sql)
 	Connection.Execute sql
 End Function
 
-Dim XMLString, XMLObj
+Dim XMLString
 
 Function SetXMLPath(xmlPath)
 	XMLString = xmlPath
 End Function
 
 Function OpenXML()
+	Dim objXML
 	if XMLString = "" then
-		Response.Write "No XML string was provided"
+		Response.Write "No XML string was attached"
 		Response.End
 	end if
-	set XMLObj = Server.CreateObject("Microsoft.XMLDOM")
-	XMLObj.async = false
-	XMLObj.load (Server.MapPath(XMLString))
+	set objXML = Server.CreateObject("Microsoft.XMLDOM")
+	
+	objXML.async = false
+	objXML.load(Server.MapPath(XMLString))
+	If objXML.parseError.errorCode then
+		Response.Write "Error Parsing XML<br/>"
+		Response.Write "Reason: " & objXML.parseError.reason & " Error Line: " & objXML.parseError.line
+		Response.End
+	End If
+	
+	set OpenXML = objXML
 End Function
 
 %>
