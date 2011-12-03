@@ -1,4 +1,4 @@
-<%@ Language=VBScript %>
+﻿<%@ Language=VBScript %>
 <%
 option explicit
 Response.Expires = -1
@@ -27,7 +27,33 @@ Dim category_code
 article_id = 0
 
 if Request("action") = "" or Request("action") = "add" then
+    publish = Request("publish")
+    publish_start_date = Request("publish_start_date")
+    index_image_url = Request("index_image_url")
+    sequence = Request("sequence")
+    order_year = Request("order_year")
+	category_code = Request("category_code")
 
+    title = Request("title")
+    content = Request("content")
+    meta_description = Request("meta_description")
+    meta_keywords = Request("meta_keywords")
+    meta_robots = Request("meta_robots")
+    meta_author = Request("meta_author")
+    
+    title_bm = Request("title_bm")
+    content_bm = Request("content_bm")
+    meta_description_bm = Request("meta_description_bm")
+    meta_keywords_bm = Request("meta_keywords_bm")
+    meta_robots_bm = Request("meta_robots_bm")
+    meta_author_bm = Request("meta_author_bm")
+    
+    title_chi = Request("title_chi")
+    content_chi = Request("content_chi")
+    meta_description_chi = Request("meta_description_chi")
+    meta_keywords_chi = Request("meta_keywords_chi")
+    meta_robots_chi = Request("meta_robots_chi")
+    meta_author_chi = Request("meta_author_chi")
 elseif Request("action") = "edit" then
 	if Request("id") = "" or not IsNumeric(Request("id")) then
 		Response.Write "Invalid Article ID"
@@ -43,6 +69,7 @@ elseif Request("action") = "edit" then
 		Response.Write "Error: Article not found"
 		Response.End
 	End If
+    Dim xmlContent
 	title = RecordSet("title")
 	publish = RecordSet("publish")
 	publish_start_date = RecordSet("publish_start_date")
@@ -50,7 +77,29 @@ elseif Request("action") = "edit" then
 	sequence = RecordSet("sequence")
 	order_year = RecordSet("order_year")
 	category_code = RecordSet("category_code")
-	getArticleContent(RecordSet("content_filename"))
+	set xmlContent = getArticleContent(RecordSet("content_filename"))
+    if xmlContent.length > 0 then
+        title = xmlContent.item(0).selectSingleNode("en/title").text
+        content = xmlContent.item(0).selectSingleNode("en/content").text
+        meta_description = xmlContent.item(0).selectSingleNode("en/meta/description").text
+        meta_keywords = xmlContent.item(0).selectSingleNode("en/meta/keyword").text
+        meta_robots = xmlContent.item(0).selectSingleNode("en/meta/robots").text
+        meta_author = xmlContent.item(0).selectSingleNode("en/meta/author").text
+        
+        title_bm = xmlContent.item(0).selectSingleNode("bm/title").text
+        content_bm = xmlContent.item(0).selectSingleNode("bm/content").text
+        meta_description_bm = xmlContent.item(0).selectSingleNode("bm/meta/description").text
+        meta_keywords_bm = xmlContent.item(0).selectSingleNode("bm/meta/keyword").text
+        meta_robots_bm = xmlContent.item(0).selectSingleNode("bm/meta/robots").text
+        meta_author_bm = xmlContent.item(0).selectSingleNode("bm/meta/author").text
+        
+        title_chi = xmlContent.item(0).selectSingleNode("chi/title").text
+        content_chi = xmlContent.item(0).selectSingleNode("chi/content").text
+        meta_description_chi = xmlContent.item(0).selectSingleNode("chi/meta/description").text
+        meta_keywords_chi = xmlContent.item(0).selectSingleNode("chi/meta/keyword").text
+        meta_robots_chi = xmlContent.item(0).selectSingleNode("chi/meta/robots").text
+        meta_author_chi = xmlContent.item(0).selectSingleNode("chi/meta/author").text
+    End if
 end if
 %>
 <script type="text/javascript">
@@ -119,7 +168,7 @@ end if
 		return s;
 	}
 </script>
-<form method="POST" enctype="multipart/form-data" accept-charset="utf-8" class="input_form">
+<form method="POST" enctype="multipart/form-data" accept-charset="utf-8" class="input_form" action="article-save.asp?id=<%= article_id %>&amp;action=<%= Request("action") %>">
 	<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td><label>Publish</label>:</td>
