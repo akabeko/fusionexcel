@@ -2,6 +2,7 @@
 <%
 option explicit
 Response.Expires = -1
+Response.CharSet = "utf-8"
 Server.ScriptTimeout = 600
 Session.CodePage = 65001
 
@@ -23,10 +24,33 @@ Dim title_chi, content_chi, meta_description_chi, meta_keywords_chi, meta_robots
 Dim sequence, order_year
 Dim category_code
 
-if Request("action") <> "" or Request("action") = "add" then
+article_id = 0
+
+if Request("action") = "" or Request("action") = "add" then
 
 elseif Request("action") = "edit" then
+	if Request("id") = "" or not IsNumeric(Request("id")) then
+		Response.Write "Invalid Article ID"
+		Response.End
+	End If
+	article_id = CInt(Request("id"))
+	sql = "SELECT title, index_image_url, publish_start_date, publish_end_date, publish, sequence, order_year, category_code, content_filename FROM article WHERE article_id = " & article_id
+	Call SetConnection(GetArticleDbPath())
+	Call OpenDatabase()
+	Call CreateRecordSet(RecordSet, sql)
 	
+	if RecordSet.EOF then
+		Response.Write "Error: Article not found"
+		Response.End
+	End If
+	title = RecordSet("title")
+	publish = RecordSet("publish")
+	publish_start_date = RecordSet("publish_start_date")
+	index_image_url = RecordSet("index_image_url")
+	sequence = RecordSet("sequence")
+	order_year = RecordSet("order_year")
+	category_code = RecordSet("category_code")
+	getArticleContent(RecordSet("content_filename"))
 end if
 %>
 <script type="text/javascript">
@@ -123,7 +147,7 @@ end if
 					categories = getCategoriesList()
 					For index = 0 to UBound(categories, 2)
 				%>
-					<input type="checkbox" name="category_code" id="id_<%= categories(1, index) %>" value="<%= categories(0, index) %>" <% if category_code > 0 then %><% if (((category_code \ categories(0, index)) mod 2) = 1) then %> checked="checked"<% end if %><% end if %> />
+					<input type="checkbox" name="category_code" id="id_<%= categories(1, index) %>" value="<%= categories(0, index) %>" <% if category_code > 0 and categories(0, index) > 0 then %><% if (((category_code \ categories(0, index)) mod 2) = 1) then %> checked="checked"<% end if %><% end if %> />
 					<label style="font-weight: normal" for="id_<%= categories(1, index) %>"><%= categories(1, index) %></label>
 				<%
 					Next

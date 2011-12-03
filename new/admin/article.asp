@@ -68,7 +68,7 @@ category_code = 1
 			<tr>
 				<td><input type="checkbox" name="action_article_id" value="<%= RecordSet("article_id") %>" /></td>
 				<td><%= RecordSet("article_id") %></td>
-				<td><a href='article-edit.asp?id=<%= RecordSet("article_id") %>'><%= RecordSet("title") %></a></td>
+				<td><a href='article-edit.asp?action=edit&amp;id=<%= RecordSet("article_id") %>'><%= RecordSet("title") %></a></td>
 				<% if RecordSet("publish") then %>
 					<td style="background: green; color: white;">Yes</td>
 				<% else %>

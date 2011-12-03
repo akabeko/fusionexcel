@@ -30,6 +30,10 @@ Function GetArticleDbPath()
 	GetArticleDbPath = GetDataPath() & article_db
 End Function
 
+Function GetArticlePath(path)
+	GetArticlePath = GetDataPath() & article_path & path
+End Function
+
 
 'Get references data'
 
@@ -69,6 +73,15 @@ Function getCategoriesList()
 		next
 	end if
 	getCategoriesList = categories
+End Function
+
+Function getArticleContent(path)
+	Dim objXML, root
+	SetXMLPath(GetArticlePath(path))
+	set objxml = OpenXML()
+	set root = objXML.selectNodes("article")
+	Response.Write root.length
+	Response.End
 End Function
 
 'Misc function'
