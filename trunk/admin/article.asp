@@ -315,7 +315,7 @@ if Request("action") <> "" then
 	</div>
 	<br />
 	<div id="image">
-		<label for="id_preview_image_url">Home Page Index Photo</label>:
+		<label for="id_preview_image_url">Index Photo</label>:
 		<input type="file" name="preview_image_url" id="id_preview_image_url" /><br />
 		<% if preview_image_url <> "" then %><a href="<%= preview_image_url %>" target="_blank"><img src="<%= preview_image_url %>" /></a><% end if %>
 	</div>
@@ -399,7 +399,7 @@ if Request("action") <> "" then
 			sql = sql & " WHERE rc.category_group_code =  " & category_group
 			if category_code <> "" and category_code > 0 then
 				sql = sql & " AND ar.category_code > 0"
-				sql = sql & " AND (((" & category_code & " \ ar.category_code) mod 2) = 1)"
+				sql = sql & " AND (((ar.category_code \ " & category_code & ") mod 2) = 1)"
 			end if
 			
 			if Request("search") = "title" then
@@ -412,8 +412,6 @@ if Request("action") <> "" then
 			sql = sql & " ORDER BY sequence_indexed DESC"
 
 			call CreateRecordSet(RecordSet, sql)
-			
-			
 			
 			Do While not RecordSet.EOF
 		%>
