@@ -80,8 +80,7 @@ Function getArticleContent(path)
 	SetXMLPath(GetArticlePath(path))
 	set objxml = OpenXML()
 	set root = objXML.selectNodes("article")
-	Response.Write root.length
-	Response.End
+	set getArticleContent = root
 End Function
 
 'Misc function'
