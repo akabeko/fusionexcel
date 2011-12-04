@@ -17,6 +17,7 @@ if Request("submit") = "Login" then
 	if not RecordSet.EOF then
 		Session("login") = username
 		Session.Timeout = 120
+        
 		Response.Redirect("Default.asp")
 	else
 		Response.Redirect("login.asp?msg=") & Server.URLEncode("Invalid username or password")
