@@ -80,7 +80,7 @@ table p {
 
 #main #button_navigator {
 	margin: 10px;
-	text-align: right;
+	float: right;
 }
 
 #login_wrap {
@@ -101,3 +101,18 @@ table p {
 	font-size: 14px;
 }
 
+.delete-btn {
+    background-image: url(../images/icon-32-delete.png);
+}
+
+.delete-btn, .new-btn {
+    height: 32px;
+    width: 32px;
+    display: block;
+    float: right;
+    margin: 5px;
+}
+
+.new-btn {
+    background-image: url(../images/icon-32-new.png);
+}

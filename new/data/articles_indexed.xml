@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<articles>
+<article id='1'>
+<article_id>1</article_id>
+<title lang='en'>FE Sponsors RM 36,000 Towards World Lupus Day 2011 'Walkathon-a-Payung'!</title>
+<title lang='bm'></title>
+<title lang='chi'></title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date></publish_start_date>
+<sequence>1</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110001</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>1.xml</content_filename>
+</article>
+<article id='14'>
+<article_id>14</article_id>
+<title lang='en'>Testing Only</title>
+<title lang='bm'>Testing Only</title>
+<title lang='chi'>Testing Only</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date></publish_start_date>
+<sequence>2</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110002</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>14.xml</content_filename>
+</article>
+</articles>

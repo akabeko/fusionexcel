@@ -184,7 +184,7 @@ end if
 		</tr>
 		<tr>
 			<td><label for="id_order">Sequence Number</label>:</td>
-			<td><input type="text" id="id_sequence" name="sequence" value="<% if sequence = "" then %>0001<% else %><%= PadDigits(sequence, 4) %><% end if %>" maxlength="4" /></td>
+			<td><input type="text" id="id_sequence" name="sequence" value="<% if sequence = "" then %><%= PadDigits(getLatestArticleSequence(), 4) %><% else %><%= PadDigits(sequence, 4) %><% end if %>" maxlength="4" /></td>
 			<td><label for="id_order_year">Sequence Year</label>:</td>
 			<td><input type="text" id="id_order_year" name="order_year" class="date_year" value="<% if order_year = "" then %><%= Year(Now()) %><% else %><%= order_year %><% end if %>" maxlength="4" /></td>
 		</tr>
@@ -330,6 +330,7 @@ end if
 	<br clear="both" />
 	<div>
 		<input type="submit" name="submit" value="<% if Request("action") = "edit" then %>Update<% else %>Add<% end if %>" />
+        <input type="button" name="back" value="Cancel" onclick="window.location = 'article.asp'" />
 	</div>
 </form>
 <!--#include file="footer.asp" -->

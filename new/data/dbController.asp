@@ -35,6 +35,8 @@ Function ExecuteQuery(sql)
 	Connection.Execute sql
 End Function
 
+
+' XML Function '
 Dim XMLString
 
 Function SetXMLPath(xmlPath)
@@ -47,8 +49,7 @@ Function OpenXML()
 		Response.Write "No XML string was attached"
 		Response.End
 	end if
-	set objXML = Server.CreateObject("Microsoft.XMLDOM")
-	
+	set objXML = Server.CreateObject("Msxml2.DOMDocument")
 	objXML.async = false
 	objXML.load(Server.MapPath(XMLString))
 	If objXML.parseError.errorCode then
@@ -60,4 +61,23 @@ Function OpenXML()
 	set OpenXML = objXML
 End Function
 
+Function SaveXML(objXML, path)
+    objXML.Save Server.MapPath(path)
+End Function
+
+Function CreateXML()
+    set CreateXML = Server.CreateObject("Microsoft.XMLDOM")
+End Function
+
+
+' XPath Function @ Associate with XMLString & SetXMLPath '
+Function OpenXpath()
+    Dim objXML
+    if XMLString = "" then
+		Response.Write "No XML string was attached"
+		Response.End
+	end if
+    set objXML = Server.CreateObject("Msxml2.DOMDocument.3.0")
+    objXML.async = false
+End Function
 %>

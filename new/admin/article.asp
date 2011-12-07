@@ -10,6 +10,18 @@ category_code = 1
 %>
 <!--#include file="header.asp" -->
 <% if Request("action") = "" then %>
+<%
+
+if Request.ServerVariables("REQUEST_METHOD") = "POST" then
+    if Request("delete") = 1 then
+        Call SetConnection(GetArticleDbPath())
+        Call OpenDatabase()
+        sql = "DELETE FROM article WHERE article_id IN (" & Request("action_article_id") & ")"
+        call ExecuteQuery(sql)
+        Response.Redirect("article.asp")
+    end if
+end if
+%>
 <script type="text/javascript">
 	function deleteConfirm() {
 		var checkedVal = $("#id_article_list input:checked");
@@ -20,14 +32,14 @@ category_code = 1
 		}
 	}
 </script>
-<div style="float: left;">
-	<form method="post" action="article.asp?article=news&amp;category_group=<%= Request("category_group") %>&amp;search=title">
+<div style="float: left; margin-top: 15px;">
+	<form method="post" action="article.asp?search=title">
 		<label for="id_search_text">Search: </label><input type="text" name="search_query" id="id_search_text" value="" size="50" style="border-radius: 5px; border: 1px solid #CCC;" />
 	</form>
 </div>
 <div id="button_navigator">
-	<a href="javascript::void(0)" onclick="deleteConfirm()">Delete Selected</a>
-	<a href="article.asp?action=add<% if not article = "" then %>&amp;article=<%= article %><% end if %>">New Article</a>
+	<a href="javascript::void(0)" onclick="deleteConfirm()" class="delete-btn" title="Delete Selected"></a>
+	<a href="article-edit.asp?action=add" class="new-btn" title="New Article"></a>
 </div>
 <br />
 <%
@@ -49,7 +61,7 @@ category_code = 1
 	Call OpenDatabase()
 	Call CreateRecordSet(RecordSet, sql)
 %>
-<form method="post" id="id_article_list">
+<form method="post" id="id_article_list" action="article.asp?delete=1">
 	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="article_list">
 		<thead>
 			<tr>

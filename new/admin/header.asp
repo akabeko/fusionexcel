@@ -54,18 +54,15 @@ end if
 			<div id="navigation_menu">
 				<ul class="topnav">
 					<li>
-						<a href="#">Article</a>
+						<a href="article.asp">Article</a>
 						<ul class="subnav">
-							<li><a href="article.asp?article=news&amp;category_group=1">News &amp; Events</a></li>
-							<li><a href="article.asp?article=news&amp;category_group=1&amp;category_code=2">Charities</a></li>
-							<li><a href="article.asp?article=news&amp;category_group=1&amp;category_code=4">Sponsorship</a></li>
+							<li><a href="article.asp">News &amp; Events</a></li>
+							<li><a href="article.asp?category_code=2">Charities</a></li>
+							<li><a href="article.asp?category_code=4">Sponsorship</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="#">VIP QP Weares</a>
-						<ul class="subnav">
-							<li><a href="article_link.asp">VIP QP Wearers</a></li>
-						</ul>
+						<a href="under-construction.asp">Service Center</a>
 					</li>
 				</ul>
 			</div>
