@@ -44,44 +44,7 @@ body {
 	    </script>
           </td>
         </tr>
-        <tr>
-          <td width="180" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                      <td colspan="2">
-					    <!--#include file="render_sidebar_article.asp" -->
-                      </td>
-                    </tr>
-                  </table></td>
-              </tr>
-            </table></td>
-          <td width="10" valign="top">&nbsp;</td>
-          <td width="740" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
-              <tr>
-				<% if category = "charity" then %>
-					<td><img src="img/banner_charities.jpg" width="740" height="170" /></td>
-				<% elseif category = "sponsorships" then %>
-					<td><img src="img/banner_sponsor.jpg" width="740" height="170" /></td>
-				<% else %>
-					<td><img src="img/banner_news.jpg" width="740" height="170" /></td>
-				<% end if %>
-              </tr>
-              <tr>
-                <td height="8"></td>
-              </tr>
-              <tr>
-                <td valign="top" bgcolor="#999999">
-					<script type="text/javascript">
-						// CMS Code Start Here
-						var iframesrc="news_list.asp?lang=<%= Request("lang") %>&category=<%= Request("category") %><% if not Request("page") = "" then %>&page=<%= Request("page") %><% end if %>"
-						document.write('<iframe id="datamain" name="myframe" src="'+iframesrc+'" ALLOWTRANSPARENCY="true" width="740px" height="1512px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>')
-						// End of CMS Code
-					</script>
-                </td>
-              </tr>
-            </table></td>
-        </tr>
+        <!--#include file="render_article_list.asp" -->
         <tr>
           <td colspan="3" height="10"></td>
         </tr>

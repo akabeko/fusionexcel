@@ -16,7 +16,7 @@ end if
 
 Dim articlesObj, item
 
-set objXml = GetIndexedArticles()
+set objXml = GetIndexedArticles(category_code)
 set articlesObj = objXml.selectNodes("articles/article")
 Dim index_image_url, title, article_id, publish, publish_start_date
 Dim counter
@@ -30,6 +30,16 @@ counter = 0
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>慈善活动<% elseif lang = 2 then %>Acara Amal<% else %>Charities<% end if %></td>
 <% elseif category_code = 4 then %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>赞助<% elseif lang = 2 then %>Tajaan<% else %>Sponsorships<% end if %></td>
+<% elseif category_code = 8 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>公司代言人<% elseif lang = 2 then %>Jurucakap Syarikat<% else %>Company Spokepersons<% end if %></td>
+<% elseif category_code = 16 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>科技伙伴<% elseif lang = 2 then %>Rakan Kongsi Teknologi<% else %>Technology Partners<% end if %></td>
+<% elseif category_code = 32 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>宇宙天然能量石<% elseif lang = 2 then %>Loket Kuantum<% else %>Testimonials (QP)<% end if %></td>
+<% elseif category_code = 64 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>量子美容肥皂<% elseif lang = 2 then %>Bar Kecantikan Kuantum<% else %>Testimonials (QBB)<% end if %></td>
+<% elseif category_code = 128 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>宇宙天然能量充电器<% elseif lang = 2 then %>Pengecas Kuantum<% else %>Testimonials (QC)<% end if %></td>
 <% else %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>新闻与活动<% elseif lang = 2 then %>Berita dan Aktiviti<% else %>News &amp; Events<% end if %></td>
 <% end if %>
@@ -46,7 +56,7 @@ for each item in articlesObj
     publish_start_date = item.childNodes(6).text
     
     if LCASE(publish) = "true" then
-        if (IsDate(publish_start_date) and CDate(publish_start_date < now())) or publish_start_date = "" then   
+        if (IsDate(publish_start_date) and CDate(publish_start_date) < now()) or publish_start_date = "" then
             %><li><a href="article.asp?lang=<%= lang %>article_id=<%= article_id %>&amp;title=<%= Replace(title, " ", "") %>" target="_top" title="<%= title %>"><%= title %></li><%
             counter = counter + 1
         end if

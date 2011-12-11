@@ -56,13 +56,18 @@ end if
 					<li>
 						<a href="article.asp">Article</a>
 						<ul class="subnav">
-							<li><a href="article.asp">News &amp; Events</a></li>
+							<li><a href="article.asp?category_code=1">News &amp; Events</a></li>
 							<li><a href="article.asp?category_code=2">Charities</a></li>
 							<li><a href="article.asp?category_code=4">Sponsorship</a></li>
+                            <li><a href="article.asp?category_code=8">Company Spokepersons</a></li>
+                            <li><a href="article.asp?category_code=16">Technology Partners</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="under-construction.asp">Service Center</a>
+						<a href="service_centres.asp">Service Center</a>
+					</li>
+                    <li>
+						<a href="under-construction.asp">VIP QP Wearers</a>
 					</li>
 				</ul>
 			</div>

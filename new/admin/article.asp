@@ -9,7 +9,6 @@ Dim RecordSet, sql, XMLObj
 category_code = 1
 %>
 <!--#include file="header.asp" -->
-<% if Request("action") = "" then %>
 <%
 
 if Request.ServerVariables("REQUEST_METHOD") = "POST" then
@@ -18,6 +17,7 @@ if Request.ServerVariables("REQUEST_METHOD") = "POST" then
         Call OpenDatabase()
         sql = "DELETE FROM article WHERE article_id IN (" & Request("action_article_id") & ")"
         call ExecuteQuery(sql)
+        call ReindexArticles()
         Response.Redirect("article.asp")
     end if
 end if
@@ -62,7 +62,7 @@ end if
 	Call CreateRecordSet(RecordSet, sql)
 %>
 <form method="post" id="id_article_list" action="article.asp?delete=1">
-	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="article_list">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="article_list listing">
 		<thead>
 			<tr>
 				<td>&nbsp;</td>
@@ -97,7 +97,6 @@ end if
 	</table>
 </form>
 <%
-	call CloseRecordSet(RecordSet)
-end if
+call CloseRecordSet(RecordSet)
 %>
 <!--#include file="footer.asp" -->

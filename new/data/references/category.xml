@@ -12,4 +12,12 @@
 		<category_code>4</category_code>
 		<category_name>Sponsorships</category_name>
 	</category>
+    <category>
+		<category_code>8</category_code>
+		<category_name>Company Spokepersons</category_name>
+	</category>
+    <category>
+		<category_code>16</category_code>
+		<category_name>Technology Partners</category_name>
+	</category>
 </categories>

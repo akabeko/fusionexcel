@@ -50,6 +50,8 @@ Function SaveFiles(article_id)
         sql = "SELECT * FROM article"
         call CreateRecordSet(RecordSet, sql)
         RecordSet.AddNew
+        RecordSet.Fields("created_by") = Session("login")
+        RecordSet.Fields("created") = Now()
 	else
 		sql = "SELECT * FROM article WHERE article_id = " & article_id
 		Call CreateRecordSet(RecordSet, sql)
@@ -76,7 +78,6 @@ Function SaveFiles(article_id)
     RecordSet.Fields("title") = Upload.Form("title")
     RecordSet.Fields("title_bm") = Upload.Form("title_bm")
     RecordSet.Fields("title_chi") = Upload.Form("title_chi")
-	RecordSet.Fields("created_by") = Session("login")
 	RecordSet.Fields("modified_by") = Session("login")
     RecordSet.Fields("modified") = Now()
     
@@ -112,7 +113,7 @@ Function SaveFiles(article_id)
     article_id = RecordSet("article_id")
     
     if RecordSet.Fields("content_filename") <> "" then
-        Dim xmlContent, node
+        Dim xmlContent
         set xmlContent = getArticle(RecordSet.Fields("content_filename"))
         xmlContent.selectSingleNode("article/en/title").text = Upload.Form("title")
         xmlContent.selectSingleNode("article/en/content").text = Upload.Form("content")
@@ -136,102 +137,58 @@ Function SaveFiles(article_id)
         xmlContent.selectSingleNode("article/chi/meta/robots").text = Upload.Form("meta_robots_chi")
         call saveArticleContent(xmlContent, RecordSet.Fields("content_filename"))
     else
-        Dim objXML, objPi, root, en, bm, chi, meta_en, meta_bm, meta_chi
-        Dim en_title, en_content, en_meta_desc, en_meta_keyword, en_meta_robots, en_meta_author
-        Dim bm_title, bm_content, bm_meta_desc, bm_meta_keyword, bm_meta_robots, bm_meta_author
-        Dim chi_title, chi_content, chi_meta_desc, chi_meta_keyword, chi_meta_robots, chi_meta_author
-        set objXML = createArticle()
-        ' Create Root'
-        set root = objXML.createElement("article")
-        objXML.appendChild root
-        ' Create language element '
-        set en = objXML.createElement("en")
-        set bm = objXML.createElement("bm")
-        set chi = objXML.createElement("chi")
-        root.appendChild en
-        root.appendChild bm
-        root.appendChild chi
-        ' Create eng element '
-        set en_title = objXML.createElement("title")
-        set en_content = objXML.createElement("content")
-        set meta_en = objXML.createElement("meta")
-        en.appendChild en_title
-        en.appendChild en_content
-        en.appendChild meta_en
-        en_title.text = Upload.Form("title")
-        en_content.text = Upload.Form("content")
-        ' Create meta element'
-        set en_meta_desc = objXML.createElement("description")
-        set en_meta_keyword = objXML.createElement("keyword")
-        set en_meta_robots = objXML.createElement("author")
-        set en_meta_author = objXML.createElement("robots")
-        en_meta_desc.text = Upload.Form("meta_description")
-        en_meta_keyword.text = Upload.Form("meta_keywords")
-        en_meta_robots.text = Upload.Form("meta_robots")
-        en_meta_author.text = Upload.Form("meta_author")
-        meta_en.appendChild en_meta_desc
-        meta_en.appendChild en_meta_keyword
-        meta_en.appendChild en_meta_robots
-        meta_en.appendChild en_meta_author
-        
-        ' Create bm element '
-        set bm_title = objXML.createElement("title")
-        set bm_content = objXML.createElement("content")
-        set meta_bm = objXML.createElement("meta")
-        bm.appendChild bm_title
-        bm.appendChild bm_content
-        bm.appendChild meta_bm
-        bm_title.text = Upload.Form("title_bm")
-        bm_content.text = Upload.Form("content_bm")
-        ' Create meta element'
-        set bm_meta_desc = objXML.createElement("description")
-        set bm_meta_keyword = objXML.createElement("keyword")
-        set bm_meta_robots = objXML.createElement("author")
-        set bm_meta_author = objXML.createElement("robots")
-        bm_meta_desc.text = Upload.Form("meta_description_bm")
-        bm_meta_keyword.text = Upload.Form("meta_keywords_bm")
-        bm_meta_robots.text = Upload.Form("meta_robots_bm")
-        bm_meta_author.text = Upload.Form("meta_author_bm")
-        meta_bm.appendChild bm_meta_desc
-        meta_bm.appendChild bm_meta_keyword
-        meta_bm.appendChild bm_meta_robots
-        meta_bm.appendChild bm_meta_author
-        
-        ' Create chi element '
-        set chi_title = objXML.createElement("title")
-        set chi_content = objXML.createElement("content")
-        set meta_chi = objXML.createElement("meta")
-        chi.appendChild chi_title
-        chi.appendChild chi_content
-        chi.appendChild meta_chi
-        chi_title.text = Upload.Form("title_chi")
-        chi_content.text = Upload.Form("content_chi")
-        ' Create meta element'
-        set chi_meta_desc = objXML.createElement("description")
-        set chi_meta_keyword = objXML.createElement("keyword")
-        set chi_meta_robots = objXML.createElement("author")
-        set chi_meta_author = objXML.createElement("robots")
-        chi_meta_desc.text = Upload.Form("meta_description_chi")
-        chi_meta_keyword.text = Upload.Form("meta_keywords_chi")
-        chi_meta_robots.text = Upload.Form("meta_robots_chi")
-        chi_meta_author.text = Upload.Form("meta_author_chi")
-        meta_chi.appendChild chi_meta_desc
-        meta_chi.appendChild chi_meta_keyword
-        meta_chi.appendChild chi_meta_robots
-        meta_chi.appendChild chi_meta_author
-        
-        set objPi = objXML.createProcessingInstruction("xml", "version='1.0'")
-        
-        objXML.insertBefore objPi, objXML.childNodes(0)
-        
-        call saveArticleContent(objXML, article_id & ".xml")
-        RecordSet.Fields("content_filename") = article_id & ".xml"
+        Dim fileStream, file, content_filename
+        content = article_id & ".xml"
+        set fileStream = Server.CreateObject("Scripting.FileSystemObject")
+        set file = fileStream.CreateTextFile(Server.MapPath(GetArticlePath(content_filename)), true)
+        file.WriteLine "<?xml version='1.0' encoding='utf-8'?>"
+        file.WriteLine "<article>"
+        file.WriteLine "<en>"
+        file.WriteLine "<title>" & Upload.Form("title") & "</title>"
+        file.WriteLine "<content>" & Upload.Form("content") & "</content>"
+        file.WriteLine "<meta>"
+        file.WriteLine "<description>" & Upload.Form("meta_description") & "</description>"
+        file.WriteLine "<keyword>" & Upload.Form("meta_keywords") & "</keyword>"
+        file.WriteLine "<author>" & Upload.Form("meta_author") & "</author>"
+        file.WriteLine "<robots>" & Upload.Form("meta_robots") & "</robots>"
+        file.WriteLine "</meta>"
+        file.WriteLine "</en>"
+        file.WriteLine "<bm>"
+        file.WriteLine "<title>" & Upload.Form("title_bm") & "</title>"
+        file.WriteLine "<content>" & Upload.Form("content_bm") & "</content>"
+        file.WriteLine "<meta>"
+        file.WriteLine "<description>" & Upload.Form("meta_description_bm") & "</description>"
+        file.WriteLine "<keyword>" & Upload.Form("meta_keywords_bm") & "</keyword>"
+        file.WriteLine "<author>" & Upload.Form("meta_author_bm") & "</author>"
+        file.WriteLine "<robots>" & Upload.Form("meta_robots_bm") & "</robots>"
+        file.WriteLine "</meta>"
+        file.WriteLine "</bm>"
+        file.WriteLine "<chi>"
+        file.WriteLine "<title>" & Upload.Form("title_chi") & "</title>"
+        file.WriteLine "<content>" & Upload.Form("content_chi") & "</content>"
+        file.WriteLine "<meta>"
+        file.WriteLine "<description>" & Upload.Form("meta_description_chi") & "</description>"
+        file.WriteLine "<keyword>" & Upload.Form("meta_keywords_chi") & "</keyword>"
+        file.WriteLine "<author>" & Upload.Form("meta_author_chi") & "</author>"
+        file.WriteLine "<robots>" & Upload.Form("meta_robots_chi") & "</robots>"
+        file.WriteLine "</meta>"
+        file.WriteLine "</chi>"
+        file.WriteLine "</article>"
+        RecordSet.Fields("content_filename") = content_filename
         RecordSet.Update
     end if
     
     RecordSet.close
     
     call CloseRecordSet(RecordSet)
+    
+    Dim categories, index
+    categories = getCategoriesList()
+    For index = 0 to UBound(categories, 2)
+        if categories(1, index) <> "" then
+            call ReindexData(categories(0, index))
+        end if
+    Next
     
     Response.Redirect("article-edit.asp?action=edit&id=" & article_id)
 End Function

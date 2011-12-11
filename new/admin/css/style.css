@@ -66,14 +66,14 @@ table p {
 	color: red;
 }
 
-.article_list {
+.listing {
 	border-collapse: collapse;
 }
-.article_list thead {
+.listing thead {
 	font-weight: bold;
 }
 
-.article_list tr td {
+.listing tr td {
 	border: 1px solid #D8D8D8;
 	padding: 5px;
 }
@@ -115,4 +115,7 @@ table p {
 
 .new-btn {
     background-image: url(../images/icon-32-new.png);
+}
+.subnav {
+    z-index: 9999;
 }

@@ -60,7 +60,7 @@ elseif Request("action") = "edit" then
 		Response.End
 	End If
 	article_id = CInt(Request("id"))
-	sql = "SELECT title, index_image_url, publish_start_date, publish_end_date, publish, sequence, order_year, category_code, content_filename FROM article WHERE article_id = " & article_id
+	sql = "SELECT title, index_image_url, publish_start_date, publish, sequence, order_year, category_code, content_filename FROM article WHERE article_id = " & article_id
 	Call SetConnection(GetArticleDbPath())
 	Call OpenDatabase()
 	Call CreateRecordSet(RecordSet, sql)
@@ -195,10 +195,12 @@ end if
 					Dim categories, index
 					categories = getCategoriesList()
 					For index = 0 to UBound(categories, 2)
-				%>
-					<input type="checkbox" name="category_code" id="id_<%= categories(1, index) %>" value="<%= categories(0, index) %>" <% if category_code > 0 and categories(0, index) > 0 then %><% if (((category_code \ categories(0, index)) mod 2) = 1) then %> checked="checked"<% end if %><% end if %> />
-					<label style="font-weight: normal" for="id_<%= categories(1, index) %>"><%= categories(1, index) %></label>
-				<%
+                        if categories(1, index) <> "" then
+                        %>
+                            <input type="checkbox" name="category_code" id="id_<%= categories(1, index) %>" value="<%= categories(0, index) %>" <% if category_code > 0 and categories(0, index) > 0 then %><% if (((category_code \ categories(0, index)) mod 2) = 1) then %> checked="checked"<% end if %><% end if %> />
+                            <label style="font-weight: normal" for="id_<%= categories(1, index) %>"><%= categories(1, index) %></label>
+                        <%
+                        end if
 					Next
 				%>
 			</td>
@@ -334,3 +336,7 @@ end if
 	</div>
 </form>
 <!--#include file="footer.asp" -->
+<%
+call CloseRecordSet(RecordSet)
+call CloseDatabase()
+%>

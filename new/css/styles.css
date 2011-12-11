@@ -1,0 +1,186 @@
+.trList
+{
+    FONT-FAMILY: Arial;
+    COLOR: #000000;
+    FONT-SIZE: 11px
+}
+.ErrMsg
+{
+    FONT-FAMILY: Arial;
+    COLOR: red;
+    FONT-SIZE: 16px;
+    FONT-WEIGHT: bolder
+}
+.trHeader
+{
+    BACKGROUND-COLOR: #5f80ad;
+    FONT-FAMILY: Arial;
+    COLOR: #ffffff;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder
+}
+.menuText
+{
+    BACKGROUND-COLOR: #5f80ad;
+    FONT-FAMILY: Arial;
+    COLOR: #ffffff;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder
+}
+.menuText1
+{
+    FONT-FAMILY: Arial;
+    COLOR: #000000;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder
+}
+.menuText A:link
+{
+    FONT-FAMILY: Arial;
+    COLOR: #ffffff;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder;
+    TEXT-DECORATION: none
+}
+.menuText A:hover
+{
+    FONT-FAMILY: Arial;
+    COLOR: #ffdd03;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder
+}
+.trHeader A:link
+{
+    FONT-FAMILY: Arial;
+    COLOR: #ffffff;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder
+}
+.trHeader A:hover
+{
+    FONT-FAMILY: Arial;
+    COLOR: #ffdd03;
+    FONT-SIZE: 12px;
+    FONT-WEIGHT: bolder
+}
+.trList A:link
+{
+    FONT-FAMILY: Arial;
+    COLOR: #000000;
+    FONT-SIZE: 11px;
+    TEXT-DECORATION: underline
+}
+.trList A:hover
+{
+    FONT-FAMILY: Arial;
+    COLOR: #ffdd03;
+    FONT-SIZE: 11px;
+    TEXT-DECORATION: underline
+}
+.trListAn
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial;
+    COLOR: #000000;
+    FONT-SIZE: 13px
+}
+.trListAn A:link
+{
+    FONT-FAMILY: Arial;
+    COLOR: black;
+    FONT-SIZE: 13px
+}
+.trListAn A:visited
+{
+    FONT-FAMILY: Arial;
+    COLOR: black;
+    FONT-SIZE: 13px
+}
+.tdList
+{
+    BACKGROUND-COLOR: #5f80ad;
+    COLOR: white
+}
+.tdList A:link
+{
+    COLOR: white;
+    FONT-SIZE: 13px
+}
+.tdList A:hover
+{
+    FONT-FAMILY: Arial;
+    COLOR: #ffdd03;
+    FONT-SIZE: 13px
+}
+.Back
+{
+    FONT-FAMILY: Arial;
+    COLOR: blue;
+    FONT-SIZE: 13px
+}
+.menuText A
+{
+    COLOR: #ffffff
+}
+.tdList A
+{
+    COLOR: #ffffff
+}
+.trHeader A
+{
+    COLOR: #ffffff
+}
+.trList A
+{
+    COLOR: #000000;
+    TEXT-DECORATION: underline
+}
+.trListAn A
+{
+    FONT-FAMILY: Arial;
+    COLOR: #000000
+}
+.paraText
+{
+    TEXT-ALIGN: justify;
+    FONT-FAMILY: Arial;
+    COLOR: #000000;
+    FONT-SIZE: 11px
+}
+.Header
+{
+    TEXT-ALIGN: center;
+    FONT-FAMILY: Arial;
+    COLOR: navy;
+    FONT-SIZE: 16px;
+    FONT-WEIGHT: bolder
+}
+.trlist1
+{
+    FONT-FAMILY: Arial;
+    COLOR: black;
+    FONT-SIZE: 12px
+}
+.trlist1 A
+{
+    FONT-FAMILY: Arial;
+    COLOR: black;
+    FONT-SIZE: 12px
+}
+.trlist1 A:hover
+{
+    FONT-FAMILY: Arial;
+    COLOR: #ffdd03;
+    FONT-SIZE: 12px
+}
+.trlist1 A:link
+{
+    FONT-FAMILY: Arial;
+    COLOR: black;
+    FONT-SIZE: 12px
+}
+.fe3
+{
+    FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    FONT-SIZE: 11px
+}
