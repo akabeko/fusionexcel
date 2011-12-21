@@ -1,3 +1,4 @@
+<%@ CodePage=65001 %>
 <!--#include file="libraries.asp" -->
 <%
 Dim articleObj, lang, article_id
@@ -28,12 +29,12 @@ set articleObj = getArticleContent(article_id & ".xml")
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<% if lang = 3 then %>zh<% else %>en<% end if %>">
 <head>
-<title>FusionExcel - News & Events - News & Events Page 01 of 27.</title>
+<title>FusionExcel - News & Events - News & Events.</title>
 <meta name="description" content="<% if articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/description").text <> "" then %><%= articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/description").text %><% else %><% end if %>">
 <meta name="keywords" content="<% if articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/keyword").text <> "" then %><%= articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/keyword").text %><% else %>FusionExcel International<% end if %>">
-<meta charset="ISO-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="robots" content="<% if articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/robots").text<> "" then %><%= articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/robots").text %><% else %>all<% end if %>">
 <meta name="distribution" content="global" /> 
 <meta name="author" content="<% if articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/author").text <> "" then %><%= articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/author").text %><% else %>FusionExcel International<% end if %>">

@@ -12,6 +12,10 @@ Session.CodePage = 65001
 Dim sql, article_id, RecordSet, uploadsDirVar
 uploadsDirVar = Server.MapPath("/images/")
 
+if Session("login") = "" then
+    Response.Redirect "login.asp"
+end if
+
 if Request.ServerVariables("REQUEST_METHOD") <> "POST" then
     Response.Redirect "article-edit.asp?id=" & Request("id") & "&action=" & Request("action") & "&error=not_supported"
 end if
@@ -99,7 +103,7 @@ Function SaveFiles(article_id)
 	RecordSet.Fields("order_year") = Upload.Form("order_year")    
     RecordSet.Fields("sequence_indexed") = Upload.Form("order_year") & "" & PadDigits(Upload.Form("sequence"), 4)
     
-    Dim category_codes, category_code, code
+    Dim category_codes, category_code, code, content
 	category_codes = Split(Upload.Form("category_code"), ",")
 	
 	for each code in category_codes
@@ -138,39 +142,99 @@ Function SaveFiles(article_id)
         call saveArticleContent(xmlContent, RecordSet.Fields("content_filename"))
     else
         Dim fileStream, file, content_filename
-        content = article_id & ".xml"
+        content_filename = article_id & ".xml"
         set fileStream = Server.CreateObject("Scripting.FileSystemObject")
         set file = fileStream.CreateTextFile(Server.MapPath(GetArticlePath(content_filename)), true)
         file.WriteLine "<?xml version='1.0' encoding='utf-8'?>"
         file.WriteLine "<article>"
         file.WriteLine "<en>"
-        file.WriteLine "<title>" & Upload.Form("title") & "</title>"
+        file.WriteLine "<title>"
+        if Upload.Form("title") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("title"))
+        end if
+        file.WriteLine "</title>"
         file.WriteLine "<content>" & Upload.Form("content") & "</content>"
         file.WriteLine "<meta>"
-        file.WriteLine "<description>" & Upload.Form("meta_description") & "</description>"
-        file.WriteLine "<keyword>" & Upload.Form("meta_keywords") & "</keyword>"
-        file.WriteLine "<author>" & Upload.Form("meta_author") & "</author>"
-        file.WriteLine "<robots>" & Upload.Form("meta_robots") & "</robots>"
+        file.WriteLine "<description>"
+        if Upload.Form("meta_description") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_description"))
+        end if
+        file.WriteLine "</description>"
+        file.WriteLine "<keyword>"
+        if Upload.Form("meta_description") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_keywords"))
+        end if
+        file.WriteLine "</keyword>"
+        file.WriteLine "<author>"
+        if Upload.Form("meta_description") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_author"))
+        end if
+        file.WriteLine "</author>"
+        file.WriteLine "<robots>"
+        if Upload.Form("meta_description") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_robots"))
+        end if
+        file.WriteLine "</robots>"
         file.WriteLine "</meta>"
         file.WriteLine "</en>"
         file.WriteLine "<bm>"
-        file.WriteLine "<title>" & Upload.Form("title_bm") & "</title>"
+        file.WriteLine "<title>"
+        if Upload.Form("title_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("title_bm"))
+        end if
+        file.WriteLine "</title>"
         file.WriteLine "<content>" & Upload.Form("content_bm") & "</content>"
         file.WriteLine "<meta>"
-        file.WriteLine "<description>" & Upload.Form("meta_description_bm") & "</description>"
-        file.WriteLine "<keyword>" & Upload.Form("meta_keywords_bm") & "</keyword>"
-        file.WriteLine "<author>" & Upload.Form("meta_author_bm") & "</author>"
-        file.WriteLine "<robots>" & Upload.Form("meta_robots_bm") & "</robots>"
+        file.WriteLine "<description>"
+        if Upload.Form("meta_description_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_description_bm"))
+        end if
+        file.WriteLine "</description>"
+        file.WriteLine "<keyword>"
+        if Upload.Form("meta_description_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_keywords_bm"))
+        end if
+        file.WriteLine "</keyword>"
+        file.WriteLine "<author>"
+        if Upload.Form("meta_description_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_author_bm"))
+        end if
+        file.WriteLine "</author>"
+        file.WriteLine "<robots>"
+        if Upload.Form("meta_description_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_robots_bm"))
+        end if
+        file.WriteLine "</robots>"
         file.WriteLine "</meta>"
         file.WriteLine "</bm>"
         file.WriteLine "<chi>"
-        file.WriteLine "<title>" & Upload.Form("title_chi") & "</title>"
+        file.WriteLine "<title>"
+        if Upload.Form("title_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("title_chi"))
+        end if
+        file.WriteLine "</title>"
         file.WriteLine "<content>" & Upload.Form("content_chi") & "</content>"
         file.WriteLine "<meta>"
-        file.WriteLine "<description>" & Upload.Form("meta_description_chi") & "</description>"
-        file.WriteLine "<keyword>" & Upload.Form("meta_keywords_chi") & "</keyword>"
-        file.WriteLine "<author>" & Upload.Form("meta_author_chi") & "</author>"
-        file.WriteLine "<robots>" & Upload.Form("meta_robots_chi") & "</robots>"
+        file.WriteLine "<description>"
+        if Upload.Form("meta_description_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_description_chi"))
+        end if
+        file.WriteLine "</description>"
+        file.WriteLine "<keyword>"
+        if Upload.Form("meta_description_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_keywords_chi"))
+        end if
+        file.WriteLine "</keyword>"
+        file.WriteLine "<author>"
+        if Upload.Form("meta_description_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_author_chi"))
+        end if
+        file.WriteLine "</author>"
+        file.WriteLine "<robots>"
+        if Upload.Form("meta_description_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("meta_robots_chi"))
+        end if
+        file.WriteLine "</robots>"
         file.WriteLine "</meta>"
         file.WriteLine "</chi>"
         file.WriteLine "</article>"

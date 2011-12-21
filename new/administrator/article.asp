@@ -1,7 +1,7 @@
 <!--#include file="../libraries.asp" -->
 <%
 Dim page_title
-page_title = "Fusion Excel Content Management System"
+page_title = "[Article] Fusion Excel Content Management System"
 
 Dim category_code
 Dim RecordSet, sql, XMLObj
@@ -17,7 +17,7 @@ if Request.ServerVariables("REQUEST_METHOD") = "POST" then
         Call OpenDatabase()
         sql = "DELETE FROM article WHERE article_id IN (" & Request("action_article_id") & ")"
         call ExecuteQuery(sql)
-        call ReindexArticles()
+        call ReindexData(category_code)
         Response.Redirect("article.asp")
     end if
 end if

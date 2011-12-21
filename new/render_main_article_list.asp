@@ -25,7 +25,7 @@ Dim index_image_url, title, article_id, publish, publish_start_date, category_co
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<link href="css/fe.css" rel="stylesheet" type="text/css">
+	<link href="/css/fe.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%
@@ -115,7 +115,7 @@ for each item in articlesObj
         end if
         
         if LCASE(publish) = "true" and index > firstArticleIndex then
-            %><li><a href="article.asp?article_id=<%= article_id %>&amp;title=<%= Replace(title, " ", "_") %>" target="_top" title="<%= title %>"><% if Len(title) > 50 then %><%= Left(title, 55) %>...</a><% else %><%= title %><% end if %></li><%
+            %><li><a href="article.asp?article_id=<%= article_id %>&amp;title=<%= Replace(title, " ", "_") %>" target="_top" title="<%= title %>"><% if Len(title) > 50 then %><%= Left(title, 50) %>...</a><% else %><%= title %><% end if %></li><%
             counter = counter + 1
         end if
         index = index + 1

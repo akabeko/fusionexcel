@@ -1,4 +1,4 @@
-<!--#include file="libraries.asp" -->
+﻿<!--#include file="libraries.asp" -->
 <%
 Dim LIMIT, OFFSET, lang, category_code
 Dim objXml, lang_index

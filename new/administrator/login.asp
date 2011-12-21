@@ -16,7 +16,7 @@ if Request("submit") = "Login" then
 	
 	if not RecordSet.EOF then
 		Session("login") = username
-		Session.Timeout = 1800
+		Session.Timeout = 360
         
 		Response.Redirect("Default.asp")
 	else

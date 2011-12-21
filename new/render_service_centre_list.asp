@@ -1,4 +1,4 @@
-<!--#include file="libraries.asp" -->
+ï»¿<!--#include file="libraries.asp" -->
 <%
 Dim LIMIT, OFFSET, lang
 Dim objXml, lang_index
@@ -40,7 +40,7 @@ counter = 0
 <% if lang = 2 then %>
 <td width="168" background="img/header.gif" class="smallhead">Pusat Servis</td>
 <% elseif lang = 3 then %>
-<td width="168" background="img/header.gif" class="smallhead">·şÎñÖĞĞÄ</td>
+<td width="168" background="img/header.gif" class="smallhead">æœåŠ¡ä¸­å¿ƒ</td>
 <% else %>
 <td width="168" background="img/header.gif" class="smallhead">Service Centres</td>
 <% end if %>

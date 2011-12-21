@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article>
+	<en>
+		<title>Testing nbsp  &amp;nbsp;</title>
+		<content>&lt;p&gt;
+	&amp;amp;nbsp;&lt;/p&gt;
+</content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author></author>
+			<robots></robots>
+		</meta>
+	</en>
+	<bm>
+		<title>Testing nbsp</title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author></author>
+			<robots></robots>
+		</meta>
+	</bm>
+	<chi>
+		<title>Testing nbsp</title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author></author>
+			<robots></robots>
+		</meta>
+	</chi>
+</article>

@@ -1,5 +1,5 @@
-<!--#include file="libraries.asp" -->
-<%
+﻿<%
+' Dependancies: The parent file must included libraries before run this files '
 Dim LIMIT, OFFSET, lang, category_code
 Dim objXml, lang_index
 Dim prev_page, page, next_page
@@ -202,7 +202,7 @@ for each item in articlesObj
                 
         if LCASE(publish) = "true" then
             if index >= (page * OFFSET - OFFSET) then
-                %><li><a href="article.asp?article_id=<%= article_id %>&amp;title=<%= Replace(title, " ", "") %>" target="_top" title="<%= title %>"><%= title %></a></li><%
+                %><li><a href="article.asp?category_code=<%= category_code %>&amp;article_id=<%= article_id %>&amp;title=<%= Replace(title, " ", "") %>" target="_top" title="<%= title %>"><%= title %></a></li><%
                 counter = counter + 1
             end if
             index = index + 1

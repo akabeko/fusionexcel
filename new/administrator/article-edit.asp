@@ -105,6 +105,16 @@ end if
 <script type="text/javascript">
 	$(function() {
 		$('#tabs').tabs();
+        $('.url-category').change(function() {
+            var base_url = $('#id-preview-url').attr('data-base-url');
+            $('#id-preview-url').val(base_url + "&" + $(this).val());
+            $('#id-preview-url').focus();
+            $('#id-preview-url').select();
+        });
+        $('#id-preview-url').click(function(){
+            $(this).focus();
+            $(this).select();
+        });
 		$('#id_title, #id_content, #id_meta_description, #id_meta_keywords, #id_meta_robots, #id_meta_author').blur(function() {
 			var id_chi = "#" + $(this).attr('id') + "_chi";
 			var id_bm = "#" + $(this).attr('id') + "_bm";
@@ -178,7 +188,7 @@ end if
 		</tr>
 		<tr>
 			<td><label for="id_publish_start_date">Start Publish Date</label>:</td>
-			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= publish_start_date %>" /></td>
+			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= publish_start_date %>" readonly="readonly" /></td>
 			<td></td>
 			<td></td>
 		</tr>
@@ -330,6 +340,21 @@ end if
 	</div>
 
 	<br clear="both" />
+    <label>Preview Url:</label>
+    <input type="text" size="100" id="id-preview-url" data-base-url="<%= root_url & base_url & "article.asp?id=" & Request("id") %>" value="<%= root_url & base_url & "article.asp?id=" & Request("id") %>" readonly="readonly" />
+    <br />
+    <%
+        categories = getCategoriesList()
+        For index = 0 to UBound(categories, 2)
+            if categories(1, index) <> "" then
+            %>
+                <input type="radio" name="url-category" class="url-category" id="id_url_category_<%= categories(0, index) %>" value="category_code=<%= categories(0, index) %>" />
+                <label style="font-weight: normal" for="id_url_category_<%= categories(0, index) %>"><%= categories(1, index) %></label>
+            <%
+            end if
+        Next
+    %>
+    <br /><br clear="both" />
 	<div>
 		<input type="submit" name="submit" value="<% if Request("action") = "edit" then %>Update<% else %>Add<% end if %>" />
         <input type="button" name="back" value="Cancel" onclick="window.location = 'article.asp'" />

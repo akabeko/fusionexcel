@@ -57,6 +57,18 @@ Function GetIndexedSCsPath()
     GetIndexedSCsPath = GetDataPath() & service_centres_indexed_xml
 End Function
 
+Function GetLinksDbPath()
+    GetLinksDbPath = GetDataPath() & links_db
+End Function
+
+Function GetLinkPath(path)
+    GetLinkPath = GetDataPath() & links_path & path
+End Function
+
+Function GetIndexedLinksPath()
+    GetIndexedLinksPath = GetDataPath() & links_indexed_xml
+End Function
+
 ' Get indexed folder path, with parameters of the indexed file name '
 ' Filename pattern = category_id + xml extension '
 Function GetIndexedPath(filename)
@@ -163,9 +175,21 @@ Function ReindexData(category_code)
     Do While not RecordSet.EOF
         file.WriteLine "<article id='" & RecordSet.Fields("article_id") &"'>"
         file.WriteLine "<article_id>" & RecordSet.Fields("article_id") & "</article_id>"
-        file.WriteLine "<title lang='en'>" & Server.HTMLEncode(RecordSet.Fields("title")) & "</title>"
-        file.WriteLine "<title lang='bm'>" & Server.HTMLEncode(RecordSet.Fields("title_bm")) & "</title>"
-        file.WriteLine "<title lang='chi'>" & Server.HTMLEncode(RecordSet.Fields("title_chi")) & "</title>"
+        file.WriteLine "<title lang='en'>"
+        if RecordSet.Fields("title") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("title"))
+        end if
+        file.WriteLine "</title>"
+        file.WriteLine "<title lang='bm'>"
+        if RecordSet.Fields("title_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("title_bm"))
+        end if
+        file.WriteLine "</title>"
+        file.WriteLine "<title lang='chi'>"
+        if RecordSet.Fields("title_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("title_chi"))
+        end if
+        file.WriteLine "</title>"
         file.WriteLine "<index_image_url>" & RecordSet.Fields("index_image_url") & "</index_image_url>"
         file.WriteLine "<publish>" & RecordSet.Fields("publish") & "</publish>"
         file.WriteLine "<publish_start_date>" & RecordSet.Fields("publish_start_date") & "</publish_start_date>"
@@ -281,15 +305,35 @@ Function ReindexServiceCentres()
     Do While not RecordSet.EOF
         file.WriteLine "<service_centre id='" & RecordSet.Fields("service_centre_id") &"'>"
         file.WriteLine "<service_centre_id>" & RecordSet.Fields("service_centre_id") & "</service_centre_id>"
-        file.WriteLine "<country_name lang='en'>" & Server.HTMLEncode(RecordSet.Fields("country_name")) & "</country_name>"
-        file.WriteLine "<country_name lang='bm'>" & Server.HTMLEncode(RecordSet.Fields("country_name_bm")) & "</country_name>"
-        file.WriteLine "<country_name lang='chi'>" & Server.HTMLEncode(RecordSet.Fields("country_name_chi")) & "</country_name>"
+        file.WriteLine "<country_name lang='en'>"
+        if RecordSet.Fields("country_name") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("country_name"))
+        end if
+        file.WriteLine "</country_name>"
+        file.WriteLine "<country_name lang='bm'>"
+        if RecordSet.Fields("country_name_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("country_name_bm"))
+        end if
+        file.WriteLine "</country_name>"
+        file.WriteLine "<country_name lang='chi'>"
+        if RecordSet.Fields("country_name_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("country_name_chi"))
+        end if
+        file.WriteLine "</country_name>"
         file.WriteLine "<is_main>" & RecordSet.Fields("is_main") & "</is_main>"
         file.WriteLine "<content_filename>" & RecordSet.Fields("content_filename") & "</content_filename>"
         file.WriteLine "</service_centre>"
 		RecordSet.MoveNext 
     Loop
     file.WriteLine "</service_centres>"
+End Function
+
+Function ReindexLinks()
+    'TODO: Reindex Links Data'
+End Function
+
+Function getLatestLinksSequence()
+
 End Function
 
 loadCategoryRef()

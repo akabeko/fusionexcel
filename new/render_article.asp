@@ -1,8 +1,15 @@
 <%
 ' Libraries and others param define on the parent files '
 Dim LIMIT, OFFSET, objXml
+Dim category_code
 
-set objXml = GetIndexedArticles()
+category_code = 1
+
+if Request("category_code") <> "" and IsNumeric(Request("category_code")) then
+    category_code = CInt(Request("category_code"))
+end if
+
+set objXml = GetIndexedArticles(category_code)
 set articlesObj = objXml.selectNodes("articles/article")
 Dim index_image_url, title, publish, publish_start_date, article_id_local, category_code_local
 Dim counter
@@ -91,7 +98,13 @@ next
 <td width="740" valign="top">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
 <tr>
+<% if category_code = 2 then %>
+<td><img src="img/banner_charities.jpg" width="740" height="170" /></td>
+<% elseif category_code = 4 then %>
+<td><img src="img/banner_sponsor.jpg" width="740" height="170" /></td>
+<% else %>
 <td><img src="img/banner_news.jpg" width="740" height="170" /></td>
+<% end if %>
 </tr>
 <tr>
 <td height="8"></td>

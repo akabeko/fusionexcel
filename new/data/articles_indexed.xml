@@ -1,31 +1,272 @@
 <?xml version='1.0' encoding='utf-8'?>
 <articles>
-<article id='1'>
-<article_id>1</article_id>
-<title lang='en'>FE Sponsors RM 36,000 Towards World Lupus Day 2011 'Walkathon-a-Payung'!</title>
-<title lang='bm'></title>
-<title lang='chi'></title>
+<article id='719'>
+<article_id>719</article_id>
+<title lang='en'>FE Sponsors 11-11-11 Birthday Bash Event, Penang!</title>
+<title lang='bm'>FusionExcel Menaja Acara Perjumpaan Hari Jadi 11-11-11, Penang!</title>
+<title lang='chi'>FusionExcel School Of Networking (SON) Chinese, Port Dickson!</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>1014</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111014</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>719.xml</content_filename>
+</article>
+<article id='53'>
+<article_id>53</article_id>
+<title lang='en'>Achievers Recognition Dinner MAEPS 18th December 2011. (1)</title>
+<title lang='bm'>Scott Smith, Current World Long Drive Record Holder 539 Yards.</title>
+<title lang='chi'>Scott Smith, Current World Long Drive Record Holder 539 Yards.</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/11/20</publish_start_date>
+<sequence>1012</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111012</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>53.xml</content_filename>
+</article>
+<article id='124'>
+<article_id>124</article_id>
+<title lang='en'>FE Sponsors RM 83,055 Towards Battle 21 International 2011!</title>
+<title lang='bm'>FE Expands in the Philippines.</title>
+<title lang='chi'>FE Expands in the Philippines.</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/11/10</publish_start_date>
+<sequence>1011</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111011</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>124.xml</content_filename>
+</article>
+<article id='49'>
+<article_id>49</article_id>
+<title lang='en'>FE Davao's Achiever's Recognition Night!</title>
+<title lang='bm'>Lance Reader 2008 Long Drive Golf Senior Champion .</title>
+<title lang='chi'>Lance Reader 2008 Long Drive Golf Senior Champion .</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/11/9</publish_start_date>
+<sequence>1008</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111008</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>49.xml</content_filename>
+</article>
+<article id='754'>
+<article_id>754</article_id>
+<title lang='en'>Quantum Pendant Demos.</title>
+<title lang='bm'>Quantum Pendant Demos.</title>
+<title lang='chi'>Quantum Pendant Demos.</title>
 <index_image_url></index_image_url>
 <publish>True</publish>
 <publish_start_date></publish_start_date>
-<sequence>1</sequence>
+<sequence>1007</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20110001</sequence_indexed>
+<sequence_indexed>20111007</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>1.xml</content_filename>
+<content_filename></content_filename>
 </article>
-<article id='14'>
-<article_id>14</article_id>
-<title lang='en'>Testing Only</title>
-<title lang='bm'>Testing Only</title>
-<title lang='chi'>Testing Only</title>
+<article id='47'>
+<article_id>47</article_id>
+<title lang='en'>Hari Raya Open House 11th November 2006.</title>
+<title lang='bm'>Shalin Zulkifli, World Bowling Champion.</title>
+<title lang='chi'>Shalin Zulkifli, World Bowling Champion.</title>
+<index_image_url>/images/congratulation.jpg</index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/11/9</publish_start_date>
+<sequence>1006</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111006</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>47.xml</content_filename>
+</article>
+<article id='43'>
+<article_id>43</article_id>
+<title lang='en'>Hari Raya Open House 11th November 2006.</title>
+<title lang='bm'>FusionExcel's Welcome Day, Saturday, 20th January 2007 is Packed with Participants. Congratulations! Special Guest: Mr. Malek Noor (Champion Body Builder).</title>
+<title lang='chi'>FusionExcel's Welcome Day, Saturday, 20th January 2007 is Packed with Participants. Congratulations! Special Guest: Mr. Malek Noor (Champion Body Builder).</title>
+<index_image_url>/images/welcomeday02.jpg</index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/11/9</publish_start_date>
+<sequence>1005</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111005</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>43.xml</content_filename>
+</article>
+<article id='48'>
+<article_id>48</article_id>
+<title lang='en'>Deepavali Open House, 05th November 2006.</title>
+<title lang='bm'>Sales Cancellations Policy.</title>
+<title lang='chi'>Sales Cancellations Policy.</title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date></publish_start_date>
-<sequence>2</sequence>
+<publish_start_date>2011/11/9</publish_start_date>
+<sequence>1004</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20110002</sequence_indexed>
+<sequence_indexed>20111004</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>14.xml</content_filename>
+<content_filename>48.xml</content_filename>
 </article>
-</articles>
+<article id='30'>
+<article_id>30</article_id>
+<title lang='en'>Quantum Pendant Demos.</title>
+<title lang='bm'>FE Manila Philippines Celebrates 4th Anniversary !</title>
+<title lang='chi'>FE Manila Philippines Celebrates 4th Anniversary !</title>
+<index_image_url>/images/home_26102011.jpg</index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/10/28</publish_start_date>
+<sequence>1003</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111003</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>30.xml</content_filename>
+</article>
+<article id='50'>
+<article_id>50</article_id>
+<title lang='en'>Quantum Pendant Demos.</title>
+<title lang='bm'>FusionExcel Super Bowling League.</title>
+<title lang='chi'>FusionExcel Super Bowling League.</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/11/9</publish_start_date>
+<sequence>1002</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111002</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>50.xml</content_filename>
+</article>
+<article id='741'>
+<article_id>741</article_id>
+<title lang='en'>123 FE Rises To The Occasion For Typhoon Ondoy Victims !</title>
+<title lang='bm'>FE Rises To The Occasion For Typhoon Ondoy Victims !</title>
+<title lang='chi'>FE Rises To The Occasion For Typhoon Ondoy Victims !</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>723</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110723</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>741.xml</content_filename>
+</article>
+<article id='740'>
+<article_id>740</article_id>
+<title lang='en'>FusionExcel's Social Entrepreneur Program Taking Root!</title>
+<title lang='bm'>FusionExcel's Social Entrepreneur Program Taking Root!</title>
+<title lang='chi'>FusionExcel's Social Entrepreneur Program Taking Root!</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>722</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110722</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>740.xml</content_filename>
+</article>
+<article id='739'>
+<article_id>739</article_id>
+<title lang='en'>FusionExcel Welcomes VIP Quantum Pendant User, Menteri Besar (Chief Minister) of Pahang,  YAB Dato' Seri Hj Adnan B. Hj Yaakob!</title>
+<title lang='bm'>FusionExcel Welcomes VIP Quantum Pendant User, Menteri Besar (Chief Minister) of Pahang,  YAB Dato' Seri Hj Adnan B. Hj Yaakob!</title>
+<title lang='chi'>FusionExcel Welcomes VIP Quantum Pendant User, Menteri Besar (Chief Minister) of Pahang,  YAB Dato' Seri Hj Adnan B. Hj Yaakob!</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>721</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110721</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>739.xml</content_filename>
+</article>
+<article id='738'>
+<article_id>738</article_id>
+<title lang='en'>Test test test FusionExcel Achievers Recognition Dinner, Jakarta, 09th September 2009!</title>
+<title lang='bm'>FusionExcel Achievers Recognition Dinner, Jakarta, 09th September 2009!</title>
+<title lang='chi'>FusionExcel Achievers Recognition Dinner, Jakarta, 09th September 2009!</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>720</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110720</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>738.xml</content_filename>
+</article>
+<article id='737'>
+<article_id>737</article_id>
+<title lang='en'>FusionExcel Sponsors Movie </title>
+<title lang='bm'>FusionExcel Sponsors Movie</title>
+<title lang='chi'>FusionExcel Sponsors Movie</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>719</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110719</sequence_indexed>
+<category_code>5</category_code>
+<content_filename>737.xml</content_filename>
+</article>
+<article id='736'>
+<article_id>736</article_id>
+<title lang='en'>FusionExcel Making Waves In Manila! (2)</title>
+<title lang='bm'>FusionExcel Making Waves In Manila! (2)</title>
+<title lang='chi'>FusionExcel Making Waves In Manila! (2)</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>718</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110718</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>736.xml</content_filename>
+</article>
+<article id='735'>
+<article_id>735</article_id>
+<title lang='en'>FusionExcel Making Waves In Manila! (1)</title>
+<title lang='bm'>FusionExcel Making Waves In Manila! (1)</title>
+<title lang='chi'>FusionExcel Making Waves In Manila! (1)</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>717</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110717</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>735.xml</content_filename>
+</article>
+<article id='734'>
+<article_id>734</article_id>
+<title lang='en'>FE Making Waves In Davao City, Philippines! (2)</title>
+<title lang='bm'>FE Making Waves In Davao City, Philippines! (2)</title>
+<title lang='chi'>FE Making Waves In Davao City, Philippines! (2)</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>716</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110716</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>734.xml</content_filename>
+</article>
+<article id='733'>
+<article_id>733</article_id>
+<title lang='en'>FusionExcel Making Waves In Davao City, Philippines! (1)</title>
+<title lang='bm'>FusionExcel Making Waves In Davao City, Philippines! (1)</title>
+<title lang='chi'>FusionExcel Making Waves In Davao City, Philippines! (1)</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>2011/12/10</publish_start_date>
+<sequence>715</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20110715</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>733.xml</content_filename>
+</article>
+<article id='732'>
+<article_id>732</article_id>
+<title lang='en'>Watch Video Quantum Pendant Wearer Champion Athlete Daniel Kiss Of Hungary Win 110m Hurdles Heat, 2009 World Athletics Championships, Berlin!</title>
+<title lang='bm'>Watch Video Quantum Pendant Wearer Champion Athlete Daniel Kiss Of Hungary Win 110m Hurdles Heat, 2009 World Athletics Championships, Berlin!</title>
