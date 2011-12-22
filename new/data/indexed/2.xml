@@ -14,9 +14,9 @@ Test Article
 <index_image_url></index_image_url>
 <publish>True</publish>
 <publish_start_date></publish_start_date>
-<sequence>1027</sequence>
+<sequence>1043</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111027</sequence_indexed>
+<sequence_indexed>20111043</sequence_indexed>
 <category_code>6</category_code>
 <content_filename>782.xml</content_filename>
 </article>
@@ -34,9 +34,9 @@ Scott Smith, Current World Long Drive Record Holder 539 Yards.
 <index_image_url></index_image_url>
 <publish>True</publish>
 <publish_start_date>2011/11/20</publish_start_date>
-<sequence>1024</sequence>
+<sequence>1040</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111024</sequence_indexed>
+<sequence_indexed>20111040</sequence_indexed>
 <category_code>7</category_code>
 <content_filename>53.xml</content_filename>
 </article>
@@ -54,9 +54,9 @@ Lance Reader 2008 Long Drive Golf Senior Champion .
 <index_image_url></index_image_url>
 <publish>True</publish>
 <publish_start_date>2011/11/9</publish_start_date>
-<sequence>1020</sequence>
+<sequence>1036</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111020</sequence_indexed>
+<sequence_indexed>20111036</sequence_indexed>
 <category_code>7</category_code>
 <content_filename>49.xml</content_filename>
 </article>
@@ -442,25 +442,6 @@ FE Donates 100,000 Baht to Anonymous Warriors Association 333 Thailand
 <sequence_indexed>20110513</sequence_indexed>
 <category_code>3</category_code>
 <content_filename>529.xml</content_filename>
-</article>
-<article id='483'>
-<article_id>483</article_id>
-<title lang='en'>
-FE Donates RM 20,000 to Women's Aid Organisation!
-</title>
-<title lang='bm'>
-FE Donates RM 20,000 to Women's Aid Organisation!
-</title>
-<title lang='chi'>
-</title>
-<index_image_url></index_image_url>
-<publish>True</publish>
-<publish_start_date>2011/12/1</publish_start_date>
-<sequence>467</sequence>
-<order_year>2011</order_year>
-<sequence_indexed>20110467</sequence_indexed>
-<category_code>3</category_code>
-<content_filename>483.xml</content_filename>
 </article>
 <article id='475'>
 <article_id>475</article_id>
