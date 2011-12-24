@@ -45,7 +45,18 @@ for each item in articlesObj
         
         if (((category_code \ this_category_code) mod 2) = 1) then
             if LCASE(publish) = "true" then
-                if (IsDate(publish_start_date) and CDate(publish_start_date) < now()) or publish_start_date = "" then
+                Dim is_publish
+                is_publish = true
+                if publish_start_date <> "" then
+                    if IsDate(publish_start_date) then
+                        if CDate(publish_start_date) < now() then
+                            is_publish = true
+                        else
+                            is_publish = false
+                        end if
+                    end if
+                end if
+                if is_publish  then
                     %>
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tbody>

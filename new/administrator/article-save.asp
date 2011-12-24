@@ -10,7 +10,7 @@ Session.CodePage = 65001
 <%
 
 Dim sql, article_id, RecordSet, uploadsDirVar
-uploadsDirVar = Server.MapPath("/images/")
+uploadsDirVar = Server.MapPath("/images/article/index/")
 
 if Session("login") = "" then
     Response.Redirect "login.asp"
@@ -153,7 +153,11 @@ Function SaveFiles(article_id)
             file.WriteLine Server.HTMLEncode(Upload.Form("title"))
         end if
         file.WriteLine "</title>"
-        file.WriteLine "<content>" & Upload.Form("content") & "</content>"
+        file.WriteLine "<content>"
+        if Upload.Form("content") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("content"))
+        end if
+        file.WriteLine "</content>"
         file.WriteLine "<meta>"
         file.WriteLine "<description>"
         if Upload.Form("meta_description") <> "" then
@@ -183,7 +187,11 @@ Function SaveFiles(article_id)
             file.WriteLine Server.HTMLEncode(Upload.Form("title_bm"))
         end if
         file.WriteLine "</title>"
-        file.WriteLine "<content>" & Upload.Form("content_bm") & "</content>"
+        file.WriteLine "<content>"
+        if Upload.Form("content_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("content_bm"))
+        end if
+        file.WriteLine "</content>"
         file.WriteLine "<meta>"
         file.WriteLine "<description>"
         if Upload.Form("meta_description_bm") <> "" then
@@ -213,7 +221,11 @@ Function SaveFiles(article_id)
             file.WriteLine Server.HTMLEncode(Upload.Form("title_chi"))
         end if
         file.WriteLine "</title>"
-        file.WriteLine "<content>" & Upload.Form("content_chi") & "</content>"
+        file.WriteLine "<content>"
+        if Upload.Form("content_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(Upload.Form("content_chi"))
+        end if
+        file.WriteLine "</content>"
         file.WriteLine "<meta>"
         file.WriteLine "<description>"
         if Upload.Form("meta_description_chi") <> "" then

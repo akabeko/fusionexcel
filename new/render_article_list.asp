@@ -120,6 +120,16 @@ next
 <td><img src="img/banner_charities.jpg" width="740" height="170" /></td>
 <% elseif category_code = 4 then %>
 <td><img src="img/banner_sponsor.jpg" width="740" height="170" /></td>
+<% elseif category_code = 8 then %>
+<td><img src="img/banner_companyspokesmen.jpg" width="740" height="170" /></td>
+<% elseif category_code = 16 then %>
+<td><img src="img/banner_corporate.jpg" width="740" height="170" /></td>
+<% elseif category_code = 32 then %>
+<td><img src="img/banner_testimonial.jpg" width="740" height="170" /></td>
+<% elseif category_code = 64 then %>
+<td><img src="img/banner_beauty.jpg" width="740" height="170" /></td>
+<% elseif category_code = 128 then %>
+<td><img src="img/banner_qc.jpg" width="740" height="170" /></td>
 <% else %>
 <td><img src="img/banner_news.jpg" width="740" height="170" /></td>
 <% end if %>

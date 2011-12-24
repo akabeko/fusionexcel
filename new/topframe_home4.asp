@@ -198,9 +198,9 @@ new showLocalTime("timecontainer", "server-asp", 0, "short")
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="38"><a href="faq.html" target="_top" class="menu">FAQ</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="70"><a href="corporate.html" target="_top" class="menu">Corporate</a></td>
+                <td width="70"><a href="news.asp?category_code=16" target="_top" class="menu">Corporate</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-              <td width="105"><a href="corporate_spokesman_jeandaniels.html" target="_top" class="menu">Spokespersons</a></td>
+                <td width="105"><a href="news.asp?category_code=8" target="_top" class="menu">Spokespersons</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="105"><a href="service_centres.asp" target="_top" class="menu">Service Centres</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>

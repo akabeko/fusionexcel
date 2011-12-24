@@ -14,51 +14,11 @@ Test Article
 <index_image_url></index_image_url>
 <publish>True</publish>
 <publish_start_date></publish_start_date>
-<sequence>1043</sequence>
+<sequence>1055</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111043</sequence_indexed>
+<sequence_indexed>20111055</sequence_indexed>
 <category_code>6</category_code>
 <content_filename>782.xml</content_filename>
-</article>
-<article id='53'>
-<article_id>53</article_id>
-<title lang='en'>
-Achievers Recognition Dinner MAEPS 18th December 2011. (1)
-</title>
-<title lang='bm'>
-Scott Smith, Current World Long Drive Record Holder 539 Yards.
-</title>
-<title lang='chi'>
-Scott Smith, Current World Long Drive Record Holder 539 Yards.
-</title>
-<index_image_url></index_image_url>
-<publish>True</publish>
-<publish_start_date>2011/11/20</publish_start_date>
-<sequence>1040</sequence>
-<order_year>2011</order_year>
-<sequence_indexed>20111040</sequence_indexed>
-<category_code>7</category_code>
-<content_filename>53.xml</content_filename>
-</article>
-<article id='49'>
-<article_id>49</article_id>
-<title lang='en'>
-FE Davao's Achiever's Recognition Night!
-</title>
-<title lang='bm'>
-Lance Reader 2008 Long Drive Golf Senior Champion .
-</title>
-<title lang='chi'>
-Lance Reader 2008 Long Drive Golf Senior Champion .
-</title>
-<index_image_url></index_image_url>
-<publish>True</publish>
-<publish_start_date>2011/11/9</publish_start_date>
-<sequence>1036</sequence>
-<order_year>2011</order_year>
-<sequence_indexed>20111036</sequence_indexed>
-<category_code>7</category_code>
-<content_filename>49.xml</content_filename>
 </article>
 <article id='289'>
 <article_id>289</article_id>

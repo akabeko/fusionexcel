@@ -258,7 +258,7 @@ Countries!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</DIV>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="41"><a href="faq.html" target="_top" class="menu">FAQ</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="80"><a href="corporate.html" target="_top" class="menu">Corporate</a></td>
+                <td width="80"><a href="news.asp?category_code=16" target="_top" class="menu">Corporate</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="117"><a href="service_centres.asp" target="_top" class="menu">Service Centres</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
