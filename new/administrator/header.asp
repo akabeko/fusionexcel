@@ -72,6 +72,9 @@ end if
                     <li>
                         <a href="under-construction.asp">User Admin Account</a>
                     </li>
+                    <li>
+                        <a href="logout.asp">Logout</a>
+                    </li>
 				</ul>
 			</div>
 		</div>

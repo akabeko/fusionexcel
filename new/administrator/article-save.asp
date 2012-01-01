@@ -150,33 +150,45 @@ Function SaveFiles(article_id)
         file.WriteLine "<en>"
         file.WriteLine "<title>"
         if Upload.Form("title") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("title"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
         file.WriteLine "<content>"
         if Upload.Form("content") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("content"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</content>"
         file.WriteLine "<meta>"
         file.WriteLine "<description>"
         if Upload.Form("meta_description") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_description"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</description>"
         file.WriteLine "<keyword>"
-        if Upload.Form("meta_description") <> "" then
+        if Upload.Form("meta_keywords") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_keywords"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</keyword>"
         file.WriteLine "<author>"
-        if Upload.Form("meta_description") <> "" then
+        if Upload.Form("meta_author") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_author"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</author>"
         file.WriteLine "<robots>"
-        if Upload.Form("meta_description") <> "" then
+        if Upload.Form("meta_robots") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_robots"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</robots>"
         file.WriteLine "</meta>"
@@ -184,33 +196,45 @@ Function SaveFiles(article_id)
         file.WriteLine "<bm>"
         file.WriteLine "<title>"
         if Upload.Form("title_bm") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("title_bm"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
         file.WriteLine "<content>"
         if Upload.Form("content_bm") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("content_bm"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</content>"
         file.WriteLine "<meta>"
         file.WriteLine "<description>"
         if Upload.Form("meta_description_bm") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_description_bm"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</description>"
         file.WriteLine "<keyword>"
-        if Upload.Form("meta_description_bm") <> "" then
+        if Upload.Form("meta_keywords_bm") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_keywords_bm"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</keyword>"
         file.WriteLine "<author>"
-        if Upload.Form("meta_description_bm") <> "" then
+        if Upload.Form("meta_author_bm") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_author_bm"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</author>"
         file.WriteLine "<robots>"
-        if Upload.Form("meta_description_bm") <> "" then
+        if Upload.Form("meta_robots_bm") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_robots_bm"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</robots>"
         file.WriteLine "</meta>"
@@ -218,33 +242,45 @@ Function SaveFiles(article_id)
         file.WriteLine "<chi>"
         file.WriteLine "<title>"
         if Upload.Form("title_chi") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("title_chi"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
         file.WriteLine "<content>"
         if Upload.Form("content_chi") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("content_chi"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</content>"
         file.WriteLine "<meta>"
         file.WriteLine "<description>"
         if Upload.Form("meta_description_chi") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_description_chi"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</description>"
         file.WriteLine "<keyword>"
-        if Upload.Form("meta_description_chi") <> "" then
+        if Upload.Form("meta_keywords_chi") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_keywords_chi"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</keyword>"
         file.WriteLine "<author>"
-        if Upload.Form("meta_description_chi") <> "" then
+        if Upload.Form("meta_author_chi") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_author_chi"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</author>"
         file.WriteLine "<robots>"
-        if Upload.Form("meta_description_chi") <> "" then
+        if Upload.Form("meta_robots_chi") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(Upload.Form("meta_robots_chi"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</robots>"
         file.WriteLine "</meta>"

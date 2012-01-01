@@ -25,7 +25,7 @@ Dim index_image_url, title, article_id, publish, publish_start_date, category_co
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<link href="/css/fe.css" rel="stylesheet" type="text/css">
+	<link href="css/fe.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%
@@ -61,7 +61,7 @@ for each item in articlesObj
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tbody>
                             <tr>
-                                <td height="35px" bgcolor="#e8edf0" class="fe2"><% if lang = 2 then %>Berita and Aktiviti<% elseif lang = 3 then %>新闻与活动<% else %>News &amp; Events<% end if %></td>
+                                <td height="35px" bgcolor="#e8edf0" class="fe2"><span style="margin-left: 10px;"><% if lang = 2 then %>Berita and Aktiviti<% elseif lang = 3 then %>新闻与活动<% else %>News &amp; Events<% end if %></span></td>
                             </tr>
                             <tr>
                                 <td>

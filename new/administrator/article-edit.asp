@@ -188,7 +188,7 @@ end if
 		</tr>
 		<tr>
 			<td><label for="id_publish_start_date">Start Publish Date</label>:</td>
-			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= publish_start_date %>" readonly="readonly" /></td>
+			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= Month(CDate(publish_start_date)) %>/<%= Day(CDate(publish_start_date)) %>/<%= Year(CDate(publish_start_date)) %>" readonly="readonly" /><a href="javascript:void(0)" onclick="$('#id_publish_start_date').val('');" style="font-size:9px;"><u>Clear</u></a></td>
 			<td></td>
 			<td></td>
 		</tr>

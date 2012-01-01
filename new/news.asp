@@ -26,6 +26,8 @@ end if
 <%if base_lang = 3 then %>量子美容肥皂<% elseif base_lang = 2 then %>Bar Kecantikan Kuantum<% else %>Testimonials (QBB)<% end if %>
 <% elseif Request("category_code") = "128" then %>
 <%if base_lang = 3 then %>宇宙天然能量充电器<% elseif base_lang = 2 then %>Pengecas Kuantum<% else %>Testimonials (QC)<% end if %>
+<% elseif Request("category_code") = "256" then %>
+<%if base_lang = 3 then %>产品<% elseif base_lang = 2 then %>Produk<% else %>Products<% end if %>
 <% else %>
 <%if base_lang = 3 then %>新闻与活动<% elseif base_lang = 2 then %>Berita dan Aktiviti<% else %>News &amp; Events<% end if %>
 <% end if %>
@@ -45,6 +47,8 @@ end if
 <%if base_lang = 3 then %>量子美容肥皂<% elseif base_lang = 2 then %>Bar Kecantikan Kuantum<% else %>Testimonials (QBB)<% end if %>
 <% elseif Request("category_code") = "128" then %>
 <%if base_lang = 3 then %>宇宙天然能量充电器<% elseif base_lang = 2 then %>Pengecas Kuantum<% else %>Testimonials (QC)<% end if %>
+<% elseif Request("category_code") = "256" then %>
+<%if base_lang = 3 then %>产品<% elseif base_lang = 2 then %>Produk<% else %>Products<% end if %>
 <% else %>
 <%if base_lang = 3 then %>新闻与活动<% elseif base_lang = 2 then %>Berita dan Aktiviti<% else %>News &amp; Events<% end if %>
 <% end if %>

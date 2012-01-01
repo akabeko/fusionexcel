@@ -177,17 +177,23 @@ Function ReindexData(category_code)
         file.WriteLine "<article_id>" & RecordSet.Fields("article_id") & "</article_id>"
         file.WriteLine "<title lang='en'>"
         if RecordSet.Fields("title") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("title"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
         file.WriteLine "<title lang='bm'>"
         if RecordSet.Fields("title_bm") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("title_bm"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
         file.WriteLine "<title lang='chi'>"
         if RecordSet.Fields("title_chi") <> "" then
+            file.WriteLine "<![CDATA["
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("title_chi"))
+            file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
         file.WriteLine "<index_image_url>" & RecordSet.Fields("index_image_url") & "</index_image_url>"

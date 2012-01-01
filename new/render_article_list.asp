@@ -36,10 +36,10 @@ counter = 0
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-bottom: 25px;">
 <tr>
 <td colspan="2">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #5A71AB">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #5A71AB;">
 <tbody>
 <tr>
 <td width="15px" background="img/header.gif"></td>
@@ -57,6 +57,26 @@ counter = 0
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>量子美容肥皂<% elseif lang = 2 then %>Bar Kecantikan Kuantum<% else %>Testimonials (QBB)<% end if %></td>
 <% elseif category_code = 128 then %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>宇宙天然能量充电器<% elseif lang = 2 then %>Pengecas Kuantum<% else %>Testimonials (QC)<% end if %></td>
+<% elseif category_code = 256 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>产品<% elseif lang = 2 then %>Produk<% else %>Product Registration<% end if %></td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#FFF" class="left-news">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="25px" height="30px" align="center" background="img/buttonbg_lightblue.gif">
+<img src="img/buttonbg_lightblue_icon.gif" width="15px" height="15px">
+</td>
+<td width="163px" background="img/buttonbg_lightblue.gif">
+<a href="products_registration.html">Product Registration</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="15px" background="img/header.gif"></td>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>产品<% elseif lang = 2 then %>Produk<% else %>Products<% end if %></td>
 <% else %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>新闻与活动<% elseif lang = 2 then %>Berita dan Aktiviti<% else %>News &amp; Events<% end if %></td>
 <% end if %>
@@ -130,6 +150,8 @@ next
 <td><img src="img/banner_beauty.jpg" width="740" height="170" /></td>
 <% elseif category_code = 128 then %>
 <td><img src="img/banner_qc.jpg" width="740" height="170" /></td>
+<% elseif category_code = 256 then %>
+<td><img src="img/banner_quantumscience.jpg" width="740" height="170" /></td>
 <% else %>
 <td><img src="img/banner_news.jpg" width="740" height="170" /></td>
 <% end if %>
@@ -151,7 +173,13 @@ next
 OFFSET = 50
 Dim total_record, total_page
 total_record = articlesObj.length
-total_page = Round(total_record / OFFSET, 0)
+total_page = total_record / OFFSET
+
+if total_page > Round(total_record / OFFSET, 0) then
+    total_page = total_page + 1
+end if
+
+total_page = Round(total_page, 0)
 
 if total_page = 0 and total_record > 1 then
     total_page = 1
@@ -194,6 +222,7 @@ end if
 <%
 Dim index
 index = 0
+counter = 0
 
 for each item in articlesObj
     category_code_local = CInt(item.childNodes(10).text)

@@ -40,7 +40,7 @@ set articleObj = getArticleContent(article_id & ".xml")
 <meta name="author" content="<% if articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/author").text <> "" then %><%= articleObj.item(0).selectSingleNode(lang_index_chr & "/meta/author").text %><% else %>FusionExcel International<% end if %>">
 <meta name="designer" content="KLHunter.com - Web Design Management" />
 <meta name="copyright" content="FusionExcel International ?All Rights Reserved" />
-<link href="/css/fe.css?1" rel="stylesheet" type="text/css">
+<link href="css/fe.css?1" rel="stylesheet" type="text/css">
 <style type="text/css">
 <!--
 body {
