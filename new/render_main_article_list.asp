@@ -25,7 +25,7 @@ Dim index_image_url, title, article_id, publish, publish_start_date, category_co
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<link href="css/fe.css" rel="stylesheet" type="text/css">
+	<link href="<%= GetFrontendCSSPath() %>fe.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%

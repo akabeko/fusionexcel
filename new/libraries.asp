@@ -12,6 +12,14 @@ Function GetDataPath()
 	GetDataPath = GetPath() & data_path
 End Function
 
+Function GetFrontendCSSPath()
+    GetFrontendCSSPath = GetPath() & frontend_css_folder_path
+End Function
+
+Function GetCKFinderPath()
+    GetCKFinderPath = GetPath() &  ckfinder_folder_path
+End Function
+
 ' Get category references xml file url '
 Function GetCategoryRefPath()
 	GetCategoryRefPath = GetDataPath() & category_ref_xml

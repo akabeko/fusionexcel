@@ -197,7 +197,17 @@ next
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
-<td valign="top"><strong><%= articleObj.item(0).selectSingleNode(lang_index_chr & "/title").text %></strong></td>
+<td valign="top"><strong>
+<% if articleObj.item(0).selectNodes(lang_index_chr & "/alt_title").length > 0 then %>
+<% if articleObj.item(0).selectSingleNode(lang_index_chr & "/alt_title").text <> "" then %>
+<%= articleObj.item(0).selectSingleNode(lang_index_chr & "/alt_title").text %>
+<% else %>
+<%= articleObj.item(0).selectSingleNode(lang_index_chr & "/title").text %>
+<% end if %>
+<% else %>
+<%= articleObj.item(0).selectSingleNode(lang_index_chr & "/title").text %>
+<% end if %>
+</strong></td>
 </tr>
 <tr>
 <td valign="top">&nbsp;</td>

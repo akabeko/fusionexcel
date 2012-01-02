@@ -164,28 +164,28 @@ end if
 		});
 		
 		CKEDITOR.replace('id_content', {
-			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
-			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
-			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
-			filebrowserUploadUrl: '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-			filebrowserImageUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
-			filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
+			filebrowserBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html',
+			filebrowserImageBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html?type=Images',
+			filebrowserFlashBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html?type=Flash',
+			filebrowserUploadUrl: '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Files',
+			filebrowserImageUploadUrl : '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
+			filebrowserFlashUploadUrl : '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
 		});
 		CKEDITOR.replace('id_content_bm', {
-			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
-			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
-			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
-			filebrowserUploadUrl: '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-			filebrowserImageUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
-			filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
+			filebrowserBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html',
+			filebrowserImageBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html?type=Images',
+			filebrowserFlashBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html?type=Flash',
+			filebrowserUploadUrl: '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Files',
+			filebrowserImageUploadUrl : '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
+			filebrowserFlashUploadUrl : '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
 		});
 		CKEDITOR.replace('id_content_chi', {
-			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
-			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
-			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
-			filebrowserUploadUrl: '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Files',
-			filebrowserImageUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
-			filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
+			filebrowserBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html',
+			filebrowserImageBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html?type=Images',
+			filebrowserFlashBrowseUrl: '<%= GetCKFinderPath() %>ckfinder.html?type=Flash',
+			filebrowserUploadUrl: '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Files',
+			filebrowserImageUploadUrl : '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
+			filebrowserFlashUploadUrl : '<%= GetCKFinderPath() %>core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
 		});
 	});
 	function trimNumber(s) {

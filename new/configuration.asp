@@ -1,4 +1,5 @@
 <%
+Dim ckfinder_folder_path, frontend_css_folder_path
 
 Dim root_url
 
@@ -42,4 +43,7 @@ article_indexed_xml = "articles_indexed.xml"
 service_centres_indexed_xml = "service_centres_indexed.xml"
 links_indexed_xml = "links.xml"
 
+
+ckfinder_folder_path = "js/ckfinder/"
+frontend_css_folder_path = "css/"
 %>
