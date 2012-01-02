@@ -175,9 +175,9 @@ new showLocalTime("timecontainer", "server-asp", 0, "short")
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="52"><a href="index.html" target="_top" class="menu">Home</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="72"><a href="products.html" target="_top"  class="menu">Products</a></td>
+                <td width="72"><a href="news.asp?category_code=256" target="_top"  class="menu">Products</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="98"><a href="testimonial_list.html" target="_top"  class="menu">Testimonials</a></td>
+                <td width="98"><a href="news.asp?category_code=32" target="_top"  class="menu">Testimonials</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="76"><a href="pricelist.html" target="_top" class="menu">Price List</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>

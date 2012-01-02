@@ -17,10 +17,18 @@ if Request("submit") = "Login" then
 	if not RecordSet.EOF then
 		Session("login") = username
 		Session.Timeout = 360
-        
-		Response.Redirect("Default.asp")
+        if Request("redirect_url") <> "" then
+            Response.Redirect(Request("redirect_url"))
+        else
+            Response.Redirect("Default.asp")
+        end if
 	else
-		Response.Redirect("login.asp?msg=") & Server.URLEncode("Invalid username or password")
+        Dim query_string
+        query_string = "msg=" & Server.URLEncode("Invalid username or password")
+        if Request("redirect_url") <> "" then
+            query_string = query_string & "&redirect_url=" & Server.URLEncode(Request("redirect_url"))
+        End if
+		Response.Redirect("login.asp?" & query_string)
 	end if
 	
 	call CloseRecordSet(RecordSet)

@@ -1,6 +1,8 @@
 <%
 if Session("login") = "" then
-	Response.Redirect("login.asp")
+    Dim redirect_url
+    redirect_url = "http://" & Request.ServerVariables("SERVER_NAME") & Request.ServerVariables("URL") & "?" & Request.Querystring
+	Response.Redirect("login.asp?redirect_url=" & Server.URLEncode(redirect_url))
 end if
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ZH" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -61,6 +63,10 @@ end if
 							<li><a href="article.asp?category_code=4">Sponsorship</a></li>
                             <li><a href="article.asp?category_code=8">Company Spokepersons</a></li>
                             <li><a href="article.asp?category_code=16">Technology Partners</a></li>
+                            <li><a href="article.asp?category_code=32">Testimonial (Quantum Pendant)</a></li>
+                            <li><a href="article.asp?category_code=64">Testimonial (Quantum Beauty Bar)</a></li>
+                            <li><a href="article.asp?category_code=128">Testimonial (Quantum Charger)</a></li>
+                            <li><a href="article.asp?category_code=256">Products</a></li>
 						</ul>
 					</li>
 					<li>

@@ -21,6 +21,7 @@ Dim publish, publish_start_date, index_image_url
 Dim title, content, meta_description, meta_keywords, meta_robots, meta_author
 Dim title_bm, content_bm, meta_description_bm, meta_keywords_bm, meta_robots_bm, meta_author_bm
 Dim title_chi, content_chi, meta_description_chi, meta_keywords_chi, meta_robots_chi, meta_author_chi
+Dim alt_title, alt_title_bm, alt_title_chi
 Dim sequence, order_year
 Dim category_code
 
@@ -54,6 +55,10 @@ if Request("action") = "" or Request("action") = "add" then
     meta_keywords_chi = Request("meta_keywords_chi")
     meta_robots_chi = Request("meta_robots_chi")
     meta_author_chi = Request("meta_author_chi")
+    
+    alt_title = Request("alt_title")
+    alt_title_bm = Request("alt_title_bm")
+    alt_title_chi = Request("alt_title_chi")
 elseif Request("action") = "edit" then
 	if Request("id") = "" or not IsNumeric(Request("id")) then
 		Response.Write "Invalid Article ID"
@@ -99,6 +104,16 @@ elseif Request("action") = "edit" then
         meta_keywords_chi = xmlContent.item(0).selectSingleNode("chi/meta/keyword").text
         meta_robots_chi = xmlContent.item(0).selectSingleNode("chi/meta/robots").text
         meta_author_chi = xmlContent.item(0).selectSingleNode("chi/meta/author").text
+        
+        if xmlContent.item(0).selectNodes("en/alt_title").length > 0 then
+            alt_title = xmlContent.item(0).selectSingleNode("en/alt_title").text
+        end if
+        if xmlContent.item(0).selectNodes("bm/alt_title").length > 0 then
+            alt_title_bm = xmlContent.item(0).selectSingleNode("bm/alt_title").text
+        end if
+        if xmlContent.item(0).selectNodes("chi/alt_title").length > 0 then
+            alt_title_chi = xmlContent.item(0).selectSingleNode("chi/alt_title").text
+        end if
     End if
 end if
 %>
@@ -148,7 +163,7 @@ end if
 			}
 		});
 		
-		CKEDITOR.replace('editor1', {
+		CKEDITOR.replace('id_content', {
 			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
 			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
 			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
@@ -156,7 +171,7 @@ end if
 			filebrowserImageUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
 			filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
 		});
-		CKEDITOR.replace('editor2', {
+		CKEDITOR.replace('id_content_bm', {
 			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
 			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
 			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
@@ -164,7 +179,7 @@ end if
 			filebrowserImageUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Images&currentFolder=/images/',
 			filebrowserFlashUploadUrl : '/js/ckfinder/core/connector/asp/connector.asp?command=QuickUpload&type=Flash'
 		});
-		CKEDITOR.replace('editor3', {
+		CKEDITOR.replace('id_content_chi', {
 			filebrowserBrowseUrl: '/js/ckfinder/ckfinder.html',
 			filebrowserImageBrowseUrl: '/js/ckfinder/ckfinder.html?type=Images',
 			filebrowserFlashBrowseUrl: '/js/ckfinder/ckfinder.html?type=Flash',
@@ -230,9 +245,13 @@ end if
 						<td><label for="id_title">Title</label>:</td>
 						<td colspan="3"><input type="text" id="id_title" name="title" value="<%= title %>" maxlength="255" size="80" /></td>
 					</tr>
+                    <tr>
+                        <td><label for="id_alt_title">Alternate Title</label>:</td>
+						<td colspan="3"><input type="text" id="id_alt_title" name="alt_title" value="<%= alt_title %>" maxlength="255" size="80" /></td>
+                    </tr>
 				</table>
 				<br />
-				<textarea id="editor1" name="content" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content %></textarea>
+				<textarea id="id_content" name="content" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content %></textarea>
 			</div>
 			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -263,12 +282,16 @@ end if
 			<div style="width: 73%; float: left;" class="form_main_container">
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
 					<tr>
-						<td><label for="id_title">Title</label>:</td>
+						<td><label for="id_title_bm">Title</label>:</td>
 						<td colspan="3"><input type="text" id="id_title_bm" name="title_bm" value="<%= title_bm %>" maxlength="255" size="80" /></td>
 					</tr>
+                    <tr>
+                        <td><label for="id_alt_title_bm">Alternate Title</label>:</td>
+						<td colspan="3"><input type="text" id="id_alt_title_bm" name="alt_title_bm" value="<%= alt_title_bm %>" maxlength="255" size="80" /></td>
+                    </tr>
 				</table>
 				<br />
-				<textarea id="editor2" name="content_bm" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content_bm %></textarea>
+				<textarea id="id_content_bm" name="content_bm" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content_bm %></textarea>
 			</div>
 			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -299,12 +322,16 @@ end if
 			<div style="width: 73%; float: left;" class="form_main_container">
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">
 					<tr>
-						<td><label for="id_title">Title</label>:</td>
+						<td><label for="id_title_chi">Title</label>:</td>
 						<td colspan="3"><input type="text" id="id_title_chi" name="title_chi" value="<%= title_chi %>" maxlength="255" size="80" /></td>
 					</tr>
+                    <tr>
+                        <td><label for="id_alt_title_chi">Alternate Title</label>:</td>
+						<td colspan="3"><input type="text" id="id_alt_title_chi" name="alt_title_chi" value="<%= alt_title_chi %>" maxlength="255" size="80" /></td>
+                    </tr>
 				</table>
 				<br />
-				<textarea id="editor3" name="content_chi" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content_chi %></textarea>
+				<textarea id="id_content_chi" name="content_chi" rows="15" cols="80" style="width: 80%; border: 0px !important;"><%= content_chi %></textarea>
 			</div>
 			<div style="width: 25%; float: right; padding: 10px;" class="sidebar">
 				<table width="100%" cellpadding="0" cellspacing="0" border="0">

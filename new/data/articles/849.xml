@@ -1752,7 +1752,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title>swt</alt_title></en>
 	<bm>
 		<title>Read PBA Basketball Legend, Alvin Patrimonio's Testimonial.</title>
 		<content></content>
@@ -1762,7 +1762,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>Read PBA Basketball Legend, Alvin Patrimonio's Testimonial.</title>
 		<content></content>
@@ -1772,5 +1772,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

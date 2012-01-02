@@ -78,6 +78,11 @@ Function SaveFiles(article_id)
     if not Upload.Form("publish_start_date") = "" then
         RecordSet.Fields("publish_start_date") = upload.Form("publish_start_date")
     end if
+    
+    'Alternate Title - 2/1/2012'
+    RecordSet.Fields("alt_title") = Upload.Form("alt_title")
+    RecordSet.Fields("alt_title_bm") = Upload.Form("alt_title_bm")
+    RecordSet.Fields("alt_title_chi") = Upload.Form("alt_title_chi")
 	
     RecordSet.Fields("title") = Upload.Form("title")
     RecordSet.Fields("title_bm") = Upload.Form("title_bm")
@@ -139,6 +144,35 @@ Function SaveFiles(article_id)
         xmlContent.selectSingleNode("article/chi/meta/keyword").text = Upload.Form("meta_keywords_chi")
         xmlContent.selectSingleNode("article/chi/meta/author").text = Upload.Form("meta_author_chi")
         xmlContent.selectSingleNode("article/chi/meta/robots").text = Upload.Form("meta_robots_chi")
+        
+        'Alternate Title - 2/1/2012'
+        Dim alt_title_node, article_node
+        if xmlContent.selectNodes("article/en/alt_title").length > 0 then
+            xmlContent.selectSingleNode("article/en/alt_title").text = Upload.Form("alt_title")
+        else
+            set alt_title_node = xmlContent.createElement("alt_title")
+            alt_title_node.text = Upload.Form("alt_title")
+            set article_node = xmlContent.selectSingleNode("article/en")
+            article_node.appendChild(alt_title_node)
+        end if
+        
+        if xmlContent.selectNodes("article/bm/alt_title").length > 0 then
+            xmlContent.selectSingleNode("article/bm/alt_title").text = Upload.Form("alt_title_bm")
+        else
+            set alt_title_node = xmlContent.createElement("alt_title")
+            alt_title_node.text = Upload.Form("alt_title_bm")
+            set article_node = xmlContent.selectSingleNode("article/bm")
+            article_node.appendChild(alt_title_node)
+        end if
+        
+        if xmlContent.selectNodes("article/chi/alt_title").length > 0 then
+            xmlContent.selectSingleNode("article/chi/alt_title").text = Upload.Form("alt_title_chi")
+        else
+            set alt_title_node = xmlContent.createElement("alt_title")
+            alt_title_node.text = Upload.Form("alt_title_chi")
+            set article_node = xmlContent.selectSingleNode("article/chi")
+            article_node.appendChild(alt_title_node)
+        end if
         call saveArticleContent(xmlContent, RecordSet.Fields("content_filename"))
     else
         Dim fileStream, file, content_filename
@@ -155,6 +189,13 @@ Function SaveFiles(article_id)
             file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
+        file.WriteLine "<alt_title>"
+        if Upload.Form("alt_title") <> "" then
+            file.WriteLine "<![CDATA["
+            file.WriteLine Server.HTMLEncode(Upload.Form("alt_title"))
+            file.WriteLine "]]>"
+        end if
+        file.WriteLine "</alt_title>"
         file.WriteLine "<content>"
         if Upload.Form("content") <> "" then
             file.WriteLine "<![CDATA["
@@ -201,6 +242,13 @@ Function SaveFiles(article_id)
             file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
+        file.WriteLine "<alt_title>"
+        if Upload.Form("alt_title_bm") <> "" then
+            file.WriteLine "<![CDATA["
+            file.WriteLine Server.HTMLEncode(Upload.Form("alt_title_bm"))
+            file.WriteLine "]]>"
+        end if
+        file.WriteLine "</alt_title>"
         file.WriteLine "<content>"
         if Upload.Form("content_bm") <> "" then
             file.WriteLine "<![CDATA["
@@ -247,6 +295,13 @@ Function SaveFiles(article_id)
             file.WriteLine "]]>"
         end if
         file.WriteLine "</title>"
+        file.WriteLine "<alt_title>"
+        if Upload.Form("alt_title_chi") <> "" then
+            file.WriteLine "<![CDATA["
+            file.WriteLine Server.HTMLEncode(Upload.Form("alt_title_chi"))
+            file.WriteLine "]]>"
+        end if
+        file.WriteLine "</alt_title>"
         file.WriteLine "<content>"
         if Upload.Form("content_chi") <> "" then
             file.WriteLine "<![CDATA["

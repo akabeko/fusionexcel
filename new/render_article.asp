@@ -26,6 +26,49 @@ Dim counter
 <tbody>
 <tr>
 <td width="15px" background="img/header.gif"></td>
+<% if category_code >= 32 and category_code <= 128 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>见证篇<% elseif lang = 2 then %>Testimoni<% else %>Testimonials<% end if %></td>
+</tr>
+<td colspan="2" bgcolor="#FFF" class="left-news">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="25px" height="30px" align="center" background="img/buttonbg_lightblue.gif">
+<img src="img/buttonbg_lightblue_icon.gif" width="15px" height="15px">
+<td>
+<td width="163px" background="img/buttonbg_lightblue.gif">
+<a href="test_MLP.html"><% if lang = 3 then %>商家忠诚计划<% elseif lang = 2 then %>Program Kesetiaan Pedagang<% else %>Merchant Loyalty Program<% end if %></a>
+</td>
+</tr>
+<tr>
+<td width="25px" height="30px" align="center" background="img/buttonbg_lightblue.gif">
+<img src="img/buttonbg_lightblue_icon.gif" width="15px" height="15px">
+<td>
+<td width="163px" background="img/buttonbg_lightblue.gif">
+<a href="news.asp?category_code=32"><% if lang = 3 then %>宇宙天然能量石<% elseif lang = 2 then %>Loket Kuantum<% else %>Quantum Pendant<% end if %></a>
+</td>
+</tr>
+<tr>
+<td width="25px" height="30px" align="center" background="img/buttonbg_lightblue.gif">
+<img src="img/buttonbg_lightblue_icon.gif" width="15px" height="15px">
+<td>
+<td width="163px" background="img/buttonbg_lightblue.gif">
+<a href="news.asp?category_code=64"><% if lang = 3 then %>量子美容肥皂<% elseif lang = 2 then %>Bar Kecantikan Kuantum<% else %>Quantum Beautybar<% end if %></a>
+</td>
+</tr>
+<tr>
+<td width="25px" height="30px" align="center" background="img/buttonbg_lightblue.gif">
+<img src="img/buttonbg_lightblue_icon.gif" width="15px" height="15px">
+<td>
+<td width="163px" background="img/buttonbg_lightblue.gif">
+<a href="news.asp?category_code=128"><% if lang = 3 then %>宇宙天然能量充电器(QC)<% elseif lang = 2 then %>Pengecas Kuantum (QC)<% else %>Quantum Charger (QC)<% end if %></a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="15px" background="img/header.gif"></td>
+<% end if %>
 <% if category_code = 2 then %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>慈善活动<% elseif lang = 2 then %>Acara Amal<% else %>Charities<% end if %></td>
 <% elseif category_code = 4 then %>
@@ -40,6 +83,26 @@ Dim counter
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>量子美容肥皂<% elseif lang = 2 then %>Bar Kecantikan Kuantum<% else %>Testimonials (QBB)<% end if %></td>
 <% elseif category_code = 128 then %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>宇宙天然能量充电器<% elseif lang = 2 then %>Pengecas Kuantum<% else %>Testimonials (QC)<% end if %></td>
+<% elseif category_code = 256 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>产品注册<% elseif lang = 2 then %> Pendaftaran Produk<% else %>Product Registration<% end if %></td>
+</tr>
+<tr>
+<td colspan="2" bgcolor="#FFF" class="left-news">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="25px" height="30px" align="center" background="img/buttonbg_lightblue.gif">
+<img src="img/buttonbg_lightblue_icon.gif" width="15px" height="15px">
+</td>
+<td width="163px" background="img/buttonbg_lightblue.gif">
+<a href="products_registration.html"><% if lang = 3 then %>产品注册<% elseif lang = 2 then %>Pendaftaran Produk<% else %>Product Registration<% end if %></a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td width="15px" background="img/header.gif"></td>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>产品<% elseif lang = 2 then %>Produk<% else %>Products<% end if %></td>
 <% else %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>新闻与活动<% elseif lang = 2 then %>Berita dan Aktiviti<% else %>News &amp; Events<% end if %></td>
 <% end if %>
@@ -102,6 +165,18 @@ next
 <td><img src="img/banner_charities.jpg" width="740" height="170" /></td>
 <% elseif category_code = 4 then %>
 <td><img src="img/banner_sponsor.jpg" width="740" height="170" /></td>
+<% elseif category_code = 8 then %>
+<td><img src="img/banner_companyspokesmen.jpg" width="740" height="170" /></td>
+<% elseif category_code = 16 then %>
+<td><img src="img/banner_corporate.jpg" width="740" height="170" /></td>
+<% elseif category_code = 32 then %>
+<td><img src="img/banner_testimonial.jpg" width="740" height="170" /></td>
+<% elseif category_code = 64 then %>
+<td><img src="img/banner_beauty.jpg" width="740" height="170" /></td>
+<% elseif category_code = 128 then %>
+<td><img src="img/banner_qc.jpg" width="740" height="170" /></td>
+<% elseif category_code = 256 then %>
+<td><img src="img/banner_quantumscience.jpg" width="740" height="170" /></td>
 <% else %>
 <td><img src="img/banner_news.jpg" width="740" height="170" /></td>
 <% end if %>
