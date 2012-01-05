@@ -119,6 +119,20 @@ end if
 %>
 <script type="text/javascript">
 	$(function() {
+        <% if Request("success") = "1" then %>
+            $('#dialog').dialog({
+                autoOpen: true,
+                show: "fade",
+                hide: "fade",
+                modal: true,
+                resizeable: false,
+                buttons: {
+                    Ok: function() {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        <% end if %>
 		$('#tabs').tabs();
         $('.url-category').change(function() {
             var base_url = $('#id-preview-url').attr('data-base-url');
@@ -193,6 +207,11 @@ end if
 		return s;
 	}
 </script>
+<% if Request("success") = "1" then %>
+    <div id="dialog">
+        Data update successfully!
+    </div>
+<% end if %>
 <form method="POST" enctype="multipart/form-data" accept-charset="utf-8" class="input_form" action="article-save.asp?id=<%= article_id %>&amp;action=<%= Request("action") %>">
 	<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
@@ -203,7 +222,7 @@ end if
 		</tr>
 		<tr>
 			<td><label for="id_publish_start_date">Start Publish Date</label>:</td>
-			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<%= Month(CDate(publish_start_date)) %>/<%= Day(CDate(publish_start_date)) %>/<%= Year(CDate(publish_start_date)) %>" readonly="readonly" /><a href="javascript:void(0)" onclick="$('#id_publish_start_date').val('');" style="font-size:9px;"><u>Clear</u></a></td>
+			<td><input type="text" id="id_publish_start_date" name="publish_start_date" class="date" value="<% if publish_start_date <> "" then %><% if CDate(publish_start_date) then %><%= Month(CDate(publish_start_date)) %>/<%= Day(CDate(publish_start_date)) %>/<%= Year(CDate(publish_start_date)) %><% end if %><% end if %>" readonly="readonly" /><a href="javascript:void(0)" onclick="$('#id_publish_start_date').val('');" style="font-size:9px;"><u>Clear</u></a></td>
 			<td></td>
 			<td></td>
 		</tr>

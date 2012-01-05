@@ -1,4 +1,6 @@
 <%
+
+Dim maintenance
 Dim ckfinder_folder_path, frontend_css_folder_path
 
 Dim root_url
@@ -17,6 +19,8 @@ Dim category_ref_xml
 Dim article_indexed_xml
 Dim service_centres_indexed_xml
 Dim links_indexed_xml
+
+maintenance = 0
 
 base_lang = 1
 

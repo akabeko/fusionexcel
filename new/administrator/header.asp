@@ -1,4 +1,7 @@
 <%
+if maintenance = 1 then
+    Response.Redirect("maintenance.asp")
+end if
 if Session("login") = "" then
     Dim redirect_url
     redirect_url = "http://" & Request.ServerVariables("SERVER_NAME") & Request.ServerVariables("URL") & "?" & Request.Querystring

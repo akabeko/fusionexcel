@@ -90,20 +90,6 @@ Function SaveFiles(article_id)
 	RecordSet.Fields("modified_by") = Session("login")
     RecordSet.Fields("modified") = Now()
     
-    Dim OrderRecordSet
-    sql = "SELECT COUNT(1) AS 'counter' FROM article WHERE order_year = " & upload.Form("order_year") & " AND sequence = " & upload.Form("sequence")
-    call CreateRecordSet(OrderRecordSet, sql)
-    if OrderRecordSet.Fields("'counter'") > 0 then
-        If Upload.Form("submit") = "Add" then
-            sql = "UPDATE article SET sequence = sequence + 1, sequence_indexed = Val(format(order_year) + '' + format(sequence + 1, '0000')) WHERE order_year = " & upload.form("order_year")
-        else
-			if not sameSequence or not sameOrderYear then
-				sql = "UPDATE article SET sequence = sequence + 1, sequence_indexed = Val(format(order_year) + '' + format(sequence + 1, '0000')) WHERE order_year = " & Upload.Form("order_year") & " AND sequence >= " & Upload.Form("sequence")
-				call ExecuteQuery(sql)
-			end if
-		end if		
-	end if
-    
     RecordSet.Fields("sequence") = Upload.Form("sequence")
 	RecordSet.Fields("order_year") = Upload.Form("order_year")    
     RecordSet.Fields("sequence_indexed") = Upload.Form("order_year") & "" & PadDigits(Upload.Form("sequence"), 4)
@@ -349,6 +335,21 @@ Function SaveFiles(article_id)
     
     call CloseRecordSet(RecordSet)
     
+    Dim OrderRecordSet
+    sql = "SELECT COUNT(1) AS 'counter' FROM article WHERE order_year = " & upload.Form("order_year") & " AND sequence = " & upload.Form("sequence") & " AND NOT (article_id = " & article_id & ")"
+    call CreateRecordSet(OrderRecordSet, sql)
+    if OrderRecordSet.Fields("'counter'") > 0 then
+        If Upload.Form("submit") = "Add" then
+            sql = "UPDATE article SET sequence = sequence + 1, sequence_indexed = Val(format(order_year) + '' + format(sequence + 1, '0000')) WHERE order_year = " & upload.form("order_year") & " AND NOT (article_id = " & article_id & ")"
+        else
+			if not sameSequence or not sameOrderYear then
+				sql = "UPDATE article SET sequence = sequence + 1, sequence_indexed = Val(format(order_year) + '' + format(sequence + 1, '0000')) WHERE order_year = " & Upload.Form("order_year") & " AND sequence >= " & Upload.Form("sequence") & " AND NOT (article_id = " & article_id & ")"
+				call ExecuteQuery(sql)
+			end if
+		end if		
+	end if
+    Call CloseRecordSet(OrderRecordSet)
+    
     Dim categories, index
     categories = getCategoriesList()
     For index = 0 to UBound(categories, 2)
@@ -357,6 +358,6 @@ Function SaveFiles(article_id)
         end if
     Next
     
-    Response.Redirect("article-edit.asp?action=edit&id=" & article_id)
+    Response.Redirect("article-edit.asp?action=edit&success=1&id=" & article_id)
 End Function
 %>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<article>
+<en>
+<title>Test Article</title>
+<content><p>
+	Test Article</p>
+</content>
+<meta>
+<description></description>
+<keyword></keyword>
+<author></author>
+<robots></robots>
+</meta>
+</en>
+<bm>
+<title>Test Article</title>
+<content></content>
+<meta>
+<description></description>
+<keyword></keyword>
+<author></author>
+<robots></robots>
+</meta>
+</bm>
+<chi>
+<title>Test Article</title>
+<content></content>
+<meta>
+<description></description>
+<keyword></keyword>
+<author></author>
+<robots></robots>
+</meta>
+</chi>
+</article>

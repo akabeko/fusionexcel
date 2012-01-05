@@ -74,6 +74,29 @@ end if
                 return false;
             }
         });
+        $("#id_article_name").keyup(function() {
+            
+            $.ajax({
+                dataType: 'xml', type: 'POST', url: 'ajax-article-search.asp',
+                data: $('#id_article_name').val(),
+                success: function(xmlResponse) {
+                    alert();
+                    var data = $("article", xmlResponse).map(function() {
+                        return {
+                            value: $("title", this).text(),
+                            id: $("article_id", this).text()
+                        };
+                    }).get();
+                    $("#id_article_name").autocomplete({
+                        source: data,
+                        minLength: 0,
+                        select: function(event, ui) {
+                        
+                        }
+                    });
+                }
+            });
+        });
     });
     function trimNumber(s) {
 		while (s.substr(0,1) == '0' && s.length > 1) { s = s.substr(1, 9999); }
@@ -92,7 +115,7 @@ end if
         <tr>
             <td><label>Article</label>:</td>
             <td>
-                <input type="text" name="article_name" id="id_article_name" value="<%= article_name %>" size="50" readonly="readonly" />
+                <input type="text" name="article_name" id="id_article_name" value="<%= article_name %>" size="50" />
                 <input type="hidden" name="article_id" id="id_article_id" value="<%= article_id %>" />
                 <input type="hidden" name="article_category_code" id="id_article_category_code" value="<%= article_category_code %>" />
                 <button>Search</button>

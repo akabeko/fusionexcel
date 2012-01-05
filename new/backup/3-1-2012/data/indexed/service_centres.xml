@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<service_centres>
+<service_centre id='1'>
+<service_centre_id>1</service_centre_id>
+<country_name lang='en'>
+Malaysia
+</country_name>
+<country_name lang='bm'>
+Malaysia
+</country_name>
+<country_name lang='chi'>
+Malaysia
+</country_name>
+<is_main>True</is_main>
+<content_filename>1.xml</content_filename>
+</service_centre>
+</service_centres>

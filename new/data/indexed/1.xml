@@ -1,108 +1,1408 @@
 <?xml version='1.0' encoding='utf-8'?>
 <articles>
-<article id='854'>
-<article_id>854</article_id>
+<article id='913'>
+<article_id>913</article_id>
 <title lang='en'>
 <![CDATA[
-Test Article 4
+The School Of Networking 1 (Bahasa Malaysia), 26th July 2008
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-Test Article 4
+The School Of Networking 1 (Bahasa Malaysia), 26th July 2008
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Test Article 4
+The School Of Networking 1 (Bahasa Malaysia), 26th July 2008
 ]]>
 </title>
 <index_image_url></index_image_url>
-<publish>False</publish>
-<publish_start_date>1/1/2012</publish_start_date>
-<sequence>4</sequence>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1216</sequence>
 <order_year>2012</order_year>
-<sequence_indexed>20120004</sequence_indexed>
+<sequence_indexed>20121216</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>854.xml</content_filename>
+<content_filename>913.xml</content_filename>
 </article>
-<article id='853'>
-<article_id>853</article_id>
+<article id='912'>
+<article_id>912</article_id>
 <title lang='en'>
 <![CDATA[
-Test Article 3
+The School Of Networking 1 (Mandarin), 25th July 2008.
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-Test Article 3
+The School Of Networking 1 (Mandarin), 25th July 2008.
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Test Article 3
+The School Of Networking 1 (Mandarin), 25th July 2008.
 ]]>
 </title>
 <index_image_url></index_image_url>
-<publish>False</publish>
-<publish_start_date>1/1/2012</publish_start_date>
-<sequence>3</sequence>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1215</sequence>
 <order_year>2012</order_year>
-<sequence_indexed>20120003</sequence_indexed>
+<sequence_indexed>20121215</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>853.xml</content_filename>
+<content_filename>912.xml</content_filename>
 </article>
-<article id='852'>
-<article_id>852</article_id>
+<article id='911'>
+<article_id>911</article_id>
 <title lang='en'>
 <![CDATA[
-Test Article 2
+FE In The News In Thailand!
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-Test Article 2
+FE In The News In Thailand!
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Test Article 2
+FE In The News In Thailand!
 ]]>
 </title>
 <index_image_url></index_image_url>
-<publish>False</publish>
-<publish_start_date>1/3/2012</publish_start_date>
-<sequence>1</sequence>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1211</sequence>
 <order_year>2012</order_year>
-<sequence_indexed>20120001</sequence_indexed>
+<sequence_indexed>20121211</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>852.xml</content_filename>
+<content_filename>911.xml</content_filename>
 </article>
-<article id='850'>
-<article_id>850</article_id>
+<article id='910'>
+<article_id>910</article_id>
 <title lang='en'>
 <![CDATA[
-Test Article 1
+Congratulations To Quantum Pendant Wearer, Adrian Ang, Winner Men's Masters Gold Medal To Bowling Asian Championship, Hong Kong! 
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-Test Article 1
+Congratulations to QP Wearer, Adrian Ang, Winner Men's Masters Gold Medal t Bowling Asian Championship, Hong Kong! 
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Test Article 1
+Congratulations to QP Wearer, Adrian Ang, Winner Men's Masters Gold Medal t Bowling Asian Championship, Hong Kong! 
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1210</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121210</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>910.xml</content_filename>
+</article>
+<article id='909'>
+<article_id>909</article_id>
+<title lang='en'>
+<![CDATA[
+FE Creates Much Interest In Sri Lanka!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Creates Much Interest In Sri Lanka!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Creates Much Interest In Sri Lanka!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1209</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121209</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>909.xml</content_filename>
+</article>
+<article id='908'>
+<article_id>908</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, World Class Indonesian Badminton Player, Elizabeth Latief! 
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, World Class Indonesian Badminton Player, Elizabeth Latief! 
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, World Class Indonesian Badminton Player, Elizabeth Latief! 
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1208</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121208</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>908.xml</content_filename>
+</article>
+<article id='907'>
+<article_id>907</article_id>
+<title lang='en'>
+<![CDATA[
+Great News! FusionExcel Official Sponsor Of Selangor Football Team!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Great News! FusionExcel Official Sponsor Of Selangor Football Team!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Great News! FusionExcel Official Sponsor Of Selangor Football Team!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1207</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121207</sequence_indexed>
+<category_code>5</category_code>
+<content_filename>907.xml</content_filename>
+</article>
+<article id='906'>
+<article_id>906</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer Monsour Del Rosario, Filipino Tae Kwon Do Ambassador, Action Movie Superstar And Olympic Medalist.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer Monsour Del Rosario, Filipino Tae Kwon Do Ambassador, Action Movie Superstar And Olympic Medalist.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer Monsour Del Rosario, Filipino Tae Kwon Do Ambassador, Action Movie Superstar And Olympic Medalist.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date></publish_start_date>
+<sequence>1206</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121206</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>906.xml</content_filename>
+</article>
+<article id='905'>
+<article_id>905</article_id>
+<title lang='en'>
+<![CDATA[
+Photos FE Event Jakarta, Indonesia, 12th July 2008 (2).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Photos FE Event Jakarta, Indonesia, 12th July 2008 (2).
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Photos FE Event Jakarta, Indonesia, 12th July 2008 (2).
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1205</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121205</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>905.xml</content_filename>
+</article>
+<article id='904'>
+<article_id>904</article_id>
+<title lang='en'>
+<![CDATA[
+Photos FE Event Jakarta, Indonesia, 12th July 2008(1).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Photos FE Event Jakarta, Indonesia, (1).
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Photos FE Event Jakarta, Indonesia, (1).
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1204</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121204</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>904.xml</content_filename>
+</article>
+<article id='903'>
+<article_id>903</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer , China's Renowned Calligrahic Artist, Master Wen Lun. Master Wen Lun's Unique Style Of Calligraphy Is Featured Widely In The Chinese Media And Is On Display At The 2008 Beijing Olympics.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes QP Wearer , China's Renowned Calligrahic Artist, Master Wen Lun. Master Wen Lun's Unique Style of Calligraphy is Featured Widely In The Chinese Media And Is On Display At The 2008 Beijing Olympics.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes QP Wearer , China's Renowned Calligrahic Artist, Master Wen Lun. Master Wen Lun's Unique Style of Calligraphy is Featured Widely In The Chinese Media And Is On Display At The 2008 Beijing Olympics.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1203</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121203</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>903.xml</content_filename>
+</article>
+<article id='902'>
+<article_id>902</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, Taekwando Champ, Selva Muthu Ramasamy.  
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, Taekwando Champ, Selva Muthu Ramasamy.  
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, Taekwando Champ, Selva Muthu Ramasamy.  
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1202</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121202</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>902.xml</content_filename>
+</article>
+<article id='901'>
+<article_id>901</article_id>
+<title lang='en'>
+<![CDATA[
+FusionExcel Spokesman And Star Of Contender Asia, Zidov, At Headquarter BEP, 09th July 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FusionExcel Spokesman And Star Of Contender Asia, Zidov, At Headquarter BEP, 09th July 2008.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FusionExcel Spokesman And Star Of Contender Asia, Zidov, At Headquarter BEP, 09th July 2008.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1201</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121201</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>901.xml</content_filename>
+</article>
+<article id='900'>
+<article_id>900</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer, General Avelino Ignacio Razon Jr, Chief Of Philippines National Police! 
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer, General Avelino Ignacio Razon Jr, Chief Of Philippines National Police! 
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer, General Avelino Ignacio Razon Jr, Chief Of Philippines National Police! 
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1200</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121200</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>900.xml</content_filename>
+</article>
+<article id='899'>
+<article_id>899</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer Randy Santiago, Well Known Host Of Wowowee, Philippines Most Popular TV Variety Show!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer Randy Santiago, Well Known Host Of Wowowee, Philippines Most Popular TV Variety Show!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer Randy Santiago, Well Known Host Of Wowowee, Philippines Most Popular TV Variety Show!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1199</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121199</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>899.xml</content_filename>
+</article>
+<article id='898'>
+<article_id>898</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer, Hon. Eduardo Roquero, Mayor Of San Jose, Bulacan, Philippines! Photos Show FE Leader, Francis Yarra, Demonstrating FE's Quantum Pendant To Mayor Eduardo Roquero 
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer, Hon. Eduardo Roquero, Mayor Of San Jose, Bulacan, Philippines! Photos Show FE Leader, Francis Yarra, demonstrating FE's Quantum Pendant To Mayor Eduardo Roquero 
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum Pendants Wearer, Hon. Eduardo Roquero, Mayor Of San Jose, Bulacan, Philippines! Photos Show FE Leader, Francis Yarra, demonstrating FE's Quantum Pendant To Mayor Eduardo Roquero 
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1198</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121198</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>898.xml</content_filename>
+</article>
+<article id='897'>
+<article_id>897</article_id>
+<title lang='en'>
+<![CDATA[
+Photos SON 2, 4th - 5th July 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Photos SON 2, 4th - 5th July 2008
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Photos SON 2, 4th - 5th July 2008
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1197</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121197</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>897.xml</content_filename>
+</article>
+<article id='896'>
+<article_id>896</article_id>
+<title lang='en'>
+<![CDATA[
+Master Yap's Seminar FE Headquarter 3rd July 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Master Yap's Seminar FE HQ 3rd July 2008.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Master Yap's Seminar FE HQ 3rd July 2008.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1196</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121196</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>896.xml</content_filename>
+</article>
+<article id='895'>
+<article_id>895</article_id>
+<title lang='en'>
+<![CDATA[
+Ringo Borlain, 2006 Mr Universe (Mixed Pair Category).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Ringo Borlain, 2006 Mr Universe (Mixed Pair Category).
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Ringo Borlain, 2006 Mr Universe (Mixed Pair Category).
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1195</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121195</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>895.xml</content_filename>
+</article>
+<article id='894'>
+<article_id>894</article_id>
+<title lang='en'>
+<![CDATA[
+Congratulations! FE Spokesman Shalin Zulkifli Wins GOLD At Asian Championships Hong Kong (Woman's Double).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Congratulations! FE Spokesman Shalin Zulkifli wins GOLD at Asian Championships Hong Kong (Woman's Double)
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Congratulations! FE Spokesman Shalin Zulkifli wins GOLD at Asian Championships Hong Kong (Woman's Double)
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1194</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121194</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>894.xml</content_filename>
+</article>
+<article id='893'>
+<article_id>893</article_id>
+<title lang='en'>
+<![CDATA[
+Great News! FE's New Office.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Great News! FE's New Office.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Great News! FE's New Office.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1193</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121193</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>893.xml</content_filename>
+</article>
+<article id='892'>
+<article_id>892</article_id>
+<title lang='en'>
+<![CDATA[
+FusionExcel Sponsors Perwira K9 Team Malaysian Wheelchair Basketball National League!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FusionExcel Sponsors Perwira K9 Team Malaysian Wheelchair Basketball National League!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FusionExcel Sponsors Perwira K9 Team Malaysian Wheelchair Basketball National League!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1192</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121192</sequence_indexed>
+<category_code>5</category_code>
+<content_filename>892.xml</content_filename>
+</article>
+<article id='891'>
+<article_id>891</article_id>
+<title lang='en'>
+<![CDATA[
+Photos Of Dr Siva's Seminar .
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Photos Of Dr Siva's Seminar
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Photos Of Dr Siva's Seminar
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1191</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121191</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>891.xml</content_filename>
+</article>
+<article id='889'>
+<article_id>889</article_id>
+<title lang='en'>
+<![CDATA[
+news 3
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+news 3
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+news 3
 ]]>
 </title>
 <index_image_url></index_image_url>
 <publish>False</publish>
-<publish_start_date>1/3/2012</publish_start_date>
-<sequence>0</sequence>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1190</sequence>
 <order_year>2012</order_year>
-<sequence_indexed>20120000</sequence_indexed>
+<sequence_indexed>20121190</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>850.xml</content_filename>
+<content_filename>889.xml</content_filename>
+</article>
+<article id='887'>
+<article_id>887</article_id>
+<title lang='en'>
+<![CDATA[
+news 2
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+news 1
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+news 1
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>False</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1189</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121189</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>887.xml</content_filename>
+</article>
+<article id='888'>
+<article_id>888</article_id>
+<title lang='en'>
+<![CDATA[
+news 1
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+news 1
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+news 1
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>False</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1188</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121188</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>888.xml</content_filename>
+</article>
+<article id='886'>
+<article_id>886</article_id>
+<title lang='en'>
+<![CDATA[
+FE Press Conference With Maggie Loo And KC Phoon.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Press Conference With Maggie Loo And KC Phoon
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Press Conference With Maggie Loo And KC Phoon
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1187</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121187</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>886.xml</content_filename>
+</article>
+<article id='885'>
+<article_id>885</article_id>
+<title lang='en'>
+<![CDATA[
+FE Donates RM 60,000 (Cash And Products) To Johore Schools.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Donates RM 60,000 (Cash And Products) To Johore Schools.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Donates RM 60,000 (Cash And Products) To Johore Schools.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1186</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121186</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>885.xml</content_filename>
+</article>
+<article id='884'>
+<article_id>884</article_id>
+<title lang='en'>
+<![CDATA[
+FE Event, Johore Bahru, Malaysia, 23th June 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Event, Johore Bahru, Malaysia, 23th June 2008
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Event, Johore Bahru, Malaysia, 23th June 2008
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1185</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121185</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>884.xml</content_filename>
+</article>
+<article id='883'>
+<article_id>883</article_id>
+<title lang='en'>
+<![CDATA[
+Photos Company Trip Langkawi 22nd / 23rd June 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Photos Company Trip Langkawi 22nd / 23rd June 2008
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Photos Company Trip Langkawi 22nd / 23rd June 2008
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1184</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121184</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>883.xml</content_filename>
+</article>
+<article id='881'>
+<article_id>881</article_id>
+<title lang='en'>
+<![CDATA[
+Thailand Uniland Golf &amp; Country Club Event With Jean Daniels, 13th June 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Thailand Uniland Golf &amp; Country Club Event With Jean Daniels, 13th June 2008
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Thailand Uniland Golf &amp; Country Club Event With Jean Daniels, 13th June 2008
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1183</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121183</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>881.xml</content_filename>
+</article>
+<article id='880'>
+<article_id>880</article_id>
+<title lang='en'>
+<![CDATA[
+FusionExcel Welcomes Quantum Pendant Wearers, Malaysian National Athlete Champions!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FusionExcel Welcomes Quantum Pendant Wearers, Malaysian National Athlete Champions!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FusionExcel Welcomes Quantum Pendant Wearers, Malaysian National Athlete Champions!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1182</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121182</sequence_indexed>
+<category_code>5</category_code>
+<content_filename>880.xml</content_filename>
+</article>
+<article id='879'>
+<article_id>879</article_id>
+<title lang='en'>
+<![CDATA[
+Pic Lifting Ramazan (WMC Muay Thai World Heavyweight Champion).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Summary Of Upcoming Events 2011.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Summary Of Upcoming Events 2011.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1181</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121181</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>879.xml</content_filename>
+</article>
+<article id='878'>
+<article_id>878</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer TV Personality, Datuk Mahadzir Lokman.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer TV Personality, Datuk Mahadzir Lokman.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer TV Personality, Datuk Mahadzir Lokman.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1179</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121179</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>878.xml</content_filename>
+</article>
+<article id='877'>
+<article_id>877</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, Maggie Loo, Former Miss Malaysia Universe!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes QP Wearer, Maggie Loo, Former Miss Malaysia Universe!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes QP Wearer, Maggie Loo, Former Miss Malaysia Universe!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1178</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121178</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>877.xml</content_filename>
+</article>
+<article id='871'>
+<article_id>871</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, Adam Hollioake, Former Captain England Cricket Team!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes QP Wearer, Adam Hollioake, Former Captain England Cricket Team!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes QP Wearer, Adam Hollioake, Former Captain England Cricket Team!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1177</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121177</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>871.xml</content_filename>
+</article>
+<article id='870'>
+<article_id>870</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Quantum Pendant Wearer, General (Rtd) Roesmanhadi, Former Chief Of Indonesia National Police.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum PendantsFE Welcomes Quantum Pendant Wearer, General (Rtd) Roesmanhadi, Former Chief of Indonesia National Police.  Wearer, General (Rtd) Roesmanhadi, Former Chief Of Indonesia National Police.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum PendantsFE Welcomes Quantum Pendant Wearer, General (Rtd) Roesmanhadi, Former Chief of Indonesia National Police.  Wearer, General (Rtd) Roesmanhadi, Former Chief Of Indonesia National Police.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1176</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121176</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>870.xml</content_filename>
+</article>
+<article id='876'>
+<article_id>876</article_id>
+<title lang='en'>
+<![CDATA[
+Read Testimonial Quantum Pendant Wearer, Zidov Akuma, Star Contender Asia &amp; 2008 Swiss Muay Thai Champion!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Read Testimonial Quantum Pendant Wearer, Zidov Akuma, Star Contender Asia &amp; 2008 Swiss Muay Thai Champion!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Read Testimonial Quantum Pendant Wearer, Zidov Akuma, Star Contender Asia &amp; 2008 Swiss Muay Thai Champion!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1175</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121175</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>876.xml</content_filename>
+</article>
+<article id='875'>
+<article_id>875</article_id>
+<title lang='en'>
+<![CDATA[
+FE's Bangkok Event, 14th June 2008 (2).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE's Bangkok Event, 14th June 2008 (2).
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE's Bangkok Event, 14th June 2008 (2).
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1174</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121174</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>875.xml</content_filename>
+</article>
+<article id='874'>
+<article_id>874</article_id>
+<title lang='en'>
+<![CDATA[
+FE's Bangkok Event, 14th June 2008 (1).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE's Bangkok Event, 14th June 2008 (1).
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE's Bangkok Event, 14th June 2008 (1).
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1173</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121173</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>874.xml</content_filename>
+</article>
+<article id='872'>
+<article_id>872</article_id>
+<title lang='en'>
+<![CDATA[
+Video FE Sponsors The Children of Payatas, Philippines.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Video FE Sponsors the Children of Payatas, Philippines.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Video FE Sponsors the Children of Payatas, Philippines.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1172</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121172</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>872.xml</content_filename>
+</article>
+<article id='873'>
+<article_id>873</article_id>
+<title lang='en'>
+<![CDATA[
+Polycontrast Interence Photography (PIP) Photo Of Quantum Pendant By Master Bahauddin Yap.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Polycontrast Interence Photography (PIP) Photo Of Quantum Pendant By Master Bahauddin Yap.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Polycontrast Interence Photography (PIP) Photo Of Quantum Pendant By Master Bahauddin Yap.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1171</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121171</sequence_indexed>
+<category_code>257</category_code>
+<content_filename>873.xml</content_filename>
+</article>
+<article id='869'>
+<article_id>869</article_id>
+<title lang='en'>
+<![CDATA[
+Read Testimonial Of Quantum Pendant Wearer, Ms Law, Champion Power Lifter.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Read Testimonial of QP Wearer, Ms Law, Champion Power Lifter.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Read Testimonial of QP Wearer, Ms Law, Champion Power Lifter.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1170</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121170</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>869.xml</content_filename>
+</article>
+<article id='866'>
+<article_id>866</article_id>
+<title lang='en'>
+<![CDATA[
+QP Wearer, Well Known Malaysia Actor And TV personality, Ashraf Sinclair, Star In Movie Gol &amp; Gincu. 
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+QP Wearer, Well Known Malaysia Actor And TV personality, Ashraf Sinclair, Star In Movie Gol &amp; Gincu. 
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+QP Wearer, Well Known Malaysia Actor And TV personality, Ashraf Sinclair, Star In Movie Gol &amp; Gincu. 
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1169</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121169</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>866.xml</content_filename>
+</article>
+<article id='865'>
+<article_id>865</article_id>
+<title lang='en'>
+<![CDATA[
+FE's Event Attended By 2,000! People! 02nd August 2008 Event Kuala Lumpur (2).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE's Event Attended By 2000! People! 02nd August 2008 Event Kuala Lumpur (2).
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE's Event Attended By 2000! People! 02nd August 2008 Event Kuala Lumpur (2).
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1168</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121168</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>865.xml</content_filename>
+</article>
+<article id='864'>
+<article_id>864</article_id>
+<title lang='en'>
+<![CDATA[
+Quantum Pendant Wearers, China Beijing 2008 Olympic Team Athletes!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Quantum Pendant Wearers, China Beijing 2008 Olympic Team Athletes!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Quantum Pendant Wearers, China Beijing 2008 Olympic Team Athletes!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1167</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121167</sequence_indexed>
+<category_code>5</category_code>
+<content_filename>864.xml</content_filename>
+</article>
+<article id='863'>
+<article_id>863</article_id>
+<title lang='en'>
+<![CDATA[
+FE Welcomes Spokesman, Master Bahauddin Yap. 
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Spokesman, Master Bahauddin Yap. 
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Spokesman, Master Bahauddin Yap. 
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1166</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121166</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>863.xml</content_filename>
+</article>
+<article id='862'>
+<article_id>862</article_id>
+<title lang='en'>
+<![CDATA[
+School Of Networking (SON) Malaysia 04th &amp; 05th July 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+School Of Networking (SON) Malaysia 04th &amp; 05th July 2008.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+School Of Networking (SON) Malaysia 04th &amp; 05th July 2008.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1165</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121165</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>862.xml</content_filename>
+</article>
+<article id='861'>
+<article_id>861</article_id>
+<title lang='en'>
+<![CDATA[
+FE Achievers Recognition Dinner In Johor Bahru 23rd June 2008. 
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Achievers Recognition Dinner In Johor Bahru 23rd June 2008. 
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Achievers Recognition Dinner In Johor Bahru 23rd June 2008. 
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1164</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121164</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>861.xml</content_filename>
+</article>
+<article id='860'>
+<article_id>860</article_id>
+<title lang='en'>
+<![CDATA[
+FE Donates RM 20,000 To Perwira K9 Malaysia, 7th June 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Donates RM 20,000 To Perwira K9 Malaysia, 7th June 2008
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Donates RM 20,000 To Perwira K9 Malaysia, 7th June 2008
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1163</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121163</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>860.xml</content_filename>
+</article>
+<article id='859'>
+<article_id>859</article_id>
+<title lang='en'>
+<![CDATA[
+Record Crowd At FE's PGRM Event, Kuala Lumpur, 7th June 2008! (2)
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Record Crowd At FE's PGRM Event, Kuala Lumpur, 7th June 2008! (2)
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Record Crowd At FE's PGRM Event, Kuala Lumpur, 7th June 2008! (2)
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1162</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121162</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>859.xml</content_filename>
+</article>
+<article id='858'>
+<article_id>858</article_id>
+<title lang='en'>
+<![CDATA[
+Achievers Recognition Dinner, PGRM, Kuala Lumpur, Malaysia 28th February 2009 (2)
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Achievers Recognition Dinner, PGRM, Kuala Lumpur, Malaysia 28th February 2009 (2)
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Achievers Recognition Dinner, PGRM, Kuala Lumpur, Malaysia 28th February 2009 (2)
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>False</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1161</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121161</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>858.xml</content_filename>
+</article>
+<article id='857'>
+<article_id>857</article_id>
+<title lang='en'>
+<![CDATA[
+Achievers Recognition Dinner, PGRM, Kuala Lumpur, Malaysia 28th February 2009 (1).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Achievers Recognition Dinner, PGRM, Kuala Lumpur, Malaysia 28th February 2009 (1)
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Achievers Recognition Dinner, PGRM, Kuala Lumpur, Malaysia 28th February 2009 (1)
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1160</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121160</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>857.xml</content_filename>
+</article>
+<article id='856'>
+<article_id>856</article_id>
+<title lang='en'>
+<![CDATA[
+Congratulations! FusionExcel Sponsored Team Wearing FusionExcel's Qunatum Pendant Wins Two Horns Penang Open Dart Doubles Championship 2008. There were 240 Local and Foreign Participants From Malaysia, Hong Kong, Philippines, Japan, Korea, China, Thailand
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Congratulations! FusionExcel Sponsored Team Wearing FusionExcel's Qunatum Pendant Wins Two Horns Penang Open Dart Doubles Championship 2008. There were 240 Local and Foreign Participants From Malaysia, Hong Kong, Philippines, Japan, Korea, China, Thailand
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Congratulations! FusionExcel Sponsored Team Wearing FusionExcel's Qunatum Pendant Wins Two Horns Penang Open Dart Doubles Championship 2008. There were 240 Local and Foreign Participants From Malaysia, Hong Kong, Philippines, Japan, Korea, China, Thailand
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1159</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121159</sequence_indexed>
+<category_code>5</category_code>
+<content_filename>856.xml</content_filename>
 </article>
 <article id='849'>
 <article_id>849</article_id>
@@ -134,7 +1434,7 @@ Read PBA Basketball Legend, Alvin Patrimonio's Testimonial.
 <article_id>848</article_id>
 <title lang='en'>
 <![CDATA[
-Quantem Pendant Wearer, Hon. Mayor Victor R Sumulong Of Antipolo City, Rizal (Metro Manila).
+Quantum Pendant Wearer, Hon. Mayor Victor R Sumulong Of Antipolo City, Rizal (Metro Manila).
 ]]>
 </title>
 <title lang='bm'>
@@ -160,17 +1460,17 @@ Pemakai QP, Hon. Datuk Bandar Victor R Sumulong Bandar Raya Antipolo, Rizal (Met
 <article_id>847</article_id>
 <title lang='en'>
 <![CDATA[
-Quantem Pendant Wearer, Well Known Filipino Singer And Songwriter Lito Camo. 
+Quantum Pendant Wearer, Well Known Filipino Singer And Songwriter Lito Camo.
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-Quantem Pendant Wearer, Well Known Filipino Singer And Songwriter Lito Camo. 
+Quantem Pendant Wearer, Well Known Filipino Singer And Songwriter Lito Camo.
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Quantem Pendant Wearer, Well Known Filipino Singer And Songwriter Lito Camo. 
+Quantem Pendant Wearer, Well Known Filipino Singer And Songwriter Lito Camo.
 ]]>
 </title>
 <index_image_url></index_image_url>
@@ -316,7 +1616,7 @@ Read PBA Basketball Legend, Alvin Patrimonio's Testimonial.
 <article_id>841</article_id>
 <title lang='en'>
 <![CDATA[
-FusionExcel At ECoP Conference (Employers Confederation Of Philippines), 14th May 2008. ECoP President Sergio Ortiz-Luis JR Is A Quantem Pendants Wearer. Sergio Ortiz Is Also The Chairman/Treasurer Of The Philippines Chamber Of Commerce &amp; Industry.
+FusionExcel At ECoP Conference (Employers Confederation Of Philippines), 14th May 2008. ECoP President Sergio Ortiz-Luis JR Is A Quantum Pendants Wearer. Sergio Ortiz Is Also The Chairman/Treasurer Of The Philippines Chamber Of Commerce &amp; Industry.
 ]]>
 </title>
 <title lang='bm'>
@@ -342,7 +1642,7 @@ FE at ECoP Conference (Employers Confederation of Philippines), 14th May 2008. E
 <article_id>840</article_id>
 <title lang='en'>
 <![CDATA[
-Quantem Pendants Wearer Boy Abunda Of Popular &#8220;Boy &amp; Kris Show&#8221; ABS-CBN Philippines. Boy Abunda And Kris AquiNo Are The Host Of The TV Show. Kris Aquino Is The Daughter Of Former Philippines President Cory Aquino.
+Quantum Pendants Wearer Boy Abunda Of Popular &#8220;Boy &amp; Kris Show&#8221; ABS-CBN Philippines. Boy Abunda And Kris AquiNo Are The Host Of The TV Show. Kris Aquino Is The Daughter Of Former Philippines President Cory Aquino.
 ]]>
 </title>
 <title lang='bm'>
@@ -1456,32 +2756,6 @@ QP Wearer, Senator Panfilo Lacson, former Chief of the Philippine National Polic
 <category_code>1</category_code>
 <content_filename>122.xml</content_filename>
 </article>
-<article id='798'>
-<article_id>798</article_id>
-<title lang='en'>
-<![CDATA[
-Dr Emoto's Seminar in Kuala Lump 13th December 2008.
-]]>
-</title>
-<title lang='bm'>
-<![CDATA[
-Dr Emoto's Seminar in Kuala Lump 13th December 2008.
-]]>
-</title>
-<title lang='chi'>
-<![CDATA[
-Dr Emoto's Seminar in Kuala Lump 13th December 2008.
-]]>
-</title>
-<index_image_url></index_image_url>
-<publish>False</publish>
-<publish_start_date>12/27/2011</publish_start_date>
-<sequence>1100</sequence>
-<order_year>2011</order_year>
-<sequence_indexed>20111100</sequence_indexed>
-<category_code>1</category_code>
-<content_filename>798.xml</content_filename>
-</article>
 <article id='121'>
 <article_id>121</article_id>
 <title lang='en'>
@@ -1508,31 +2782,31 @@ PBA Kings (Philippines Basketball Association  - Professional League) Team.  - T
 <category_code>1</category_code>
 <content_filename>121.xml</content_filename>
 </article>
-<article id='797'>
-<article_id>797</article_id>
+<article id='798'>
+<article_id>798</article_id>
 <title lang='en'>
 <![CDATA[
-5,200 Attended Dr Emoto's Bangkok Seminar 07th December 2008!
+Dr Emoto's Seminar in Kuala Lump 13th December 2008.
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-5,200 Attended Dr Emoto's Bangkok Seminar 07th December 2008!
+Dr Emoto's Seminar in Kuala Lump 13th December 2008.
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-5,200 Attended Dr Emoto's Bangkok Seminar 07th December 2008!
+Dr Emoto's Seminar in Kuala Lump 13th December 2008.
 ]]>
 </title>
 <index_image_url></index_image_url>
 <publish>False</publish>
 <publish_start_date>12/27/2011</publish_start_date>
-<sequence>1099</sequence>
+<sequence>1100</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111099</sequence_indexed>
+<sequence_indexed>20111100</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>797.xml</content_filename>
+<content_filename>798.xml</content_filename>
 </article>
 <article id='120'>
 <article_id>120</article_id>
@@ -1560,31 +2834,31 @@ QP Wearers, Filipino Basketball Stars, Allan Caidic &amp; Samboy Lim!
 <category_code>1</category_code>
 <content_filename>120.xml</content_filename>
 </article>
-<article id='796'>
-<article_id>796</article_id>
+<article id='797'>
+<article_id>797</article_id>
 <title lang='en'>
 <![CDATA[
-FE Welcomes World Renowned Scientist, Dr Emoto to Manila, Philippines!
+5,200 Attended Dr Emoto's Bangkok Seminar 07th December 2008!
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-FE Welcomes World Renowned Scientist, Dr Emoto to Manila, Philippines!
+5,200 Attended Dr Emoto's Bangkok Seminar 07th December 2008!
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-FE Welcomes World Renowned Scientist, Dr Emoto to Manila, Philippines!
+5,200 Attended Dr Emoto's Bangkok Seminar 07th December 2008!
 ]]>
 </title>
 <index_image_url></index_image_url>
 <publish>False</publish>
 <publish_start_date>12/27/2011</publish_start_date>
-<sequence>1098</sequence>
+<sequence>1099</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111098</sequence_indexed>
+<sequence_indexed>20111099</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>796.xml</content_filename>
+<content_filename>797.xml</content_filename>
 </article>
 <article id='119'>
 <article_id>119</article_id>
@@ -1612,31 +2886,31 @@ FE Golf &amp; Dinner Event, Bangkok, 30 March 2008
 <category_code>1</category_code>
 <content_filename>119.xml</content_filename>
 </article>
-<article id='196'>
-<article_id>196</article_id>
+<article id='796'>
+<article_id>796</article_id>
 <title lang='en'>
 <![CDATA[
-FE Donates Baht 200,000 To Pibulsonggram Foundation, Thailand 29th March 2008
+FE Welcomes World Renowned Scientist, Dr Emoto to Manila, Philippines!
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-FE Welcomes QP Wearer TV Personality, Datuk Mahadzir Lokman.
+FE Welcomes World Renowned Scientist, Dr Emoto to Manila, Philippines!
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-FE Welcomes QP Wearer TV Personality, Datuk Mahadzir Lokman.
+FE Welcomes World Renowned Scientist, Dr Emoto to Manila, Philippines!
 ]]>
 </title>
 <index_image_url></index_image_url>
-<publish>True</publish>
-<publish_start_date>11/26/2011</publish_start_date>
-<sequence>1097</sequence>
+<publish>False</publish>
+<publish_start_date>12/27/2011</publish_start_date>
+<sequence>1098</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111097</sequence_indexed>
+<sequence_indexed>20111098</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>196.xml</content_filename>
+<content_filename>796.xml</content_filename>
 </article>
 <article id='795'>
 <article_id>795</article_id>
@@ -1664,31 +2938,31 @@ Dr Emoto In HongKong.
 <category_code>1</category_code>
 <content_filename>795.xml</content_filename>
 </article>
-<article id='794'>
-<article_id>794</article_id>
+<article id='196'>
+<article_id>196</article_id>
 <title lang='en'>
 <![CDATA[
-Dr Emoto's Seminar In Jakarta 09th April 2010 A Great Success!
+FE Donates Baht 200,000 To Pibulsonggram Foundation, Thailand 29th March 2008
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-Dr Emoto's Seminar In Jakarta 09th April 2010 A Great Success!
+FE Welcomes QP Wearer TV Personality, Datuk Mahadzir Lokman.
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Dr Emoto's Seminar In Jakarta 09th April 2010 A Great Success!
+FE Welcomes QP Wearer TV Personality, Datuk Mahadzir Lokman.
 ]]>
 </title>
 <index_image_url></index_image_url>
-<publish>False</publish>
-<publish_start_date>12/27/2011</publish_start_date>
-<sequence>1096</sequence>
+<publish>True</publish>
+<publish_start_date>11/26/2011</publish_start_date>
+<sequence>1097</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111096</sequence_indexed>
+<sequence_indexed>20111097</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>794.xml</content_filename>
+<content_filename>196.xml</content_filename>
 </article>
 <article id='117'>
 <article_id>117</article_id>
@@ -1716,31 +2990,31 @@ Dr Emoto's Seminar In Jakarta 09th April 2010 A Great Success!
 <category_code>1</category_code>
 <content_filename>117.xml</content_filename>
 </article>
-<article id='793'>
-<article_id>793</article_id>
+<article id='794'>
+<article_id>794</article_id>
 <title lang='en'>
 <![CDATA[
-Dr Emoto's Seminar In Kuala Lumpur 03rd April 2010 A Great Success! (2)
+Dr Emoto's Seminar In Jakarta 09th April 2010 A Great Success!
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-Dr Emoto's Seminar In Kuala Lumpur 03rd April 2010 A Great Success! (2)
+Dr Emoto's Seminar In Jakarta 09th April 2010 A Great Success!
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Dr Emoto's Seminar In Kuala Lumpur 03rd April 2010 A Great Success! (2)
+Dr Emoto's Seminar In Jakarta 09th April 2010 A Great Success!
 ]]>
 </title>
 <index_image_url></index_image_url>
 <publish>False</publish>
 <publish_start_date>12/27/2011</publish_start_date>
-<sequence>1095</sequence>
+<sequence>1096</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111095</sequence_indexed>
+<sequence_indexed>20111096</sequence_indexed>
 <category_code>1</category_code>
-<content_filename>793.xml</content_filename>
+<content_filename>794.xml</content_filename>
 </article>
 <article id='116'>
 <article_id>116</article_id>
@@ -1767,6 +3041,32 @@ Dr Emoto's Seminar In Kuala Lumpur 03rd April 2010 A Great Success! (2)
 <sequence_indexed>20111095</sequence_indexed>
 <category_code>1</category_code>
 <content_filename>116.xml</content_filename>
+</article>
+<article id='793'>
+<article_id>793</article_id>
+<title lang='en'>
+<![CDATA[
+Dr Emoto's Seminar In Kuala Lumpur 03rd April 2010 A Great Success! (2)
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Dr Emoto's Seminar In Kuala Lumpur 03rd April 2010 A Great Success! (2)
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Dr Emoto's Seminar In Kuala Lumpur 03rd April 2010 A Great Success! (2)
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>False</publish>
+<publish_start_date>12/27/2011</publish_start_date>
+<sequence>1095</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111095</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>793.xml</content_filename>
 </article>
 <article id='41'>
 <article_id>41</article_id>
@@ -1820,32 +3120,6 @@ Dr Emoto's Seminar In Kuala Lumpur 03rd April 2010 A Great Success! (1)
 <category_code>1</category_code>
 <content_filename>792.xml</content_filename>
 </article>
-<article id='341'>
-<article_id>341</article_id>
-<title lang='en'>
-<![CDATA[
-Congratulations! FusionExcel Team Wins Chess Championship.
-]]>
-</title>
-<title lang='bm'>
-<![CDATA[
-FE Donates RM 5,000.00 to Malaysian Mental Health Association.
-]]>
-</title>
-<title lang='chi'>
-<![CDATA[
-FE Donates RM 5,000.00 to Malaysian Mental Health Association.
-]]>
-</title>
-<index_image_url></index_image_url>
-<publish>True</publish>
-<publish_start_date>12/1/2011</publish_start_date>
-<sequence>1093</sequence>
-<order_year>2011</order_year>
-<sequence_indexed>20111093</sequence_indexed>
-<category_code>5</category_code>
-<content_filename>341.xml</content_filename>
-</article>
 <article id='791'>
 <article_id>791</article_id>
 <title lang='en'>
@@ -1872,31 +3146,31 @@ FE Donates RM 5,000.00 to Malaysian Mental Health Association.
 <category_code>1</category_code>
 <content_filename>791.xml</content_filename>
 </article>
-<article id='790'>
-<article_id>790</article_id>
+<article id='341'>
+<article_id>341</article_id>
 <title lang='en'>
 <![CDATA[
-4,000 Attend Dr Emoto's Seminar in Bangkok 04th April 2010! (1)
+Congratulations! FusionExcel Team Wins Chess Championship.
 ]]>
 </title>
 <title lang='bm'>
 <![CDATA[
-4,000 Attend Dr Emoto's Seminar in Bangkok 04th April 2010! (1
+FE Donates RM 5,000.00 to Malaysian Mental Health Association.
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-4,000 Attend Dr Emoto's Seminar in Bangkok 04th April 2010! (1
+FE Donates RM 5,000.00 to Malaysian Mental Health Association.
 ]]>
 </title>
 <index_image_url></index_image_url>
-<publish>False</publish>
-<publish_start_date>12/27/2011</publish_start_date>
-<sequence>1092</sequence>
+<publish>True</publish>
+<publish_start_date>12/1/2011</publish_start_date>
+<sequence>1093</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111092</sequence_indexed>
-<category_code>1</category_code>
-<content_filename>790.xml</content_filename>
+<sequence_indexed>20111093</sequence_indexed>
+<category_code>5</category_code>
+<content_filename>341.xml</content_filename>
 </article>
 <article id='113'>
 <article_id>113</article_id>
@@ -1923,6 +3197,32 @@ FE's Event attended by 2000! Pics 2nd August 2008 Event KL (1).
 <sequence_indexed>20111092</sequence_indexed>
 <category_code>1</category_code>
 <content_filename>113.xml</content_filename>
+</article>
+<article id='790'>
+<article_id>790</article_id>
+<title lang='en'>
+<![CDATA[
+4,000 Attend Dr Emoto's Seminar in Bangkok 04th April 2010! (1)
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+4,000 Attend Dr Emoto's Seminar in Bangkok 04th April 2010! (1
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+4,000 Attend Dr Emoto's Seminar in Bangkok 04th April 2010! (1
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>False</publish>
+<publish_start_date>12/27/2011</publish_start_date>
+<sequence>1092</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111092</sequence_indexed>
+<category_code>1</category_code>
+<content_filename>790.xml</content_filename>
 </article>
 <article id='789'>
 <article_id>789</article_id>
@@ -4117,7 +5417,7 @@ Official Appoinment
 </title>
 <title lang='bm'>
 <![CDATA[
-Official Appointment
+Perlantikan Rasmi.
 ]]>
 </title>
 <title lang='chi'>
@@ -4143,12 +5443,12 @@ Hari Raya Open House 11th November 2006.
 </title>
 <title lang='bm'>
 <![CDATA[
-FusionExcel's Welcome Day, Saturday, 20th January 2007 is Packed with Participants. Congratulations! Special Guest: Mr. Malek Noor (Champion Body Builder).
+Rumah Terbuka Hari Raya 11 November 2006.
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-FusionExcel's Welcome Day, Saturday, 20th January 2007 is Packed with Participants. Congratulations! Special Guest: Mr. Malek Noor (Champion Body Builder).
+2006&#24180;11&#26376;11&#26085;&#24320;&#25995;&#33410;&#38376;&#25143;&#24320;&#25918;&#27963;&#21160;!
 ]]>
 </title>
 <index_image_url>/images/welcomeday02.jpg</index_image_url>
@@ -4169,12 +5469,12 @@ Deepavali Open House, 05th November 2006.
 </title>
 <title lang='bm'>
 <![CDATA[
-Sales Cancellations Policy.
+Rumah Terbuka Deepavali, 05 November 2006.
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Sales Cancellations Policy.
+2006&#24180;11&#26376;05&#26085;&#23648;&#22934;&#33410;&#38376;&#25143;&#24320;&#25918;&#27963;&#21160;!
 ]]>
 </title>
 <index_image_url></index_image_url>
@@ -4195,12 +5495,12 @@ Quantum Pendant Demos.
 </title>
 <title lang='bm'>
 <![CDATA[
-FE Manila Philippines Celebrates 4th Anniversary !
+Demostrasi Loket Kuantum
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-FE Manila Philippines Celebrates 4th Anniversary !
+&#23431;&#23449;&#22825;&#28982;&#33021;&#37327;&#30707;&#31034;&#33539;
 ]]>
 </title>
 <index_image_url>/images/home_26102011.jpg</index_image_url>
@@ -4221,12 +5521,12 @@ Max Power and Energy.
 </title>
 <title lang='bm'>
 <![CDATA[
- 
+Demostrasi Loket Kuantum.
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-FusionExcel Super Bowling League.
+&#23431;&#23449;&#22825;&#28982;&#33021;&#37327;&#30707;&#31034;&#33539;! 
 ]]>
 </title>
 <index_image_url></index_image_url>
