@@ -1,4 +1,6 @@
 <!--#include file="configuration.asp" -->
+<!--#include file="sidebar.asp" -->
+<!--#include file="header_image.asp" -->
 <!--#include file="data/dbController.asp" -->
 <%
 

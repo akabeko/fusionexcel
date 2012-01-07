@@ -183,13 +183,13 @@ new showLocalTime("timecontainer", "server-asp", 0, "short")
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="88"><a href="news.asp?category_code=32" target="_top"  class="menu">Testimonials</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="95" valign="middle"><a href="income_plan.html" target="_top" class="menu">Income Plan</a></td>
+                <td width="95" valign="middle"><a href="news.asp?category_code=512" target="_top" class="menu">Income Plan</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="38"><a href="faq.html" target="_top" class="menu">FAQ</a></td>
+                <td width="38"><a href="news.asp?category_code=1024" target="_top" class="menu">FAQ</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="73"><a href="news.asp?category_code=16" target="_top" class="menu">Corporate</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-              <td width="110"><a href="news.asp?category_code=8" target="_top" class="menu">Spokespersons</a></td>
+                <td width="110"><a href="news.asp?category_code=8" target="_top" class="menu">Spokespersons</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="118"><a href="service_centres.asp" target="_top" class="menu">Service Centres</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>

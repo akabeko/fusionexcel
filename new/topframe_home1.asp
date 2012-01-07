@@ -254,9 +254,9 @@ Countries!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</DIV>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="76"><a href="pricelist.html" target="_top" class="menu">Price List</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="96" valign="middle"><a href="income_plan.html" target="_top" class="menu">Income Plan</a></td>
+                <td width="96" valign="middle"><a href="news.asp?category_code=512" target="_top" class="menu">Income Plan</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="41"><a href="faq.html" target="_top" class="menu">FAQ</a></td>
+                <td width="41"><a href="news.asp?category_code=1024" target="_top" class="menu">FAQ</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="80"><a href="news.asp?category_code=16" target="_top" class="menu">Corporate</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
