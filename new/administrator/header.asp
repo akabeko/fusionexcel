@@ -16,10 +16,12 @@ end if
 	<link href="css/style.css?1" rel="stylesheet" type="text/css" />
 	<link href="css/dropdownmenu/dropdownmenu.css" rel="stylesheet" type="text/css" />
 	<link href="css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/thickbox.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="js/ckfinder/ckfinder.js"></script>
+    <script type="text/javascript" src="js/thickbox-compressed.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$("ul.subnav").parent().append("<span></span>"); //Only shows drop down trigger when js is enabled (Adds empty span tag after ul.subnav*)  

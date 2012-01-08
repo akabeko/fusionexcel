@@ -10,6 +10,7 @@ Dim link_id, RecordSet, sql
 Dim publish, order_index, article_name, article_id, article_category_code, image_url
 Dim link_title, link_title_bm, link_title_chi
 Dim link_short_description, link_short_description_bm, link_short_description_chi
+Dim link_type
 
 link_id = 0
 
@@ -26,6 +27,9 @@ if Request("action") = "" or Request("action") = "add" then
     link_short_description_bm = Request("link_short_description_bm")
     link_title_chi = Request("link_title_chi")
     link_short_description_chi = Request("link_short_description_chi")
+    
+    link_type = Request("link_type")
+    external_url = Request("external_url")
 elseif Request("action") = "edit" then
     if Request("id") = "" or not IsNumeric(Request("id")) then
         Response.Write "Invalid Link ID"
@@ -55,47 +59,53 @@ elseif Request("action") = "edit" then
     link_title_chi = RecordSet("link_title_chi")
     link_short_description_chi = RecordSet("link_short_description_chi")
     
+    link_type = RecordSet("link_type")
+    external_url = RecordSet("external_url")
 end if
 %>
-
 <script type="text/javascript">
+    var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+    
+    
     $(function() {
         $('#tabs').tabs();
         $('.input_form').submit(function() {
             var article_id = $('#id_article_id').val();
             var order_index = trimNumber($('#id_order_index').val());
+            var type = $('input[name="link_type"]').val();
+            var url = $('#id_external_url').val();
             
             if(!((parseFloat(order_index) == parseInt(order_index)) && !isNaN(order_index))) {
 				alert("Please enter integer value for Order Number");
 				return false;
 			}
-			else if(!((parseFloat(article_id) == parseInt(article_id)) && !isNaN(article_id))) {
-                alert("Please select an article")
-                return false;
+            if (type == 1) {
+                if(!((parseFloat(article_id) == parseInt(article_id)) && !isNaN(article_id))) {
+                    alert("Please select an article")
+                    return false;
+                }
+            } else if (type == 2) {
+                if(!regexp.test(url)) {
+                    alert("Please enter a valid URL");
+                    return false;
+                }
             }
+			return true;
+        });
+        $('#btn_article_lookup').click(function(e) {
+            e.preventDefault();
         });
         $("#id_article_name").keyup(function() {
-            
-            $.ajax({
-                dataType: 'xml', type: 'POST', url: 'ajax-article-search.asp',
-                data: $('#id_article_name').val(),
-                success: function(xmlResponse) {
-                    alert();
-                    var data = $("article", xmlResponse).map(function() {
-                        return {
-                            value: $("title", this).text(),
-                            id: $("article_id", this).text()
-                        };
-                    }).get();
-                    $("#id_article_name").autocomplete({
-                        source: data,
-                        minLength: 0,
-                        select: function(event, ui) {
-                        
-                        }
-                    });
-                }
-            });
+
+        });
+        $('input[name="link_type"]').change(function(e) {
+            if ($(this).val() == 1) {
+                $('#id_article_lookup').show();
+                $('#id_external_url').hide();
+            } else if ($(this).val() == 2) {
+                $('#id_article_lookup').hide();
+                $('#id_external_url').show();
+            }
         });
     });
     function trimNumber(s) {
@@ -103,23 +113,54 @@ end if
 		return s;
 	}
 </script>
-<h1>VIP QP Weaver</h1>
+<h1>External Links</h1>
 <form method="POST" enctype="multipart/form-data" accept-charset="utf-8" class="input_form" action="link-edit.asp?id=<%= link_id %>&amp;action=<%= Request("action") %>">
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
             <td width="150px"><label>Publish</label>:</td>
-            <td><input type="radio" name="publish" value="false" <% if publish = false then %>checked="checked"<% end if %> /> No <input type="radio" name="publish" value="true" <% if publish = true then %>checked="checked"<% end if %> /> Yes</td>
-            <td><label for="id_order_index">Order:</label></td>
+            <td width="500px"><input type="radio" name="publish" value="false" <% if publish = false then %>checked="checked"<% end if %> /> No <input type="radio" name="publish" value="true" <% if publish = true then %>checked="checked"<% end if %> /> Yes</td>
+            <td width="150px"><label for="id_order_index">Order:</label></td>
             <td><input type="text" name="order_index" id="id_order_index" value="<% if order_index > 0 then %><%= order_index %><% else %><%= getLatestLinksSequence() %><% end if %>" /></td>
         </tr>
         <tr>
+            <td><label>Type:</label></td>
+            <td colspan="3"><input type="radio" name="link_type" value="1" <% if link_type = 1 or link_type = "" then %>checked="checked"<% end if %>/> VIP QP Wearer <input type="radio" name="link_type" value="2" <% if link_type = 2 then %>checked="checked"<% end if %>/> Videos</td>
+        </tr>
+        <tr>
+            <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr id="id_article_lookup">
             <td><label>Article</label>:</td>
             <td>
-                <input type="text" name="article_name" id="id_article_name" value="<%= article_name %>" size="50" />
+                <input type="text" name="article_name" id="id_article_name" value="<%= article_name %>" size="50" readonly="readonly" />
                 <input type="hidden" name="article_id" id="id_article_id" value="<%= article_id %>" />
                 <input type="hidden" name="article_category_code" id="id_article_category_code" value="<%= article_category_code %>" />
-                <button>Search</button>
+                <a id="btn_article_lookup" class="thickbox" href="ajax-article-lookup.asp?height=600&amp;width=1024&amp;keepThis=true&amp;TB_iframe=true">Lookup</a>
             </td>
+            <td><label for="id_article_category_code_list">Category:</label></td>
+            <td>
+                <select id="id_article_category_code_list" name="selected_category_code">
+                    <%
+                        if article_category_code > 0 then
+                        Dim categories, index
+                        categories = getCategoriesList()
+                        For index = 0 to UBound(categories, 2)
+                            if categories(1, index) <> "" then
+                                if (((article_category_code \ categories(0, index)) mod 2) = 1) then
+                                %>
+                                    <option value="<%= categories(0, index) %>"><%= categories(1, index) %></option>
+                                <%
+                                end if
+                            end if
+                        Next
+                        end if
+                    %>
+                </select>
+            </td>
+        </tr>
+        <tr id="id_external_url" style="display: none">
+            <td><label for="id_external_url">External URL</td>
+            <td><input type="text" name="external_url" id="id_external_url" value="<%= external_url %>" size="60" />
             <td></td>
             <td></td>
         </tr>
@@ -196,7 +237,3 @@ end if
         <input type="button" name="back" value="Cancel" onclick="window.location = 'links.asp'" />
 	</div>
 </form>
-
-<div id="id_ui_dialog">
-
-</div>
