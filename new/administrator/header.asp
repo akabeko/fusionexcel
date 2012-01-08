@@ -85,7 +85,7 @@ end if
 						<a href="service_centres.asp">Service Center</a>
 					</li>
                     <li>
-						<a href="links.asp">VIP QP Wearers</a>
+						<a href="links.asp">External Links</a>
 					</li>
                     <li>
                         <a href="under-construction.asp">User Admin Account</a>

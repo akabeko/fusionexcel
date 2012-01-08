@@ -81,6 +81,8 @@ Function SaveFiles(link_id)
     RecordSet.fields("link_title_chi") = upload.Form("link_title_chi")
     RecordSet.fields("link_short_description_chi") = upload.Form("link_short_description_chi")
     
+    RecordSet.Fields("external_url") = upload.Form("external_url")
+    
     Dim OrderRecordSet
     sql = "SELECT COUNT(1) AS 'counter' FROM link WHERE order_index = " & upload.Form("order_index")
     call CreateRecordSet(OrderRecordSet, sql)
@@ -98,7 +100,7 @@ Function SaveFiles(link_id)
     
     call CloseRecordSet(RecordSet)
     
-    'call ReindexLinksData()'
+    call ReindexLinksData()
     
     Response.Redirect("link-edit.asp?action=edit&id=" & link_id)
 End Function
