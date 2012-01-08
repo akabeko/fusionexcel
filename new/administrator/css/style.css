@@ -43,13 +43,12 @@ table p {
 	font-weight: bold;
 }
 
-.input_form input[type=text], .input_form select, .input_form textarea {
+.input_form input[type=text], .input_form input[type=password], .input_form select, .input_form textarea {
 	border: 1px solid #D8D8D8;
 	border-radius: 5px;
 	padding: 3px 3px;
     margin: 4px 0;
 }
-
 
 .sidebar label {
 	font-weight: normal;
