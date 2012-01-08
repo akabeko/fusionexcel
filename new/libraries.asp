@@ -351,32 +351,52 @@ Function ReindexLinksData(link_type)
     set file = fileStream.CreateTextFile(Server.MapPath(GetIndexedPath("links/" & link_type & ".xml")), true)
     file.WriteLine "<?xml version='1.0' encoding='utf-8'?>"
     file.WriteLine "<links>"
-    sql = "SELECT link_id, article_id, article_category_code, link_title, image_url, link_short_description, publish, link_type, external_url FROM links WHERE link_type = " & link_type & " ORDER BY order_index DESC"
+    sql = "SELECT link_id, article_id, article_category_code, image_url, link_title, link_short_description, link_title_bm, link_short_description_bm, link_title_chi, link_short_description_chi, publish, link_type, external_url FROM links WHERE link_type = " & link_type & " ORDER BY order_index DESC"
     call SetConnection(GetLinksDbPath())
     call OpenDatabase()
     call CreateRecordSet(RecordSet, sql)
     Do While not RecordSet.EOF
         file.WriteLine "<link id='" & RecordSet.Fields("link_id") & "'>"
         file.WriteLine "<link_id>" & RecordSet.Fields("link_id") & "</link_id>"
-        file.WriteLine "<article_id>" & RecordSet.Fields("article_id") & "</article_id>"
-        file.WriteLine "<article_category_code>" & RecordSet.Fields("article_category_code") & "<article_category_code>"
-        file.WriteLine "<link_title>"
+        file.WriteLine "<link_title lang='en'>"
         if RecordSet.Fields("link_title") then
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_title"))
         end if
         file.WriteLine "</link_title>"
+        file.WriteLine "<link_title lang='bm'>"
+        if RecordSet.Fields("link_title") then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_title"))
+        end if
+        file.WriteLine "</link_title>"
+        file.WriteLine "<link_title lang='chi'>"
+        if RecordSet.Fields("link_title_chi") then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_title_chi"))
+        end if
+        file.WriteLine "</link_title>"
+        file.WriteLine "<link_short_description lang='en'>"
+        if RecordSet.Fields("link_short_description") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_short_description"))
+        end if
+        file.WriteLine "</link_short_description>"
+        file.WriteLine "<link_short_description lang='bm'>"
+        if RecordSet.Fields("link_short_description_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_short_description_bm"))
+        end if
+        file.WriteLine "</link_short_description>"
+        file.WriteLine "<link_short_description lang='chi'>"
+        if RecordSet.Fields("link_short_description_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_short_description_chi"))
+        end if
+        file.WriteLine "</link_short_description>"
+        file.WriteLine "<article_id>" & RecordSet.Fields("article_id") & "</article_id>"
+        file.WriteLine "<article_category_code>" & RecordSet.Fields("article_category_code") & "<article_category_code>"
         file.WriteLine "<image_url>"
         if RecordSet.Fields("image_url") <> "" then
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("image_url"))
         end if
         file.WriteLine"</image_url>"
-        file.WriteLine "<link_short_description>"
-        if RecordSet.Fields("link_short_description") <> "" then
-            file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_short_description"))
-        end if
-        file.WriteLine "</link_short_description>"
         file.WriteLine "<publish>" & RecordSet.Fields("publish") & "</publish>"
-        file.WriteLine "<link_type>" & RecordSet.Fields("link_type") & "</link_type">
+        file.WriteLine "<link_type>" & RecordSet.Fields("link_type") & "</link_type>"
         file.WriteLine "<external_url>"
         if RecordSet.Fields("external_url") then
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("external_url"))
@@ -386,8 +406,11 @@ Function ReindexLinksData(link_type)
     file.WriteLine "</links>"
 End Function
 
-Function getLatestLinksSequence()
-
+Function GetIndexedLinks(type_code)
+    Dim objXML
+    SetXMLPath(GetIndexedPath("links/" & type_code & ".xml"))
+    set objXML = OpenXML()
+    set GetIndexedLinks = objXML
 End Function
 
 loadCategoryRef()
