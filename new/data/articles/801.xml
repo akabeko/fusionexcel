@@ -2,7 +2,7 @@
 <article>
 	<en>
 		<title>FE Expands In The Philippines.</title>
-		<content><![CDATA[&lt;p&gt;
+		<content>&lt;p&gt;
 	FE is now expanding very fast in the Philippines, after our very successful launches in Thailand and USA. The stage is set for FE to become a global leader in the MLM industry! &amp;nbsp;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;
 	&amp;nbsp;&lt;/p&gt;
@@ -67,7 +67,7 @@
 			&lt;/td&gt;
 		&lt;/tr&gt;
 	&lt;/tbody&gt;
-&lt;/table&gt;]]>
+&lt;/table&gt;
 </content>
 		<meta>
 			<description>FE is now expanding very fast in the Philippines, after our very successful launches in Thailand and USA. The stage is set for FE to become a global leader in the MLM industry</description>
@@ -75,7 +75,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>FE Expands In the Philippines.</title>
 		<content></content>
@@ -85,7 +85,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>FE Expands In the Philippines.</title>
 		<content></content>
@@ -95,5 +95,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

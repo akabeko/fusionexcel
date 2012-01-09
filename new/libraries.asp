@@ -1,5 +1,6 @@
 <!--#include file="configuration.asp" -->
 <!--#include file="sidebar.asp" -->
+<!--#include file="render_links_by_category.asp" -->
 <!--#include file="header_image.asp" -->
 <!--#include file="data/dbController.asp" -->
 <%
@@ -25,6 +26,11 @@ End Function
 ' Get category references xml file url '
 Function GetCategoryRefPath()
 	GetCategoryRefPath = GetDataPath() & category_ref_xml
+End Function
+
+' Get video links category references xml file url '
+Function GetVideosLinkRefPath()
+    GetVideosLinkRefPath = GetDataPath() & video_link_category_ref_xml
 End Function
 
 ' Get main database file url '
@@ -87,7 +93,7 @@ End Function
 
 'Get references data'
 
-Dim categoryRef
+Dim categoryRef, videoLinkCategoryRef
 
 Function loadCategoryRef()
 	Dim objXML, root
@@ -124,6 +130,46 @@ Function getCategoriesList()
 	end if
 	getCategoriesList = categories
 End Function
+
+Function loadVideoLinkCategoryRef()
+    Dim objXML, root
+    SetXMLPath(GetVideosLinkRefPath())
+    set objXML = OpenXML()
+    set root = objXML.selectNodes("/categories/category")
+    set videoLinkCategoryRef = root
+End Function
+
+Function getVideoLinkCategoriesNameById(intID)
+    Dim categoryName, item
+    categoryName = ""
+    if categoryRef.length > 0 then
+        for each item in categoryRef
+            if ((( CInt(intID) \ CInt(item.childNodes(0).text)) mod 2 ) > 0) then
+                categoryName = categoryName & "<p>" & item.childNodes(1).text & "</p>"
+            end if
+        next
+    end if
+    getVideoLinkCategoriesNameById = categoryName
+End Function
+
+Function getVideoLinkCategoriesList()
+    Dim categories
+    if videoLinkCategoryRef.length > 0 then
+        Redim categories(3, categoryRef.length)
+        Dim index, item
+        index = 0
+        for each item in videoLinkCategoryRef
+            categories(0, index) = item.childNodes(0).text
+            categories(1, index) = item.childNodes(1).text
+            categories(2, index) = item.childNodes(2).text
+            categories(3, index) = item.childNodes(3).text
+            index = index + 1
+        next
+    end if
+    getVideoLinkCategoriesList = categories
+End Function
+
+'end if get reference data'
 
 Function getLatestArticleSequence()
     Dim sql, RecordSet
@@ -344,11 +390,16 @@ Function ReindexServiceCentres()
     file.WriteLine "</service_centres>"
 End Function
 
-Function ReindexLinksData(link_type)
+Function ReindexLinksData(link_type, video_category_code)
     'TODO: Reindex Links Data'
-    DIm sql, RecordSet, fileStream, file
+    DIm sql, RecordSet, fileStream, file, filepath
+    if link_type = 1 then
+        filepath = "links/1.xml"
+    elseif link_type = 2 then
+        filepath = "links/videos/" & video_category_code & ".xml"
+    end if
     set fileStream = Server.CreateObject("Scripting.FileSystemObject")
-    set file = fileStream.CreateTextFile(Server.MapPath(GetIndexedPath("links/" & link_type & ".xml")), true)
+    set file = fileStream.CreateTextFile(Server.MapPath(GetIndexedPath(filepath)), true)
     file.WriteLine "<?xml version='1.0' encoding='utf-8'?>"
     file.WriteLine "<links>"
     sql = "SELECT link_id, article_id, article_category_code, image_url, link_title, link_short_description, link_title_bm, link_short_description_bm, link_title_chi, link_short_description_chi, publish, link_type, external_url FROM links WHERE link_type = " & link_type & " ORDER BY order_index DESC"
@@ -359,17 +410,17 @@ Function ReindexLinksData(link_type)
         file.WriteLine "<link id='" & RecordSet.Fields("link_id") & "'>"
         file.WriteLine "<link_id>" & RecordSet.Fields("link_id") & "</link_id>"
         file.WriteLine "<link_title lang='en'>"
-        if RecordSet.Fields("link_title") then
+        if RecordSet.Fields("link_title") <> "" then
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_title"))
         end if
         file.WriteLine "</link_title>"
         file.WriteLine "<link_title lang='bm'>"
-        if RecordSet.Fields("link_title") then
+        if RecordSet.Fields("link_title") <> "" then
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_title"))
         end if
         file.WriteLine "</link_title>"
         file.WriteLine "<link_title lang='chi'>"
-        if RecordSet.Fields("link_title_chi") then
+        if RecordSet.Fields("link_title_chi") <> "" then
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("link_title_chi"))
         end if
         file.WriteLine "</link_title>"
@@ -398,20 +449,40 @@ Function ReindexLinksData(link_type)
         file.WriteLine "<publish>" & RecordSet.Fields("publish") & "</publish>"
         file.WriteLine "<link_type>" & RecordSet.Fields("link_type") & "</link_type>"
         file.WriteLine "<external_url>"
-        if RecordSet.Fields("external_url") then
+        if RecordSet.Fields("external_url") <> ""  then
             file.WriteLine Server.HTMLEncode(RecordSet.Fields("external_url"))
         end if
         file.WriteLine "</external_url>"
+        RecordSet.MoveNext
     Loop
     file.WriteLine "</links>"
 End Function
 
-Function GetIndexedLinks(type_code)
-    Dim objXML
+Function GetIndexedLinks(type_code, video_category_code)
+    Dim objXML, filepath
+    if type_code = 1 then
+        filepath = "links/1.xml"
+    elseif type_code = 2 then
+        filepath = "links/videos/" & video_category_code & ".xml"
+    end if
     SetXMLPath(GetIndexedPath("links/" & type_code & ".xml"))
     set objXML = OpenXML()
     set GetIndexedLinks = objXML
 End Function
 
+Function getLatestLinksSequence()
+    Dim sql, RecordSet
+    sql = "SELECT MAX(order_index) + 1 AS next_sequence FROM links"
+    call SetConnection(GetLinksDbPath())
+    call OpenDatabase()
+    call CreateRecordSet(RecordSet, sql)
+    if not RecordSet.EOF then
+        getLatestLinksSequence = RecordSet.Fields("next_sequence")
+    else
+        getLatestLinksSequence = 1
+    end if
+End Function
+
 loadCategoryRef()
+loadVideoLinkCategoryRef()
 %>

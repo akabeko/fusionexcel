@@ -19,7 +19,7 @@ Ringo Borlain, 2006 Mr Universe (Mixed Pair Category).
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2012/1/5</publish_start_date>
+<publish_start_date>1/5/2012</publish_start_date>
 <sequence>1195</sequence>
 <order_year>2012</order_year>
 <sequence_indexed>20121195</sequence_indexed>
@@ -45,7 +45,7 @@ Scott Smith, Current World Longdrive Record Holder 539 yards
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2012/1/5</publish_start_date>
+<publish_start_date>1/5/2012</publish_start_date>
 <sequence>1191</sequence>
 <order_year>2012</order_year>
 <sequence_indexed>20121191</sequence_indexed>
@@ -71,7 +71,7 @@ Read Testimonial Quantum Pendant Wearer, Zidov Akuma, Star Contender Asia &amp; 
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2012/1/5</publish_start_date>
+<publish_start_date>1/5/2012</publish_start_date>
 <sequence>1175</sequence>
 <order_year>2012</order_year>
 <sequence_indexed>20121175</sequence_indexed>
@@ -97,7 +97,7 @@ Read Testimonial of QP Wearer, Ms Law, Champion Power Lifter.
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2012/1/4</publish_start_date>
+<publish_start_date>1/4/2012</publish_start_date>
 <sequence>1170</sequence>
 <order_year>2012</order_year>
 <sequence_indexed>20121170</sequence_indexed>
@@ -120,11 +120,297 @@ Read Testimonial of QP Wearer, Ms Law, Champion Power Lifter.
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2012/1/4</publish_start_date>
+<publish_start_date>1/4/2012</publish_start_date>
 <sequence>1170</sequence>
 <order_year>2012</order_year>
 <sequence_indexed>20121170</sequence_indexed>
 <category_code>32</category_code>
 <content_filename>867.xml</content_filename>
+</article>
+<article id='127'>
+<article_id>127</article_id>
+<title lang='en'>
+<![CDATA[
+Surech Kuppusamy, World Class Mountaineer.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Surech Kuppusamy, World Class Mountaineer.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Surech Kuppusamy, World Class Mountaineer.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>12/28/2011</publish_start_date>
+<sequence>1101</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111101</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>127.xml</content_filename>
+</article>
+<article id='52'>
+<article_id>52</article_id>
+<title lang='en'>
+<![CDATA[
+Making Waves.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Foo Kok Keong in Action.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Foo Kok Keong in Action.
+]]>
+</title>
+<index_image_url>/images/foo03.jpg</index_image_url>
+<publish>True</publish>
+<publish_start_date>11/9/2011</publish_start_date>
+<sequence>1079</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111079</sequence_indexed>
+<category_code>161</category_code>
+<content_filename>52.xml</content_filename>
+</article>
+<article id='62'>
+<article_id>62</article_id>
+<title lang='en'>
+<![CDATA[
+Former Baseball Star, Bobby Bradley's Testimonial.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Congratulations to All FE Achievers at Our Achievers Recognition Dinner!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Congratulations to All FE Achievers at Our Achievers Recognition Dinner!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>11/9/2011</publish_start_date>
+<sequence>1077</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111077</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>62.xml</content_filename>
+</article>
+<article id='88'>
+<article_id>88</article_id>
+<title lang='en'>
+<![CDATA[
+WONG CHOON HIN, Sportsman Of The Year, Double In Olympics, World Cup &amp; Asian Games.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+WONG CHOON HIN, Sportsman of The Year, Double in Olympics, World Cup &amp; Asian Games.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+WONG CHOON HIN, Sportsman of The Year, Double in Olympics, World Cup &amp; Asian Games.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>11/10/2011</publish_start_date>
+<sequence>1062</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111062</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>88.xml</content_filename>
+</article>
+<article id='637'>
+<article_id>637</article_id>
+<title lang='en'>
+<![CDATA[
+Read Quantum Pendant Testimonials of Prominent Thais!
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FusionExcel Event in Seremban 25th June 2009.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FusionExcel Event in Seremban 25th June 2009.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>12/7/2011</publish_start_date>
+<sequence>1058</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111058</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>637.xml</content_filename>
+</article>
+<article id='82'>
+<article_id>82</article_id>
+<title lang='en'>
+<![CDATA[
+Doug Wilmoth &amp; Fuzzy Zoeller (Golf Legend).
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Doug Wilmoth &amp; Fuzzy Zoeller (Golf Legend).
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Doug Wilmoth &amp; Fuzzy Zoeller (Golf Legend).
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>11/9/2011</publish_start_date>
+<sequence>1053</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111053</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>82.xml</content_filename>
+</article>
+<article id='70'>
+<article_id>70</article_id>
+<title lang='en'>
+<![CDATA[
+Pat Dempsey 2 Times World Long Drive Champion.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Pat Dempsey 2 Times World Long Drive Champion.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Pat Dempsey 2 Times World Long Drive Champion.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>11/10/2011</publish_start_date>
+<sequence>1039</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111039</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>70.xml</content_filename>
+</article>
+<article id='560'>
+<article_id>560</article_id>
+<title lang='en'>
+<![CDATA[
+Well Known Corporate Figure And Celebrity Jason Lo Wearing FE's Quantum Pendant On The Front Page Of The THE EDGE FINANCIAL DAILY, Monday, 03rd December 2007.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Congratulations to 100 Winners of Notebook @ FE's 1 Million QP Celebration Banquet, 23rd May 2009!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Congratulations to 100 Winners of Notebook @ FE's 1 Million QP Celebration Banquet, 23rd May 2009!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>12/6/2011</publish_start_date>
+<sequence>1038</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111038</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>560.xml</content_filename>
+</article>
+<article id='717'>
+<article_id>717</article_id>
+<title lang='en'>
+<![CDATA[
+Scott Smith, Current World Long Drive Record Holder 539 Yards
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Laos Leaders Visit Thai Country Licensee's Office!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Laos Leaders Visit Thai Country Licensee's Office!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>12/10/2011</publish_start_date>
+<sequence>1018</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111018</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>717.xml</content_filename>
+</article>
+<article id='720'>
+<article_id>720</article_id>
+<title lang='en'>
+<![CDATA[
+Lance Reader 2008 Long Drive Golf Senior Champion .
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FusionExcel Welcomes Nepalese VVIP Quantum Science Users!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FusionExcel Welcomes Nepalese VVIP Quantum Science Users!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>12/10/2011</publish_start_date>
+<sequence>1014</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111014</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>720.xml</content_filename>
+</article>
+<article id='699'>
+<article_id>699</article_id>
+<title lang='en'>
+<![CDATA[
+Shalin Zulkifli, World Bowling Champion.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Hearing Impaired FE Leaders BEP In Singapore!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Hearing Impaired FE Leaders BEP In Singapore!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>12/9/2011</publish_start_date>
+<sequence>1012</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111012</sequence_indexed>
+<category_code>33</category_code>
+<content_filename>699.xml</content_filename>
 </article>
 </articles>

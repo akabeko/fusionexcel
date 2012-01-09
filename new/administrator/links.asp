@@ -41,12 +41,12 @@ end if
 <br />
 <%
 
-sql = "SELECT link_id, article_id, article_name, link_title, publish, modified, modified_by FROM links"'
+sql = "SELECT link_id, article_id, article_name, link_title, publish, modified, modified_by, link_type, external_url, order_index FROM links"'
 if Request("search") = "title" and Request("search_query") <> "" then
     sql = sql & " WHERE link_title LIKE '%" & Replace(Request("search_query"), " ", "%") & "%' "
     sql = sql & " OR article_name LIKE '%"  & Replace(Request("search_query"), " ", "%") & "%' "
 end if
-sql = sql & " ORDER BY order_index"
+sql = sql & " ORDER BY order_index DESC"
 
 call SetConnection(GetLinksDbPath())
 call OpenDatabase()
@@ -58,11 +58,12 @@ call CreateRecordSet(RecordSet, sql)
             <tr>
                 <td>&nbsp;</td>
                 <td>ID</td>
-                <td>Article Title</td>
+                <td>Article Title/ External URL</td>
                 <td>Link Title</td>
                 <td>Publish</td>
                 <td>Last Modified</td>
                 <td>Last Modified By</td>
+                <td>Order</td>
             </tr>
         </thead>
         <tbody>
@@ -70,7 +71,13 @@ call CreateRecordSet(RecordSet, sql)
             <tr>
                 <td><input type="checkbox" name="action_link_id" value="<%= RecordSet("link_id") %>" /></td>
                 <td><%= RecordSet("link_id") %></td>
-                <td><a href="article-edit.asp?action=edit&amp;id=<%= RecordSet("article_id") %>" target="_blank"><%= RecordSet("article_name") %></a></td>
+                <td>
+                    <% if RecordSet("link_type") = 1 then %>
+                        <a href="article-edit.asp?action=edit&amp;id=<%= RecordSet("article_id") %>" target="_blank"><%= RecordSet("article_name") %></a>
+                    <% elseif RecordSet("link_type") = 2 then %>
+                        <a href="<%= RecordSet("external_url") %>" target="_blank"><%= RecordSet("external_url") %></a>
+                    <% end if %>
+                </td>
                 <td><a href="link-edit.asp?action=edit&amp;id=<%= RecordSet("link_id") %>"><%= RecordSet("link_title") %></a></td>
                 <% if RecordSet("publish") then %>
                     <td style="background: green; color: white;">Yes</td>
@@ -79,6 +86,7 @@ call CreateRecordSet(RecordSet, sql)
                 <% end if %>
                 <td><%= RecordSet("modified") %></td>
                 <td><%= RecordSet("modified_by") %></td>
+                <td><%= RecordSet("order_index") %></td>
             </tr>
             <% RecordSet.MoveNext %>
         <% Loop %>

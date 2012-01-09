@@ -5,6 +5,7 @@ Dim objXml, lang_index
 ' 1 - EN; 2 - BM; 3 - CHI '
 lang = base_lang
 link_type = 1
+video_category_code = 1
 lang_index = lang
 
 if Request("link_type") <> "" and IsNumeric(Request("link_type")) then
@@ -13,7 +14,7 @@ end if
 
 Dim linkObjs, item
 
-set objXml = GetIndexedLinks(link_type)
+set objXml = GetIndexedLinks(link_type, video_category_code)
 set linkObjs = objXml.selectNodes("links/link")
 
 %>
@@ -38,7 +39,7 @@ end if
 <!-- Siderbar end -->
 </td>
 <td width="10" valign="top">&nbsp;</td>
-<td width="740" valign="top">
+<td width="738" valign="top">
 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td>
@@ -54,7 +55,20 @@ end if
 </tr>
 <tr>
 <td valign="top">
+<%
+if link_type = 1 then
 
+elseif link_type = 2 then
+    Dim linkCategories, index
+    linkCategories = getVideoLinkCategoriesList()
+    for index = 0 to UBound(linkCategories, 2)
+        if linkCategories(1, index) <> "" then
+            Call render_links_by_category(2, linkCategories(0, index), linkCategories(lang_index, index))
+            %><br /><%
+        end if
+    next
+end if
+%>
 </td>
 </tr>
 </table>

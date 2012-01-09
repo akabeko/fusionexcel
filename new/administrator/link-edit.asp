@@ -10,7 +10,7 @@ Dim link_id, RecordSet, sql
 Dim publish, order_index, article_name, article_id, article_category_code, image_url
 Dim link_title, link_title_bm, link_title_chi
 Dim link_short_description, link_short_description_bm, link_short_description_chi
-Dim link_type
+Dim link_type, video_category_code, external_url
 
 link_id = 0
 
@@ -30,13 +30,15 @@ if Request("action") = "" or Request("action") = "add" then
     
     link_type = Request("link_type")
     external_url = Request("external_url")
+    video_category_code = Request("video_category_code")
+    
 elseif Request("action") = "edit" then
     if Request("id") = "" or not IsNumeric(Request("id")) then
         Response.Write "Invalid Link ID"
         Response.End
     end if
     link_id = CInt(Request("id"))
-    sql = "SELECT article_name, article_id, article_category_code, publish, order_index, image_url, link_title, link_title_bm, link_title_chi, link_short_description, link_short_description_bm, link_short_description_chi FROM links WHERE link_id = " & link_id
+    sql = "SELECT article_name, article_id, article_category_code, publish, order_index, image_url, link_title, link_title_bm, link_title_chi, link_short_description, link_short_description_bm, link_short_description_chi, link_type, external_url, video_category_code FROM links WHERE link_id = " & link_id
     call SetConnection(GetLinksDbPath())
     call OpenDatabase()
     call CreateRecordSet(RecordSet, sql)
@@ -61,6 +63,7 @@ elseif Request("action") = "edit" then
     
     link_type = RecordSet("link_type")
     external_url = RecordSet("external_url")
+    video_category_code = RecordSet("video_category_code")
 end if
 %>
 <script type="text/javascript">
@@ -69,10 +72,10 @@ end if
     
     $(function() {
         $('#tabs').tabs();
-        $('.input_form').submit(function() {
+        $('.input_form').submit(function(e) {
             var article_id = $('#id_article_id').val();
             var order_index = trimNumber($('#id_order_index').val());
-            var type = $('input[name="link_type"]').val();
+            var type = $('input[name="link_type"]:checked').val();
             var url = $('#id_external_url').val();
             
             if(!((parseFloat(order_index) == parseInt(order_index)) && !isNaN(order_index))) {
@@ -80,17 +83,25 @@ end if
 				return false;
 			}
             if (type == 1) {
-                if(!((parseFloat(article_id) == parseInt(article_id)) && !isNaN(article_id))) {
+                if(!((parseFloat(article_id) == parseInt(article_id)) && !isNaN(article_id)) && article_id == "0") {
                     alert("Please select an article")
                     return false;
                 }
             } else if (type == 2) {
-                if(!regexp.test(url)) {
+                if(regexp.test(url)) {
                     alert("Please enter a valid URL");
                     return false;
                 }
             }
 			return true;
+        });
+        $('#id_link_title, #id_link_short_description').blur(function() {
+            if ($('#' + $(this).attr('id') +"_bm").val() == "") {
+                $('#' + $(this).attr('id') +"_bm").val($(this).val());
+            }
+            if ($('#' + $(this).attr('id') +"_chi").val() == "") {
+                $('#' + $(this).attr('id') +"_chi").val($(this).val());
+            }
         });
         $('#btn_article_lookup').click(function(e) {
             e.preventDefault();
@@ -107,6 +118,9 @@ end if
                 $('#id_external_url').show();
             }
         });
+        $('#id_article_category_code_list').change(function() {
+            $('#id_article_category_code').val($(this).val());
+        });
     });
     function trimNumber(s) {
 		while (s.substr(0,1) == '0' && s.length > 1) { s = s.substr(1, 9999); }
@@ -114,7 +128,7 @@ end if
 	}
 </script>
 <h1>External Links</h1>
-<form method="POST" enctype="multipart/form-data" accept-charset="utf-8" class="input_form" action="link-edit.asp?id=<%= link_id %>&amp;action=<%= Request("action") %>">
+<form method="POST" enctype="multipart/form-data" accept-charset="utf-8" class="input_form" action="link-save.asp?id=<%= link_id %>&amp;action=<%= Request("action") %>">
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
             <td width="150px"><label>Publish</label>:</td>
@@ -124,12 +138,12 @@ end if
         </tr>
         <tr>
             <td><label>Type:</label></td>
-            <td colspan="3"><input type="radio" name="link_type" value="1" <% if link_type = 1 or link_type = "" then %>checked="checked"<% end if %>/> VIP QP Wearer <input type="radio" name="link_type" value="2" <% if link_type = 2 then %>checked="checked"<% end if %>/> Videos</td>
+            <td colspan="3"><input type="radio" name="link_type" value="1" id="id_link_type_1" <% if link_type = 1 or link_type = "" then %>checked="checked"<% end if %>/> <label style="font-weight: normal" for="id_link_type_1">VIP QP Wearer</label> <input type="radio" name="link_type" value="2" id="id_link_type_2" <% if link_type = 2 then %>checked="checked"<% end if %>/> <label style="font-weight: normal" for="id_link_type_2">Videos</label></td>
         </tr>
         <tr>
             <td colspan="4">&nbsp;</td>
         </tr>
-        <tr id="id_article_lookup">
+        <tr id="id_article_lookup" <% if link_type <> 1 then %>style="display:none"<% end if %>>
             <td><label>Article</label>:</td>
             <td>
                 <input type="text" name="article_name" id="id_article_name" value="<%= article_name %>" size="50" readonly="readonly" />
@@ -142,27 +156,38 @@ end if
                 <select id="id_article_category_code_list" name="selected_category_code">
                     <%
                         if article_category_code > 0 then
-                        Dim categories, index
-                        categories = getCategoriesList()
-                        For index = 0 to UBound(categories, 2)
-                            if categories(1, index) <> "" then
-                                if (((article_category_code \ categories(0, index)) mod 2) = 1) then
-                                %>
-                                    <option value="<%= categories(0, index) %>"><%= categories(1, index) %></option>
-                                <%
+                            Dim categories, index
+                            categories = getCategoriesList()
+                            For index = 0 to UBound(categories, 2)
+                                if categories(1, index) <> "" then
+                                    if (((article_category_code \ categories(0, index)) mod 2) = 1) then
+                                    %>
+                                        <option value="<%= categories(0, index) %>"><%= categories(1, index) %></option>
+                                    <%
+                                    end if
                                 end if
-                            end if
-                        Next
+                            Next
                         end if
                     %>
                 </select>
             </td>
         </tr>
-        <tr id="id_external_url" style="display: none">
+        <tr id="id_external_url" <% if link_type <> 2 then %>style="display:none"<% end if %>>
             <td><label for="id_external_url">External URL</td>
             <td><input type="text" name="external_url" id="id_external_url" value="<%= external_url %>" size="60" />
-            <td></td>
-            <td></td>
+            <td><label for="id_video_category_code">Category: </label></td>
+            <td>
+                <select id="id_video_category_code" name="video_category_code">
+                    <%
+                        categories = getVideoLinkCategoriesList()
+                        For index = 0 to UBound(categories, 2)
+                            if categories(1, index) <> "" then
+                                %><option value="<%= categories(0, index) %>"<% if (((video_category_code \ categories(0, index)) mod 2) = 1) then %> selected="selected"<% end if %>><%= categories(1, index) %></option><%
+                            end if
+                        Next
+                    %>
+                </select>
+            </td>
         </tr>
     </table>
     <br /><br />
@@ -181,7 +206,7 @@ end if
                     </tr>
                     <tr>
                         <td><label for="id_link_short_description">Short Description</label>:</td>
-                        <td><textarea name="link_short_description" rows="5" cols="80"><%= link_short_description %></textarea></td>
+                        <td><textarea name="link_short_description" id="id_link_short_description" rows="5" cols="80"><%= link_short_description %></textarea></td>
                     </tr>
                 </table>
                 <br />

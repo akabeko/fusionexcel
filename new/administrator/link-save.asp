@@ -32,7 +32,7 @@ Call OpenDatabase()
 SaveFiles(link_id)
 
 Function SaveFiles(link_id)
-    Dim upload, fileName, fileSize, ks, i fileKey, sameSequence
+    Dim upload, fileName, fileSize, ks, i, fileKey, sameSequence
     set upload = new FreeAspUpload
     
     sameSequence = False
@@ -69,11 +69,26 @@ Function SaveFiles(link_id)
         sameSequence = True
     end if
     
+    
+    
+    
+    
     RecordSet.fields("publish") = upload.Form("publish")
     
     RecordSet.fields("article_name") = upload.Form("article_name")
-    RecordSet.fields("article_id") = upload.Form("article_id")
-    RecordSet.fields("article_category_code") = upload.Form("article_category_code")
+    
+    if upload.Form("article_id") = "" then
+        RecordSet.fields("article_id") = 0
+    else 
+        RecordSet.fields("article_id") = upload.Form("article_id")
+    end if
+    
+    if upload.Form("article_category_code") = "" then
+        RecordSet.fields("article_category_code") = 0
+    else
+        RecordSet.fields("article_category_code") = upload.Form("article_category_code")
+    end if
+    
     RecordSet.fields("link_title") = upload.Form("link_title")
     RecordSet.fields("link_short_description") = upload.Form("link_short_description")
     RecordSet.fields("link_title_bm") = upload.Form("link_title_bm")
@@ -82,25 +97,40 @@ Function SaveFiles(link_id)
     RecordSet.fields("link_short_description_chi") = upload.Form("link_short_description_chi")
     
     RecordSet.Fields("external_url") = upload.Form("external_url")
+    RecordSet.Fields("link_type") = upload.Form("link_type")
     
-    Dim OrderRecordSet
-    sql = "SELECT COUNT(1) AS 'counter' FROM link WHERE order_index = " & upload.Form("order_index")
-    call CreateRecordSet(OrderRecordSet, sql)
-    if OrderRecordSet.Fields("'counter'") > 0 then
-        sql = "UPDATE article SET order_index = order_index + 1 WHERE order_index >= " & Upload.Form("order_index")
-        call ExecuteQuery(sql)	
-	end if
+    RecordSet.Fields("modified_by") = Session("login")
+    RecordSet.Fields("modified") = Now()
+    
+    if upload.Form("video_category_code") = "" then
+        RecordSet.Fields("video_category_code") = 0
+    else
+        RecordSet.Fields("video_category_code") = upload.Form("video_category_code")
+    end if
     
     RecordSet.fields("order_index") = upload.Form("order_index")
     
     RecordSet.UPDATE
     
+    
+    
     link_id = RecordSet("link_id")
+    
+    Dim OrderRecordSet
+    sql = "SELECT COUNT(1) AS 'counter' FROM links WHERE order_index = " & upload.Form("order_index") & " AND NOT (link_id = " & link_id & ")"
+    call CreateRecordSet(OrderRecordSet, sql)
+    if OrderRecordSet.Fields("'counter'") > 0 then
+        sql = "UPDATE links SET order_index = order_index + 1 WHERE order_index >= " & Upload.Form("order_index") & " AND NOT (link_id = " & link_id & ")"
+        call ExecuteQuery(sql)	
+	end if
+    
     RecordSet.Close
     
     call CloseRecordSet(RecordSet)
     
-    call ReindexLinksData()
+    call ReindexLinksData(upload.Form("link_type"), upload.Form("video_category_code"))
     
     Response.Redirect("link-edit.asp?action=edit&id=" & link_id)
 End Function
+
+%>

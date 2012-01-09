@@ -13,7 +13,7 @@ Dim data_path, article_path, service_centres_path, indexed_path, links_path
 'DB Path'
 Dim main_db, reference_db, article_db, user_db, service_centre_db, links_db
 'XML Path'
-Dim category_ref_xml
+Dim category_ref_xml, video_link_category_ref_xml
 
 'Indexed Files'
 Dim article_indexed_xml
@@ -42,6 +42,7 @@ service_centre_db = "service_centres.mdb"
 links_db = "links.mdb"
 
 category_ref_xml = "references/category.xml"
+video_link_category_ref_xml = "references/links/videos.xml"
 
 article_indexed_xml = "articles_indexed.xml"
 service_centres_indexed_xml = "service_centres_indexed.xml"
