@@ -204,7 +204,7 @@ new showLocalTime("timecontainer", "server-asp", 0, "short")
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="105"><a href="service_centres.asp" target="_top" class="menu">Service Centres</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="50" class="menu"><a href="video_testimonials.html" target="_top" class="menu">Videos</a></td>
+                <td width="50" class="menu"><a href="links.asp?link_type=2" target="_top" class="menu">Videos</a></td>
                 <td width="13" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="60"><a href="training.html" target="_top" class="menu">Training</a></td>
                 <td width="13" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>

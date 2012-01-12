@@ -8,8 +8,8 @@
 			&lt;td class="content" height="15"&gt;
 				&lt;strong&gt;YUAN YUFANG&lt;/strong&gt;&lt;/td&gt;
 		&lt;/tr&gt;
-		&lt;tr valign="top"&gt;
-			&lt;td height="10"&gt;
+		&lt;tr&gt;
+			&lt;td class="content" height="15"&gt;
 				&amp;nbsp;&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr valign="top"&gt;
@@ -26,10 +26,6 @@
 				- Bronze Medal Winner Commonwealth Games, Manchester 2002.&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr valign="top"&gt;
-			&lt;td height="10"&gt;
-				&amp;nbsp;&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;tr valign="top"&gt;
 			&lt;td align="center" height="10"&gt;
 				&lt;img height="240" src="http://www.fusionexcel.com/imgnews/y_y_spoken.jpg" width="354" /&gt;&lt;/td&gt;
 		&lt;/tr&gt;
@@ -42,7 +38,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>Official Appointment</title>
 		<content></content>
@@ -52,7 +48,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>Official Appointment</title>
 		<content></content>
@@ -62,5 +58,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

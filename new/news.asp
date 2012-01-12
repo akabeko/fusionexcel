@@ -60,7 +60,7 @@ end if
 <meta name="designer" content="KLHunter.com - Web Design Management" />
 <meta name="copyright" content="FusionExcel International © All Rights Reserved" />
 
-<link href="fe.css" rel="stylesheet" type="text/css" />
+<link href="<%= GetFrontendCSSPath() %>fe.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 <!--
 body {

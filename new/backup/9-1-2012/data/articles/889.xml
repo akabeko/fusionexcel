@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article>
+	<en>
+		<title>news 3</title>
+		<alt_title></alt_title>
+		<content>&lt;p&gt;
+	&lt;img src="http://fusionexcel.com/imgnews/news3.jpg" /&gt;&lt;/p&gt;
+</content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author>KLHunter</author>
+			<robots>all</robots>
+		</meta>
+	</en>
+	<bm>
+		<title>news 3</title>
+		<alt_title></alt_title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author>KLHunter</author>
+			<robots>all</robots>
+		</meta>
+	</bm>
+	<chi>
+		<title>news 3</title>
+		<alt_title></alt_title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author>KLHunter</author>
+			<robots>all</robots>
+		</meta>
+	</chi>
+</article>

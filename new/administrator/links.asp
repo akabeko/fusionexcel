@@ -1,9 +1,23 @@
 <!--#include file="../libraries.asp" -->
 <%
 Dim page_title
-page_title = "[VIP QP Wearers] Fusion Excel Content Management System "
+page_title = "Fusion Excel Content Management System "
 
-Dim RecordSet, sql
+Dim RecordSet, sql, link_type
+
+link_type = 1
+
+if Request("link_type") <> "" then
+    if IsNumeric(Request("link_type")) then
+        link_type = CInt(Request("link_type"))
+    End if
+End if
+
+if link_type = 1 then
+    page_title = "[VIP QP Wearers] " & page_title
+elseif link_type = 2 then
+    page_title = "[Videos] " & page_title
+end if
 %>
 <!--#include file="header.asp" -->
 <%
@@ -45,6 +59,7 @@ sql = "SELECT link_id, article_id, article_name, link_title, publish, modified, 
 if Request("search") = "title" and Request("search_query") <> "" then
     sql = sql & " WHERE link_title LIKE '%" & Replace(Request("search_query"), " ", "%") & "%' "
     sql = sql & " OR article_name LIKE '%"  & Replace(Request("search_query"), " ", "%") & "%' "
+    sql = sql & " AND link_type = " & link_type
 end if
 sql = sql & " ORDER BY order_index DESC"
 

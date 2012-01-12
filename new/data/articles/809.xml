@@ -11,7 +11,7 @@
 						&lt;tr valign="top"&gt;
 						&lt;/tr&gt;
 						&lt;tr&gt;
-							&lt;td class="content" valign="top"&gt;
+							&lt;td class="content" style="font-size: 13px; " valign="top"&gt;
 								FE is proud to announce that Angelo Que is now part of the FE international team. Angelo is the Philippines top golfer, and winner of the 2008 Philippine Open.&lt;br /&gt;
 								&lt;br /&gt;
 								Angelo is highly impressed with the benefits and power of FE&amp;#39;s Scalar Energy range of products.&lt;br /&gt;
@@ -19,7 +19,7 @@
 								&lt;a href="http://www.asiagolfonline.com/20080406/4567125-angelo-que-bags-philippine-open-title/"&gt;Angelo Que bags Philippine Open title (Asia Golf Online.com - 6th April 2008)&lt;/a&gt;&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr&gt;
-							&lt;td class="content" valign="top"&gt;
+							&lt;td class="content" style="font-size: 13px; " valign="top"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
 										&lt;tr align="center" valign="top"&gt;
@@ -27,32 +27,20 @@
 												&amp;nbsp;&lt;/td&gt;
 										&lt;/tr&gt;
 										&lt;tr valign="top"&gt;
-											&lt;td colspan="2" height="10"&gt;
-												&amp;nbsp;&lt;/td&gt;
-										&lt;/tr&gt;
-										&lt;tr valign="top"&gt;
 											&lt;td&gt;
-												&lt;img height="265" src="http://www.fusionexcel.com/imgnews/angelo1.jpg" width="354" /&gt;&lt;/td&gt;
+												&lt;img height="265" src="http://fusionexcel.com/imgnews/angelo1.jpg" width="354" /&gt;&lt;/td&gt;
 											&lt;td align="right"&gt;
-												&lt;img height="265" src="http://www.fusionexcel.com/imgnews/angelo2.jpg" width="354" /&gt;&lt;/td&gt;
-										&lt;/tr&gt;
-										&lt;tr valign="top"&gt;
-											&lt;td colspan="2" height="10"&gt;
-												&amp;nbsp;&lt;/td&gt;
+												&lt;img height="265" src="http://fusionexcel.com/imgnews/angelo2.jpg" width="354" /&gt;&lt;/td&gt;
 										&lt;/tr&gt;
 										&lt;tr valign="top"&gt;
 											&lt;td width="50%"&gt;
-												&lt;img height="265" src="http://www.fusionexcel.com/imgnews/angelo3.jpg" width="354" /&gt;&lt;/td&gt;
+												&lt;img height="265" src="http://fusionexcel.com/imgnews/angelo3.jpg" width="354" /&gt;&lt;/td&gt;
 											&lt;td align="right"&gt;
-												&lt;img height="265" src="http://www.fusionexcel.com/imgnews/angelo5.jpg" width="354" /&gt;&lt;/td&gt;
-										&lt;/tr&gt;
-										&lt;tr valign="top"&gt;
-											&lt;td colspan="2" height="10"&gt;
-												&amp;nbsp;&lt;/td&gt;
+												&lt;img height="265" src="http://fusionexcel.com/imgnews/angelo5.jpg" width="354" /&gt;&lt;/td&gt;
 										&lt;/tr&gt;
 										&lt;tr valign="top"&gt;
 											&lt;td&gt;
-												&lt;img height="252" src="http://www.fusionexcel.com/imgnews/angelo4.jpg" width="220" /&gt;&lt;/td&gt;
+												&lt;img height="252" src="http://fusionexcel.com/imgnews/angelo4.jpg" width="354" /&gt;&lt;/td&gt;
 										&lt;/tr&gt;
 									&lt;/tbody&gt;
 								&lt;/table&gt;
@@ -79,7 +67,7 @@ Angelo Que bags Philippine Open title (Asia Golf Online.com - 6th April 2008)</d
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>Filipino Golf Champion Angelo Que With FusionExcel</title>
 		<content></content>
@@ -97,7 +85,7 @@ Angelo Que bags Philippine Open title (Asia Golf Online.com - 6th April 2008)</d
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>Filipino Golf Champion Angelo Que With FusionExcel</title>
 		<content></content>
@@ -115,5 +103,5 @@ Angelo Que bags Philippine Open title (Asia Golf Online.com - 6th April 2008)</d
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

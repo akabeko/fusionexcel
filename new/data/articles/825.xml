@@ -11,7 +11,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>School of Networking (SON) Malaysia 23rd &amp; 24th May 2008.</title>
 		<content></content>
@@ -21,7 +21,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>School of Networking (SON) Malaysia 23rd &amp; 24th May 2008.</title>
 		<content></content>
@@ -31,5 +31,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

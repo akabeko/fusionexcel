@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <article>
 	<en>
-		<title>FE’s QP featured on Philippines live TV Channel  4 program  “One Morning” 30 April 2008 with Jeremiah Looi (FE’s Philippines Country Licensee), Dr. Romer Macalinao and John Epperson.</title>
+		<title>FE’s Quantum Pendants Featured On Philippines Live TV Channel  4 program  “One Morning” 30 April 2008 With Jeremiah Looi (FE’s Philippines Country Licensee), Dr. Romer Macalinao And John Epperson.</title>
 		<content>&lt;div&gt;
-	&amp;nbsp;&lt;/div&gt;
-&lt;div&gt;
 	&lt;table border="0" cellpadding="0" cellspacing="0" style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; background-color: rgb(238, 240, 252); font-size: medium; " width="100%"&gt;
 		&lt;tbody&gt;
 			&lt;tr&gt;
@@ -37,7 +35,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>FE’s QP featured on Philippines live TV Channel  4 program  “One Morning” 30 April 2008 with Jeremiah Looi (FE’s Philippines Country Licensee), Dr. Romer Macalinao And John Epperson.</title>
 		<content></content>
@@ -47,7 +45,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>FE’s QP featured on Philippines live TV Channel  4 program  “One Morning” 30 April 2008 with Jeremiah Looi (FE’s Philippines Country Licensee), Dr. Romer Macalinao And John Epperson.</title>
 		<content></content>
@@ -57,5 +55,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

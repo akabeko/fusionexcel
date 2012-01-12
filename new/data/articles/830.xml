@@ -10,9 +10,9 @@
 					&lt;tbody&gt;
 						&lt;tr valign="top"&gt;
 							&lt;td width="50%"&gt;
-								&lt;img height="263" src="http://fusionexcel.com/imgnews/ramazan1.jpg" width="350" /&gt;&lt;/td&gt;
+								&lt;img src="http://fusionexcel.com/imgnews/ramazan1.jpg" style="width: 354px; height: 266px; " /&gt;&lt;/td&gt;
 							&lt;td align="right"&gt;
-								&lt;img height="263" src="http://fusionexcel.com/imgnews/ramazan2.jpg" width="350" /&gt;&lt;/td&gt;
+								&lt;img src="http://fusionexcel.com/imgnews/ramazan2.jpg" style="width: 354px; height: 266px; " /&gt;&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10"&gt;
@@ -41,15 +41,14 @@
 			&lt;/td&gt;
 		&lt;/tr&gt;
 	&lt;/tbody&gt;
-&lt;/table&gt;
-</content>
+&lt;/table&gt;</content>
 		<meta>
 			<description>FE is proud to announce the EXCLUSIVE SPONSORSHIP of WMC Muay Thai Heavyweight Champion.</description>
 			<keyword>EXCLUSIVE SPONSORSHIP, WMC Muay Thai Heavyweight Champion, Russian Ramazan Ramazanov (The Punisher ), Dubai World Trade Centre.</keyword>
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>FusionExcel Exclusive Sponsor of World Champion Ramazan Ramazanov (The Punisher), WBC Muay Thai World Championship Title Fight, World Trade Centre, Dubai, 13th June 2008!</title>
 		<content></content>
@@ -59,7 +58,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>FusionExcel Exclusive Sponsor of World Champion Ramazan Ramazanov (The Punisher), WBC Muay Thai World Championship Title Fight, World Trade Centre, Dubai, 13th June 2008!</title>
 		<content></content>
@@ -69,5 +68,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

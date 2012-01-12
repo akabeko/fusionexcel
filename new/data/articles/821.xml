@@ -17,10 +17,6 @@
 				and Jeremy&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr&gt;
-			&lt;td align="center" height="10" valign="top"&gt;
-				&amp;nbsp;&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
 			&lt;td align="center" valign="top"&gt;
 				&lt;img height="277" src="http://www.fusionexcel.com/imgnews/morespoke2.jpg" width="398" /&gt;&lt;/td&gt;
 		&lt;/tr&gt;
@@ -28,10 +24,6 @@
 			&lt;td align="center" class="smallhead" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; " valign="top"&gt;
 				Sharing the benefits of using Scalar Energy products&lt;br /&gt;
 				and the science behind it.&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
-			&lt;td align="center" height="10" valign="top"&gt;
-				&amp;nbsp;&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr&gt;
 			&lt;td align="center" valign="top"&gt;
@@ -42,10 +34,6 @@
 				Action always speaks louder than words,&amp;nbsp;&lt;br /&gt;
 				Fusion Excel demos has NEVER fail to&amp;nbsp;&lt;br /&gt;
 				impress anyone.&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
-			&lt;td align="center" height="10" valign="top"&gt;
-				&amp;nbsp;&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr&gt;
 			&lt;td align="center" valign="top"&gt;
@@ -67,7 +55,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>Philippines QP Wearers Sergio Ortiz-Luis JR, Ambassador Donald Dee And Congressman Antonio Roman</title>
 		<content></content>
@@ -77,7 +65,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>Philippines QP Wearers Sergio Ortiz-Luis JR, Ambassador Donald Dee And Congressman Antonio Roman</title>
 		<content></content>
@@ -87,5 +75,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

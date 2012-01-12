@@ -81,7 +81,7 @@ a:active {
                     <tr>
                       <td align="right">
                        <table width="164" border="0" cellspacing="0" cellpadding="0">
-<form action="http://www.fusionexcel.com/xs_search.en.asp" id="csesearchbox" name="csesearchbox" method="GET" target="_parent">
+<form action="search.asp" id="csesearchbox" name="csesearchbox" method="GET" target="_parent">
   <tr>
     <td align="right"><img src="imgnews/search-left.gif" width="13" height="22" /></td>
     <td class="search-bg1">
@@ -163,11 +163,11 @@ new showLocalTime("timecontainer", "server-asp", 0, "short")
               <tr>
                 <td><a href="index.html" target="_top"><img src="img/clickableheader.png" alt="FusionExcel" width="210" height="30" /></a></td>
                 <td valign="top"><img src="img/arrow_upcoming.gif" width="12" height="31" /></td>
-                <td align="left" valign="middle" class="button_up"><a href="upnews_main.html" target="_top" class="whitelink">Upcoming Events</a></td>
+                <td align="left" valign="middle" class="button_up"><a href="events.asp" target="_top" class="whitelink">Upcoming Events</a></td>
                 <td align="center" valign="middle"><img src="img/arrow_right.gif" width="12" height="31" /></td>
-                <td valign="middle"><a href="char_hope4child.html" target="_top" class="whitelink">Charities</a></td>
+                <td valign="middle"><a href="news.asp?category_code=2" target="_top" class="whitelink">Charities</a></td>
                 <td align="center" valign="middle"><img src="img/arrow_right.gif" width="12" height="31" /></td>
-                <td valign="middle"><a href="sponsor_nationalGolf.html" target="_top" class="whitelink">Sponsorships</a></td>
+                <td valign="middle"><a href="news.asp?category_code=4" target="_top" class="whitelink">Sponsorships</a></td>
               </tr>
             </table></td>
           </tr>
@@ -193,7 +193,7 @@ new showLocalTime("timecontainer", "server-asp", 0, "short")
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="118"><a href="service_centres.asp" target="_top" class="menu">Service Centres</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="59" class="menu"><a href="video_testimonials.html" target="_top" class="menu">Videos</a></td>
+                <td width="59" class="menu"><a href="links.asp?link_type=2" target="_top" class="menu">Videos</a></td>
                 <td width="13" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="65"><a href="training.html" target="_top" class="menu">Training</a></td>
                 <td width="13" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>

@@ -10,8 +10,10 @@
 			&lt;td align="right"&gt;
 				&lt;img height="264" src="http://www.fusionexcel.com/imgnews/manila23.jpg" width="354" /&gt;&lt;/td&gt;
 		&lt;/tr&gt;
-		&lt;tr valign="top"&gt;
-			&lt;td colspan="2" height="10"&gt;
+		&lt;tr&gt;
+			&lt;td width="50%"&gt;
+				&amp;nbsp;&lt;/td&gt;
+			&lt;td align="right"&gt;
 				&amp;nbsp;&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr valign="top"&gt;
@@ -65,7 +67,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>Letter Of Appreciation From Judge Lorenzo B Venaracion.</title>
 		<content></content>
@@ -75,7 +77,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>Letter Of Appreciation From Judge Lorenzo B Venaracion.</title>
 		<content></content>
@@ -85,5 +87,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

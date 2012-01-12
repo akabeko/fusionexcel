@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article>
+	<en>
+		<title>Test Article 5</title>
+		<alt_title></alt_title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author></author>
+			<robots></robots>
+		</meta>
+	</en>
+	<bm>
+		<title>Test Article 5</title>
+		<alt_title></alt_title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author></author>
+			<robots></robots>
+		</meta>
+	</bm>
+	<chi>
+		<title>Test Article 5</title>
+		<alt_title></alt_title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author></author>
+			<robots></robots>
+		</meta>
+	</chi>
+</article>

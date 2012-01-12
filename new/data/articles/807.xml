@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <article>
 	<en>
-		<title>FE welcomes legendary Philippines PBA player, Alvin Vergara Patrimonio, “The Captain”.</title>
+		<title>FE Welcomes Legendary Philippines PBA Player, Alvin Vergara Patrimonio, “The Captain”.</title>
 		<content>&lt;table border="0" cellpadding="0" cellspacing="0" style="color: rgb(0, 0, 0); font-family: Times; background-color: rgb(238, 240, 252); font-size: medium; " width="100%"&gt;
 	&lt;tbody&gt;
 		&lt;tr&gt;
@@ -21,39 +21,26 @@
 				&lt;img height="338" src="http://fusionexcel.com/imgnews/alvin1.jpg" width="280" /&gt;&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr&gt;
-			&lt;td align="center" class="conthead" height="10" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: rgb(0, 0, 255); " valign="top"&gt;
-				&amp;nbsp;&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
 			&lt;td align="center" class="conthead" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: rgb(0, 0, 255); " valign="top"&gt;
 				&lt;img height="380" src="http://fusionexcel.com/imgnews/alvin2.jpg" width="550" /&gt;&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
-			&lt;td align="center" class="conthead" height="10" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: rgb(0, 0, 255); " valign="top"&gt;
-				&amp;nbsp;&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr&gt;
 			&lt;td align="center" class="conthead" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: rgb(0, 0, 255); " valign="top"&gt;
 				&lt;img height="380" src="http://fusionexcel.com/imgnews/alvin3.jpg" width="550" /&gt;&lt;/td&gt;
 		&lt;/tr&gt;
 		&lt;tr&gt;
-			&lt;td align="center" class="conthead" height="10" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: rgb(0, 0, 255); " valign="top"&gt;
-				&amp;nbsp;&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;tr&gt;
 			&lt;td align="center" class="conthead" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: rgb(0, 0, 255); " valign="top"&gt;
 				&lt;img height="380" src="http://fusionexcel.com/imgnews/alvin4.jpg" width="550" /&gt;&lt;/td&gt;
 		&lt;/tr&gt;
 	&lt;/tbody&gt;
-&lt;/table&gt;
-</content>
+&lt;/table&gt;</content>
 		<meta>
 			<description>Legendary Philippines Basketball Association (PBA), Alvin Vergara Patrimonio, The Captain, Most Valuable Player Awards, Best Player of the Conference Award, Asian Games, Samboy, Allan Caidic, Mythical First Team Selection</description>
 			<keyword>Legendary Philippines Basketball Association (PBA) player joins FE! The ever popular Alvin Vergara Patrimonio nicknamed The Captain.</keyword>
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>FE welcomes legendary Philippines PBA player, Alvin Vergara Patrimonio, “The Captain”.</title>
 		<content></content>
@@ -63,7 +50,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>FE welcomes legendary Philippines PBA player, Alvin Vergara Patrimonio, “The Captain”.</title>
 		<content></content>
@@ -73,5 +60,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

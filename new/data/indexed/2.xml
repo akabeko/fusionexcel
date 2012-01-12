@@ -46,9 +46,9 @@ Letter Of Appreciation From Judge Lorenzo B Venaracion.
 <index_image_url></index_image_url>
 <publish>True</publish>
 <publish_start_date>12/30/2011</publish_start_date>
-<sequence>1150</sequence>
+<sequence>1126</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111150</sequence_indexed>
+<sequence_indexed>20111126</sequence_indexed>
 <category_code>3</category_code>
 <content_filename>823.xml</content_filename>
 </article>
@@ -72,11 +72,37 @@ FE Donates QPs To Perwira K9 Wheelchair Basketball Dream Team
 <index_image_url></index_image_url>
 <publish>True</publish>
 <publish_start_date>12/30/2011</publish_start_date>
-<sequence>1146</sequence>
+<sequence>1123</sequence>
 <order_year>2011</order_year>
-<sequence_indexed>20111146</sequence_indexed>
+<sequence_indexed>20111123</sequence_indexed>
 <category_code>3</category_code>
 <content_filename>818.xml</content_filename>
+</article>
+<article id='811'>
+<article_id>811</article_id>
+<title lang='en'>
+<![CDATA[
+FE Donates 250,000 Pesos (RM 20,000) To Foundation For The Soup Kitchen, Food Bank &amp; Training Center Inc And Lighthouse Center For Children Foundation Inc, Quezon City, Philippines
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Donates 250,000 pesos (RM 20,000) to Foundation for the Soup Kitchen, Food Bank &amp; Training Center Inc and Lighthouse Center for Children Foundation Inc, Quezon City, Philippines
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Donates 250,000 pesos (RM 20,000) to Foundation for the Soup Kitchen, Food Bank &amp; Training Center Inc and Lighthouse Center for Children Foundation Inc, Quezon City, Philippines
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>12/30/2011</publish_start_date>
+<sequence>1117</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111117</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>811.xml</content_filename>
 </article>
 <article id='782'>
 <article_id>782</article_id>
@@ -98,11 +124,37 @@ Test Article
 <index_image_url></index_image_url>
 <publish>True</publish>
 <publish_start_date></publish_start_date>
+<sequence>1104</sequence>
+<order_year>2011</order_year>
+<sequence_indexed>20111104</sequence_indexed>
+<category_code>6</category_code>
+<content_filename>782.xml</content_filename>
+</article>
+<article id='804'>
+<article_id>804</article_id>
+<title lang='en'>
+<![CDATA[
+FE Donates To Children's Wish Society Of Malaysia
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Welcomes Quantum Bracelet Wearer, Dato' Misbun Sidek, Coach And Former World Class Badminton Player!
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Welcomes Quantum Bracelet Wearer, Dato' Misbun Sidek, Coach And Former World Class Badminton Player!
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>12/28/2011</publish_start_date>
 <sequence>1103</sequence>
 <order_year>2011</order_year>
 <sequence_indexed>20111103</sequence_indexed>
-<category_code>6</category_code>
-<content_filename>782.xml</content_filename>
+<category_code>3</category_code>
+<content_filename>804.xml</content_filename>
 </article>
 <article id='706'>
 <article_id>706</article_id>

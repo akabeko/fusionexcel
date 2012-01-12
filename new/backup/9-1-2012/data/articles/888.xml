@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article>
+	<en>
+		<title>news 1</title>
+		<alt_title></alt_title>
+		<content>&lt;p&gt;
+	&lt;img height="1370" src="http://fusionexcel.com/imgnews/news1.jpg" style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; text-align: -webkit-center; font-size: medium; " width="900" /&gt;&lt;/p&gt;
+</content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author>KLHunter</author>
+			<robots>all</robots>
+		</meta>
+	</en>
+	<bm>
+		<title>news 1</title>
+		<alt_title></alt_title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author>KLHunter</author>
+			<robots>all</robots>
+		</meta>
+	</bm>
+	<chi>
+		<title>news 1</title>
+		<alt_title></alt_title>
+		<content></content>
+		<meta>
+			<description></description>
+			<keyword></keyword>
+			<author>KLHunter</author>
+			<robots>all</robots>
+		</meta>
+	</chi>
+</article>

@@ -90,7 +90,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>Fusion Excel's Medical Consultant And Speaker : Prof. Dr. Vichit Punyahotra</title>
 		<content></content>
@@ -100,7 +100,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>Fusion Excel's Medical Consultant And Speaker : Prof. Dr. Vichit Punyahotra</title>
 		<content></content>
@@ -110,5 +110,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

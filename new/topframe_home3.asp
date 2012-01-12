@@ -152,11 +152,11 @@ new showLocalTime("timecontainer", "server-asp", 0, "short")
               <tr>
                 <td width="300">&nbsp;</td>
                 <td width="12" valign="top"><img src="img/arrow_upcoming.gif" width="12" height="31" /></td>
-                <td width="131" align="left" valign="middle" class="button_up"><a href="upnews_main.html" target="_top" class="whitelink">Upcoming Events</a></td>
+                <td width="131" align="left" valign="middle" class="button_up"><a href="events.asp" target="_top" class="whitelink">Upcoming Events</a></td>
                 <td width="13" align="center" valign="middle"><img src="img/arrow_right.gif" width="12" height="31" /></td>
-                <td width="77" valign="middle"><a href="charities_judgelorenzo.html" target="_top" class="whitelink">Charities</a></td>
+                <td width="77" valign="middle"><a href="news.asp?category_code=2" target="_top" class="whitelink">Charities</a></td>
                 <td width="12" align="center" valign="middle"><img src="img/arrow_right.gif" width="12" height="31" /></td>
-                <td width="98" valign="middle"><a href="sponsor_nationalGolf.html" target="_top" class="whitelink">Sponsorships</a></td>
+                <td width="98" valign="middle"><a href="news.asp?category_code=4" target="_top" class="whitelink">Sponsorships</a></td>
               </tr>
             </table></td>
           </tr>
@@ -190,7 +190,7 @@ new showLocalTime("timecontainer", "server-asp", 0, "short")
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="105"><a href="service_centres.asp" target="_top" class="menu">Service Centres</a></td>
                 <td width="12" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
-                <td width="50" class="menu"><a href="video_testimonials.html" target="_top" class="menu">Videos</a></td>
+                <td width="50" class="menu"><a href="links.asp?link_type=2" target="_top" class="menu">Videos</a></td>
                 <td width="13" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>
                 <td width="65"><a href="training.html" target="_top" class="menu">Training</a></td>
                 <td width="13" valign="top"><img src="img/arrow.gif" width="9" height="32" /></td>

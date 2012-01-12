@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<categories>
+	<category>
+		<category_code>1</category_code>
+		<category_name>News &amp; Events</category_name>
+	</category>
+	<category>
+		<category_code>2</category_code>
+		<category_name>Charities</category_name>
+	</category>
+	<category>
+		<category_code>4</category_code>
+		<category_name>Sponsorships</category_name>
+	</category>
+    <category>
+		<category_code>8</category_code>
+		<category_name>Company Spokepersons</category_name>
+	</category>
+    <category>
+		<category_code>16</category_code>
+		<category_name>Technology Partners</category_name>
+	</category>
+    <category>
+		<category_code>32</category_code>
+		<category_name>Testimonials (QP)</category_name>
+	</category>
+    <category>
+		<category_code>64</category_code>
+		<category_name>Testimonials (QBB)</category_name>
+	</category>
+    <category>
+		<category_code>128</category_code>
+		<category_name>Testimonials (QC)</category_name>
+	</category>
+    <category>
+		<category_code>256</category_code>
+		<category_name>Product</category_name>
+	</category>
+    <category>
+        <category_code>512</category_code>
+        <category_name>Income Plan</category_name>
+    </category>
+    <category>
+        <category_code>1024</category_code>
+        <category_name>FAQ</category_name>
+    </category>
+    <category>
+        <category_code>2048</category_code>
+        <category_name>Videos</category_name>
+    </category>
+</categories>

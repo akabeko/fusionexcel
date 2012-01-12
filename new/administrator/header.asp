@@ -4,7 +4,11 @@ if maintenance = 1 then
 end if
 if Session("login") = "" then
     Dim redirect_url
-    redirect_url = "http://" & Request.ServerVariables("SERVER_NAME") & Request.ServerVariables("URL") & "?" & Request.Querystring
+    redirect_url = "http://" & Request.ServerVariables("SERVER_NAME")
+    if Request.ServerVariables("SERVER_PORT") <> 80 then
+        redirect_url = redirect_url & ":" & Request.ServerVariables("SERVER_PORT")
+    end if
+    redirect_url = redirect_url & Request.ServerVariables("URL") & "?" & Request.Querystring
 	Response.Redirect("login.asp?redirect_url=" & Server.URLEncode(redirect_url))
 end if
 %>
@@ -17,11 +21,13 @@ end if
 	<link href="css/dropdownmenu/dropdownmenu.css" rel="stylesheet" type="text/css" />
 	<link href="css/smoothness/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
     <link href="css/thickbox.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
 	<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="js/ckfinder/ckfinder.js"></script>
     <script type="text/javascript" src="js/thickbox-compressed.js"></script>
+    <script tyoe="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$("ul.subnav").parent().append("<span></span>"); //Only shows drop down trigger when js is enabled (Adds empty span tag after ul.subnav*)  
@@ -78,17 +84,18 @@ end if
                     <li>
                         <a href="article.asp?category_code=256">Products</a>
                     </li>
-                    <li>
-                        <a href="article.asp?category_code=2048">Video</a>
-                    </li>
 					<li>
 						<a href="service_centres.asp">Service Center</a>
 					</li>
                     <li>
 						<a href="links.asp">External Links</a>
+                        <ul class="subnav">
+                            <li><a href="links.asp?link_type=1">VIP QP Wearers</a></li>
+                            <li><a href="links.asp?link_type=2">Videos</a></li>
+                        </ul>
 					</li>
                     <li>
-                        <a href="under-construction.asp">User Admin Account</a>
+                        <a href="events.asp">Upcoming Events</a>
                     </li>
                     <li>
                         <a href="reset-password.asp">Reset Password</a>
@@ -98,5 +105,9 @@ end if
                     </li>
 				</ul>
 			</div>
+            <div style="float: right; font-size: 12px; margin-top: 5px; ">
+                Current login as: <b><a href="reset-password.asp"><%= Session("login") %></a></b>
+            </div>
 		</div>
+        <br />
 		<div id="main">

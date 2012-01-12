@@ -11,7 +11,7 @@ Dim base_url
 'Common Path'
 Dim data_path, article_path, service_centres_path, indexed_path, links_path
 'DB Path'
-Dim main_db, reference_db, article_db, user_db, service_centre_db, links_db
+Dim main_db, reference_db, article_db, user_db, service_centre_db, links_db, events_db
 'XML Path'
 Dim category_ref_xml, video_link_category_ref_xml
 
@@ -40,6 +40,7 @@ user_db = "users.mdb"
 article_db = "article.mdb"
 service_centre_db = "service_centres.mdb"
 links_db = "links.mdb"
+events_db = "events.mdb"
 
 category_ref_xml = "references/category.xml"
 video_link_category_ref_xml = "references/links/videos.xml"

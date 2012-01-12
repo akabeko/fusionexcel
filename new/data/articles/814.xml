@@ -32,6 +32,8 @@
 		&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;
+	&amp;nbsp;&lt;/p&gt;
 </content>
 		<meta>
 			<description>I felt uncomfortable and embarrassed when the test of balance, flexibility and strength was administered to me.</description>
@@ -39,7 +41,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</en>
+		<alt_title></alt_title></en>
 	<bm>
 		<title>Allan Caidic, The Legendary Undisputed Three-Point Shooter “Trigger Man”.</title>
 		<content></content>
@@ -49,7 +51,7 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</bm>
+		<alt_title></alt_title></bm>
 	<chi>
 		<title>Allan Caidic, The Legendary Undisputed Three-Point Shooter “Trigger Man”.</title>
 		<content></content>
@@ -59,5 +61,5 @@
 			<author>KLHunter</author>
 			<robots>all</robots>
 		</meta>
-	</chi>
+		<alt_title></alt_title></chi>
 </article>

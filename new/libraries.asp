@@ -85,6 +85,10 @@ Function GetIndexedLinksPath()
     GetIndexedLinksPath = GetDataPath() & links_indexed_xml
 End Function
 
+Function GetEventsDbPath()
+    GetEventsDbPath = GetDataPath() & events_db
+End Function
+
 ' Get indexed folder path, with parameters of the indexed file name '
 ' Filename pattern = category_id + xml extension '
 Function GetIndexedPath(filename)
@@ -482,6 +486,159 @@ Function getLatestLinksSequence()
         getLatestLinksSequence = 1
     end if
 End Function
+
+Function ReindexEvents(year)
+    DIm sql, RecordSet, fileStream, file, filepath
+    set fileStream = Server.CreateObject("Scripting.FileSystemObject")
+    set file = fileStream.CreateTextFile(Server.MapPath(GetIndexedPath("events/" & year & ".xml")), true)
+    file.WriteLine "<?xml version='1.0' encoding='utf-8'?>"
+    file.WriteLine "<events>"
+    sql = "SELECT event_id, event_date, publish, event_country, event_city, event_name, event_details, event_venue, event_country_bm, event_city_bm, event_name_bm, event_details_bm, event_venue_bm, event_country_chi, event_city_chi, event_name_chi, event_details_chi, event_venue_chi FROM events WHERE Year(event_date) = " & year & " ORDER BY event_date"
+    call SetConnection(GetEventsDbPath())
+    call OpenDatabase()
+    call CreateRecordSet(RecordSet, sql)
+    Do While not RecordSet.EOF
+        file.WriteLine "<event>"
+        file.WriteLine "<event_id>" & RecordSet.Fields("event_id") & "</event_id>"
+        file.WriteLine "<event_date>" & RecordSet.Fields("event_date") & "</event_date>"
+        file.WriteLine "<publish>" & RecordSet.Fields("publish") & "</publish>"
+        
+        file.WriteLine "<event_country lang='en'>"
+        if RecordSet("event_country") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_country"))
+        end if
+        file.WriteLine "</event_country>"
+        
+        file.WriteLine "<event_city lang='en'>"
+        if RecordSet("event_city") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_city"))
+        end if
+        file.WriteLine "</event_city>"
+        
+        file.WriteLine "<event_name lang='en'>"
+        if RecordSet("event_name") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_name"))
+        end if
+        file.WriteLine "</event_name>"
+        
+        file.WriteLine "<event_details lang='en'>"
+        if RecordSet("event_details") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_details"))
+        end if
+        file.WriteLine "</event_details>"
+        
+        file.WriteLine "<event_venue lang='en'>"
+        if RecordSet("event_venue") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_venue"))
+        end if
+        file.WriteLine "</event_venue>"
+        
+        ' BM '
+        
+        file.WriteLine "<event_country lang='bm'>"
+        if RecordSet("event_country_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_country_bm"))
+        end if
+        file.WriteLine "</event_country>"
+        
+        file.WriteLine "<event_city lang='bm'>"
+        if RecordSet("event_city_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_city_bm"))
+        end if
+        file.WriteLine "</event_city>"
+        
+        file.WriteLine "<event_name lang='bm'>"
+        if RecordSet("event_name_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_name_bm"))
+        end if
+        file.WriteLine "</event_name>"
+        
+        file.WriteLine "<event_details lang='bm'>"
+        if RecordSet("event_details_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_details_bm"))
+        end if
+        file.WriteLine "</event_details>"
+        
+        file.WriteLine "<event_venue lang='bm'>"
+        if RecordSet("event_venue_bm") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_venue_bm"))
+        end if
+        file.WriteLine "</event_venue>"
+        
+        ' Chi '
+        
+        file.WriteLine "<event_country lang='chi'>"
+        if RecordSet("event_country_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_country_chi"))
+        end if
+        file.WriteLine "</event_country>"
+        
+        file.WriteLine "<event_city lang='chi'>"
+        if RecordSet("event_city_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_city_chi"))
+        end if
+        file.WriteLine "</event_city>"
+        
+        file.WriteLine "<event_name lang='chi'>"
+        if RecordSet("event_name_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_name_chi"))
+        end if
+        file.WriteLine "</event_name>"
+        
+        file.WriteLine "<event_details lang='chi'>"
+        if RecordSet("event_details_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_details_chi"))
+        end if
+        file.WriteLine "</event_details>"
+        
+        file.WriteLine "<event_venue lang='chi'>"
+        if RecordSet("event_venue_chi") <> "" then
+            file.WriteLine Server.HTMLEncode(RecordSet.Fields("event_venue_chi"))
+        end if
+        file.WriteLine "</event_venue>"
+        file.WriteLine "</event>"
+        
+        RecordSet.MoveNext
+    Loop
+    file.WriteLine "</events>"
+End Function
+
+Function GetIndexedEvents(year)
+    Dim objXML
+    SetXMLPath(GetIndexedPath("events/" & year & ".xml"))
+    set objXML = OpenXML()
+    set GetIndexedEvents = objXML
+End Function
+
+Function MonthAbbr(month)
+    if month = 1 then
+        MonthAbbr = "Jan"
+    elseif month = 2 then
+        MonthAbbr = "Feb"
+    elseif month = 3 then
+        MonthAbbr = "Mar"
+    elseif month = 4 then
+        MonthAbbr = "Apr"
+    elseif month = 5 then
+        MonthAbbr = "May"
+    elseif month = 6 then
+        MonthAbbr = "Jun"
+    elseif month = 7 then
+        MonthAbbr = "Jul"
+    elseif month = 8 then
+        MonthAbbr = "Aug"
+    elseif month = 9 then
+        MonthAbbr = "Sep"
+    elseif month = 10 then
+        MonthAbbr = "Oct"
+    elseif month = 11 then
+        MonthAbbr = "Nov"
+    elseif month = 12 then
+        MonthAbbr = "Dec"
+    else
+        MonthAbbr = "???"
+    end if
+end function
 
 loadCategoryRef()
 loadVideoLinkCategoryRef()

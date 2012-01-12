@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<events>
+<event>
+<event_id>2</event_id>
+<event_date>2012/1/26 15:00:00</event_date>
+<publish>True</publish>
+<event_country lang='en'>
+Malaysia
+</event_country>
+<event_city lang='en'>
+Shah Alam
+</event_city>
+<event_name lang='en'>
+Example Events
+</event_name>
+<event_details lang='en'>
+-
+</event_details>
+<event_venue lang='en'>
+Shah Alam I-City
+</event_venue>
+<event_country lang='bm'>
+Malaysia
+</event_country>
+<event_city lang='bm'>
+Shah Alam
+</event_city>
+<event_name lang='bm'>
+Example Events
+</event_name>
+<event_details lang='bm'>
+-
+</event_details>
+<event_venue lang='bm'>
+Shah Alam I-City
+</event_venue>
+<event_country lang='chi'>
+Malaysia
+</event_country>
+<event_city lang='chi'>
+Shah Alam
+</event_city>
+<event_name lang='chi'>
+Example Events
+</event_name>
+<event_details lang='chi'>
+-
+</event_details>
+<event_venue lang='chi'>
+Shah Alam I-City
+</event_venue>
+</event>
+</events>
