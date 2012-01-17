@@ -1,5 +1,5 @@
 <% Function render_sidebar(obj, category_code, sidebar_type, header, limit) %>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" id="id_sidebar">
 <tr>
 <td>
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding-bottom: 25px;">

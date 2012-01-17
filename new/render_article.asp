@@ -38,8 +38,8 @@ end if
 <!-- Siderbar end -->
 </td>
 <td width="10" valign="top">&nbsp;</td>
-<td width="740" valign="top">
-<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+<td width="740" valign="top" id="id_content">
+<table width="100%" height="100%"  border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td>
 <% Call render_header_image(category_code) %>
@@ -54,11 +54,11 @@ end if
 <tbody>
 <tr>
 <td valign="top" bgcolor="#EEF0FC">
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td valign="top" class="conthead">
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
 <tbody>
 <tr>
 <td valign="top"><strong>
@@ -81,7 +81,7 @@ end if
 </td>
 </tr>
 <tr>
-<td valign="top" class="content">
+<td valign="top" class="content" id="">
 <%= articleObj.item(0).selectSingleNode(lang_index_chr & "/content").text %>
 </td>
 </tr>

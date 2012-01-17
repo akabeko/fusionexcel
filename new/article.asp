@@ -68,9 +68,6 @@ body {
             </table></td>
         </tr>
         <tr>
-          <td colspan="3" height="10"></td>
-        </tr>
-        <tr>
           <td colspan="3"><iframe src="iframe_bottom.html" width="930" height="28" marginwidth="0" marginheight="0" frameborder="0" scrolling="No"></iframe></td>
         </tr>
       </table></td>
