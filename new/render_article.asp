@@ -50,6 +50,11 @@ if category_code = 256 or (category_code >= 4096 and category_code <= 16384) the
     set obj = GetIndexedArticles(16384)
     set artObj = obj.selectNodes("articles/article")
     Call render_sidebar(artObj, 16384, 2, false, 999999)
+elseif category_code = 16 then
+    Call render_sidebar(articlesObj, category_code, sidebar_type, header, limit)
+    set obj = GetIndexedArticles(8)
+    set artObj = obj.selectNodes("articles/article")
+    Call render_sidebar(artObj, 8, 2, false, 999999)
 else
     Call render_sidebar(articlesObj, category_code, sidebar_type, header, limit)
 end if %>

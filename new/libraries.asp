@@ -188,6 +188,19 @@ Function getLatestArticleSequence()
     end if
 End Function
 
+Function DeleteArticleFiles(str_ids)
+    Dim ids, index, fs
+    set fs = Server.CreateObject("Scripting.FileSystemObject")
+    
+    ids = Split(str_ids, ",")
+    for index = 0 to ubound(ids)
+        if fs.FileExists(GetArticlePath(ids(index) & ".xml")) then
+            fs.Delete(GetArticlePath(ids(index) & ".xml"))
+        end if
+        set fs = nothing
+    loop
+End Function
+
 Function getArticleContent(path)
 	Dim objXML, root
 	SetXMLPath(GetArticlePath(path))

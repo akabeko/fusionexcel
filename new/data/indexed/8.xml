@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <articles>
-<article id='819'>
-<article_id>819</article_id>
+<article id='934'>
+<article_id>934</article_id>
 <title lang='en'>
 <![CDATA[
 Official Appointment
@@ -9,21 +9,21 @@ Official Appointment
 </title>
 <title lang='bm'>
 <![CDATA[
-Official Appointment
+Jean Daniels
 ]]>
 </title>
 <title lang='chi'>
 <![CDATA[
-Official Appointment
+Jean Daniels
 ]]>
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2011/12/30</publish_start_date>
-<sequence>1124</sequence>
-<order_year>2011</order_year>
-<sequence_indexed>20111124</sequence_indexed>
-<category_code>9</category_code>
-<content_filename>819.xml</content_filename>
+<publish_start_date></publish_start_date>
+<sequence>1226</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121226</sequence_indexed>
+<category_code>8</category_code>
+<content_filename>934.xml</content_filename>
 </article>
 </articles>

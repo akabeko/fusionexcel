@@ -1,5 +1,31 @@
 <?xml version='1.0' encoding='utf-8'?>
 <articles>
+<article id='936'>
+<article_id>936</article_id>
+<title lang='en'>
+<![CDATA[
+&lt;center&gt;Quantum Necklace (QN)&lt;/center&gt;
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+Quan
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+Quan
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date></publish_start_date>
+<sequence>1227</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121227</sequence_indexed>
+<category_code>256</category_code>
+<content_filename>936.xml</content_filename>
+</article>
 <article id='873'>
 <article_id>873</article_id>
 <title lang='en'>
@@ -19,10 +45,10 @@ Polycontrast Interence Photography (PIP) Photo Of Quantum Pendant By Master Baha
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2012/1/5</publish_start_date>
-<sequence>1171</sequence>
+<publish_start_date>1/5/2012</publish_start_date>
+<sequence>1162</sequence>
 <order_year>2012</order_year>
-<sequence_indexed>20121171</sequence_indexed>
+<sequence_indexed>20121162</sequence_indexed>
 <category_code>257</category_code>
 <content_filename>873.xml</content_filename>
 </article>
@@ -45,7 +71,7 @@ FusionExcel Achievers Recognition Dinner, 19th April 2008.
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2011/12/25</publish_start_date>
+<publish_start_date>12/25/2011</publish_start_date>
 <sequence>1001</sequence>
 <order_year>2011</order_year>
 <sequence_indexed>20111001</sequence_indexed>

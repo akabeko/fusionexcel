@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<service_centre>
-	<en>
-		<content>&lt;table border="0" cellpadding="0" cellspacing="0" style="color: rgb(0, 0, 0); font-family: 'Times New Roman'; background-color: rgb(238, 240, 252); font-size: medium; " width="100%"&gt;
+<?xml version="1.0"?>
+<service_centre><en><content>&lt;table border="0" cellpadding="0" cellspacing="0" style="color: rgb(0, 0, 0); font-family: Times; background-color: rgb(238, 240, 252); font-size: medium; " width="100%"&gt;
 	&lt;tbody&gt;
 		&lt;tr&gt;
 			&lt;td class="smallhead" style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; " valign="top"&gt;
@@ -79,6 +77,8 @@
 							&lt;td colspan="2" height="10" width="718"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
+										&lt;tr align="center" valign="top"&gt;
+										&lt;/tr&gt;
 										&lt;tr&gt;
 											&lt;td align="center" colspan="2"&gt;
 												&lt;img src="http://fusionexcel.com/imgnews/09082011_00.jpg" style="border-top-color: rgb(153, 153, 153); border-right-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153); border-left-color: rgb(153, 153, 153); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-image: initial; " width="715" /&gt;&lt;/td&gt;
@@ -86,10 +86,6 @@
 									&lt;/tbody&gt;
 								&lt;/table&gt;
 							&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
@@ -106,10 +102,6 @@
 							&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
@@ -122,10 +114,6 @@
 									&lt;/tbody&gt;
 								&lt;/table&gt;
 							&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
@@ -142,10 +130,6 @@
 							&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
@@ -158,10 +142,6 @@
 									&lt;/tbody&gt;
 								&lt;/table&gt;
 							&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
@@ -178,10 +158,6 @@
 							&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
@@ -194,10 +170,6 @@
 									&lt;/tbody&gt;
 								&lt;/table&gt;
 							&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
@@ -214,10 +186,6 @@
 							&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
@@ -232,18 +200,10 @@
 							&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
 										&lt;tr&gt;
-											&lt;td&gt;
-												&lt;img src="http://fusionexcel.com/imgnews/09082011_17.jpg" style="border-top-color: rgb(153, 153, 153); border-right-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153); border-left-color: rgb(153, 153, 153); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-image: initial; " width="352" /&gt;&lt;/td&gt;
-											&lt;td align="right"&gt;
-												&lt;img src="http://fusionexcel.com/imgnews/09082011_18.jpg" style="border-top-color: rgb(153, 153, 153); border-right-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153); border-left-color: rgb(153, 153, 153); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-image: initial; " width="353" /&gt;&lt;/td&gt;
 										&lt;/tr&gt;
 									&lt;/tbody&gt;
 								&lt;/table&gt;
@@ -268,10 +228,6 @@
 							&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
@@ -286,18 +242,10 @@
 							&lt;/td&gt;
 						&lt;/tr&gt;
 						&lt;tr valign="top"&gt;
-							&lt;td class="content" colspan="2" height="10"&gt;
-								&amp;nbsp;&lt;/td&gt;
-						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
 							&lt;td colspan="2" height="10" width="718"&gt;
 								&lt;table border="0" cellpadding="0" cellspacing="0" width="100%"&gt;
 									&lt;tbody&gt;
 										&lt;tr&gt;
-											&lt;td&gt;
-												&lt;img src="http://fusionexcel.com/imgnews/09082011_23.jpg" style="border-top-color: rgb(153, 153, 153); border-right-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153); border-left-color: rgb(153, 153, 153); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-image: initial; " width="352" /&gt;&lt;/td&gt;
-											&lt;td align="right"&gt;
-												&lt;img src="http://fusionexcel.com/imgnews/09082011_24.jpg" style="border-top-color: rgb(153, 153, 153); border-right-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153); border-left-color: rgb(153, 153, 153); border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-image: initial; " width="353" /&gt;&lt;/td&gt;
 										&lt;/tr&gt;
 									&lt;/tbody&gt;
 								&lt;/table&gt;
@@ -329,10 +277,6 @@
 							&lt;td valign="top"&gt;
 								&amp;lt;&amp;nbsp;&lt;a href="http://fusionexcel.com/service_centres_01.html"&gt;Click Here For More Photos&lt;/a&gt;&amp;nbsp;&amp;gt;&lt;/td&gt;
 						&lt;/tr&gt;
-						&lt;tr valign="top"&gt;
-							&lt;td colspan="2" height="10" width="718"&gt;
-								&amp;nbsp;&lt;/td&gt;
-						&lt;/tr&gt;
 					&lt;/tbody&gt;
 				&lt;/table&gt;
 			&lt;/td&gt;
@@ -341,12 +285,4 @@
 &lt;/table&gt;
 &lt;p&gt;
 	&amp;nbsp;&lt;/p&gt;
-</content>
-	</en>
-	<bm>
-		<content></content>
-	</bm>
-	<chi>
-		<content></content>
-	</chi>
-</service_centre>
+</content></en><bm><content></content></bm><chi><content></content></chi></service_centre>

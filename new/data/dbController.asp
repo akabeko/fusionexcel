@@ -54,7 +54,7 @@ Function OpenXML()
 	objXML.load(Server.MapPath(XMLString))
 	If objXML.parseError.errorCode then
 		Response.Write "Error Parsing XML<br/>"
-		Response.Write "Reason: " & objXML.parseError.reason & " Error Line: " & objXML.parseError.line & " File: " & XMLString
+		Response.Write "Reason: " & objXML.parseError.reason & " Error Line: " & objXML.parseError.line
 		Response.End
 	End If
 	

@@ -387,7 +387,7 @@ end if
 
 	<br clear="both" />
     <label>Preview Url:</label>
-    <input type="text" size="100" id="id-preview-url" data-base-url="<%= root_url & base_url & "article.asp?id=" & Request("id") %>" value="<%= root_url & base_url & "article.asp?id=" & Request("id") %>" readonly="readonly" />
+    <input type="text" size="100" id="id-preview-url" data-base-url="<%= "article.asp?id=" & Request("id") %>" value="<%=  "article.asp?id=" & Request("id") %>" readonly="readonly" />
     <br />
     <%
         categories = getCategoriesList()

@@ -17,6 +17,7 @@ if Request.ServerVariables("REQUEST_METHOD") = "POST" then
         Call OpenDatabase()
         sql = "DELETE FROM article WHERE article_id IN (" & Request("action_article_id") & ")"
         call ExecuteQuery(sql)
+        call DeleteArticleFiles(Request("action_article_id"))
         call ReindexData(category_code)
         Response.Redirect("article.asp")
     end if
@@ -78,7 +79,7 @@ end if
 		<tbody>
 		<% Do While not RecordSet.EOF %>
 			<tr>
-				<td><input type="checkbox" name="action_article_id" value="<%= RecordSet("article_id") %>" /></td>
+				<td><input type="checkbox" name="action_article_id" value="<%= RecordSet("article_id") %>" <% if RecordSet("article_id") >= 1 and RecordSet("article_id") <= 10 then %> disabled="disabled="<% end if %> /></td>
 				<td><%= RecordSet("article_id") %></td>
 				<td><a href='article-edit.asp?action=edit&amp;id=<%= RecordSet("article_id") %>'><%= RecordSet("title") %></a></td>
 				<% if RecordSet("publish") then %>

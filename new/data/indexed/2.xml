@@ -1,5 +1,161 @@
 <?xml version='1.0' encoding='utf-8'?>
 <articles>
+<article id='1050'>
+<article_id>1050</article_id>
+<title lang='en'>
+<![CDATA[
+FusionExcel's Donates RM 30,000 To House Of Joy Charity, 21st September 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FusionExcel's Donates RM 30,000 To House Of Joy Charity, 21st September 2008.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FusionExcel's Donates RM 30,000 To House Of Joy Charity, 21st September 2008.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/18/2012</publish_start_date>
+<sequence>1319</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121319</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>1050.xml</content_filename>
+</article>
+<article id='1042'>
+<article_id>1042</article_id>
+<title lang='en'>
+<![CDATA[
+FusionExcel Donates RM 5000 Majlis Belia Negeri Sabah At Event Sandakan 20th September 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FusionExcel Donates RM 5000 Majlis Belia Negeri Sabah At Event Sandakan 20th September 2008.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FusionExcel Donates RM 5000 Majlis Belia Negeri Sabah At Event Sandakan 20th September 2008.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/18/2012</publish_start_date>
+<sequence>1311</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121311</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>1042.xml</content_filename>
+</article>
+<article id='1021'>
+<article_id>1021</article_id>
+<title lang='en'>
+<![CDATA[
+ FusionExcel Hosts Dinner For Children From Payatas, Philippines 13th September 2008.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Hosts Dinner For Children From Payatas, Philippines 13th September 2008
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Hosts Dinner For Children From Payatas, Philippines 13th September 2008
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/17/2012</publish_start_date>
+<sequence>1293</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121293</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>1021.xml</content_filename>
+</article>
+<article id='1001'>
+<article_id>1001</article_id>
+<title lang='en'>
+<![CDATA[
+FE Donates RM 10,000.00 To SAJA (School For Street Kids), Jakarta.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Donates RM 10,000.00 To SAJA (School For Street Kids), Jakarta.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Donates RM 10,000.00 To SAJA (School For Street Kids), Jakarta.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/16/2012</publish_start_date>
+<sequence>1273</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121273</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>1001.xml</content_filename>
+</article>
+<article id='958'>
+<article_id>958</article_id>
+<title lang='en'>
+<![CDATA[
+FE Donates RM 22,809 To Marcus Ho Appeal.
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Donates RM 22,809 To Marcus Ho Appeal.
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Donates RM 22,809 To Marcus Ho Appeal.
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/15/2012</publish_start_date>
+<sequence>1230</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121230</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>958.xml</content_filename>
+</article>
+<article id='927'>
+<article_id>927</article_id>
+<title lang='en'>
+<![CDATA[
+FE Donates RM 10,000 To Sichuan / Myanmar Disaster Relief Fund
+]]>
+</title>
+<title lang='bm'>
+<![CDATA[
+FE Donates RM 10,000 o Sichuan / Myanmar Disaster Relief Fund
+]]>
+</title>
+<title lang='chi'>
+<![CDATA[
+FE Donates RM 10,000 o Sichuan / Myanmar Disaster Relief Fund
+]]>
+</title>
+<index_image_url></index_image_url>
+<publish>True</publish>
+<publish_start_date>1/14/2012</publish_start_date>
+<sequence>1204</sequence>
+<order_year>2012</order_year>
+<sequence_indexed>20121204</sequence_indexed>
+<category_code>3</category_code>
+<content_filename>927.xml</content_filename>
+</article>
 <article id='860'>
 <article_id>860</article_id>
 <title lang='en'>
@@ -19,10 +175,10 @@ FE Donates RM 20,000 To Perwira K9 Malaysia, 7th June 2008
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2012/1/4</publish_start_date>
-<sequence>1163</sequence>
+<publish_start_date>1/4/2012</publish_start_date>
+<sequence>1154</sequence>
 <order_year>2012</order_year>
-<sequence_indexed>20121163</sequence_indexed>
+<sequence_indexed>20121154</sequence_indexed>
 <category_code>3</category_code>
 <content_filename>860.xml</content_filename>
 </article>
@@ -45,7 +201,7 @@ Letter Of Appreciation From Judge Lorenzo B Venaracion.
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2011/12/30</publish_start_date>
+<publish_start_date>12/30/2011</publish_start_date>
 <sequence>1126</sequence>
 <order_year>2011</order_year>
 <sequence_indexed>20111126</sequence_indexed>
@@ -71,7 +227,7 @@ FE Donates QPs To Perwira K9 Wheelchair Basketball Dream Team
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2011/12/30</publish_start_date>
+<publish_start_date>12/30/2011</publish_start_date>
 <sequence>1123</sequence>
 <order_year>2011</order_year>
 <sequence_indexed>20111123</sequence_indexed>
@@ -97,7 +253,7 @@ FE Donates 250,000 pesos (RM 20,000) to Foundation for the Soup Kitchen, Food Ba
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2011/12/30</publish_start_date>
+<publish_start_date>12/30/2011</publish_start_date>
 <sequence>1117</sequence>
 <order_year>2011</order_year>
 <sequence_indexed>20111117</sequence_indexed>
@@ -149,7 +305,7 @@ FE Welcomes Quantum Bracelet Wearer, Dato' Misbun Sidek, Coach And Former World 
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2011/12/28</publish_start_date>
+<publish_start_date>12/28/2011</publish_start_date>
 <sequence>1103</sequence>
 <order_year>2011</order_year>
 <sequence_indexed>20111103</sequence_indexed>
@@ -175,7 +331,7 @@ FusionExcel Donates VND 50 Million (RM 10,000) To Children With Innate Heart Dis
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2011/12/9</publish_start_date>
+<publish_start_date>12/9/2011</publish_start_date>
 <sequence>1017</sequence>
 <order_year>2011</order_year>
 <sequence_indexed>20111017</sequence_indexed>
@@ -198,7 +354,7 @@ FE Donates RM 20,000 to Women's Aid Organisation 28th February 2009!!
 </title>
 <index_image_url></index_image_url>
 <publish>True</publish>
-<publish_start_date>2011/12/1</publish_start_date>
+<publish_start_date>12/1/2011</publish_start_date>
 <sequence>459</sequence>
 <order_year>2011</order_year>
 <sequence_indexed>20110459</sequence_indexed>
