@@ -23,6 +23,12 @@ Function render_header_image(category_code)
 <img src="img/banner_faq.jpg" width="740" height="170" />
 <% elseif category_code = 2048 then %>
 <img src="img/banner_testimonials_video.jpg" width="740" height="170" />
+<% elseif category_code = 4096 then %>
+<img src="img/p_articles.jpg" width="740" height="170" />
+<% elseif category_code = 8192 then %>
+<img src="img/p_reports.jpg" width="740" height="170" />
+<% elseif category_code = 16384 then %>
+<img src="img/p_video.jpg" width="740" height="170" />
 <% else %>
 <img src="img/banner_news.jpg" width="740" height="170" />
 <% end if %>

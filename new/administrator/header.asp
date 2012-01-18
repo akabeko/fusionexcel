@@ -77,12 +77,22 @@ end if
                             <li><a href="article.asp?category_code=32">Testimonial (Quantum Pendant)</a></li>
                             <li><a href="article.asp?category_code=64">Testimonial (Quantum Beauty Bar)</a></li>
                             <li><a href="article.asp?category_code=128">Testimonial (Quantum Charger)</a></li>
-                            <li><a href="article.asp?category_code=512">Income Plan</a></li>
-                            <li><a href="article.asp?category_code=1024">FAQ</a></li>
+                            
 						</ul>
 					</li>
                     <li>
                         <a href="article.asp?category_code=256">Products</a>
+                        <ul class="subnav">
+                            <li><a href="article.asp?category_code=4096">Article</a></li>
+                            <li><a href="article.asp?category_code=8192">Reports</a></li>
+                            <li><a href="article.asp?category_code=16384">Demo Video</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="article.asp?category_code=512">Income Plan</a>
+                    </li>
+                    <li>
+                        <a href="article.asp?category_code=1024">FAQ</a>
                     </li>
 					<li>
 						<a href="service_centres.asp">Service Center</a>

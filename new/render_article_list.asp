@@ -48,7 +48,26 @@ if (category_code >= 32 and category_code <= 128) or category_code = 256 then
     header = true
 end if
 %>
-<% Call render_sidebar(articlesObj, category_code, sidebar_type, header, limit) %>
+
+<%
+if category_code = 256 or (category_code >= 4096 and category_code <= 16384) then
+    Dim obj, artObj
+    set obj = GetIndexedArticles(256)
+    set artObj = obj.selectNodes("articles/article")
+    Call render_sidebar(artObj, 256, 2, false, 999999)
+    set obj = GetIndexedArticles(4096)
+    set artObj = obj.selectNodes("articles/article")
+    Call render_sidebar(artObj, 4096, 2, false, 999999)
+    set obj = GetIndexedArticles(8192)
+    set artObj = obj.selectNodes("articles/article")
+    Call render_sidebar(artObj, 8192, 2, false, 999999)
+    set obj = GetIndexedArticles(16384)
+    set artObj = obj.selectNodes("articles/article")
+    Call render_sidebar(artObj, 16384, 2, false, 999999)
+else
+    Call render_sidebar(articlesObj, category_code, sidebar_type, header, limit)
+end if
+%>
 <!-- Siderbar end -->
 </td>
 <td width="10" valign="top">&nbsp;</td>

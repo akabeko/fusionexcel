@@ -99,6 +99,13 @@
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>疑问回答<% elseif lang = 2 then %>FAQ<% else %>FAQ<% end if %></td>
 <% elseif category_code = 2048 then %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>见证录影<% elseif lang = 2 then %>Videos<% else %>Videos<% end if %></td>
+<% elseif category_code = 4096 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>文章<% elseif lang = 2 then %>Artikel<% else %>Articles<% end if %></td>
+<% elseif category_code = 8192 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>报告<% elseif lang = 2 then %>Laporan<% else %>Reports<% end if %></td>
+<% elseif category_code = 16384 then %>
+<td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>示范录影<% elseif lang = 2 then %>Demo Video<% else %>Demo Videos<% end if %></td>
+
 <% else %>
 <td width="163" height="25px" background="img/header.gif" class="smallhead"><% if lang = 3 then %>新闻与活动<% elseif lang = 2 then %>Berita dan Aktiviti<% else %>News &amp; Events<% end if %></td>
 <% end if %>
